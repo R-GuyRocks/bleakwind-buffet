@@ -100,7 +100,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets and sets a boolean representing whether or not the customer wants ice in their drink.
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice { get; set; } = false;
 
         /// <summary>
         /// Gets and sets the size that the customer ordered.

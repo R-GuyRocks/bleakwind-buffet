@@ -26,10 +26,6 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                return price;
-            }
-            set
-            {
                 if (Size == Size.Small)
                 {
                     price = 0.75;
@@ -45,6 +41,7 @@ namespace BleakwindBuffet.Data.Drinks
                         price = 1.75;
                     }
                 }
+                return price;
             }
         }
 
@@ -95,7 +92,7 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     instructions.Remove("Add ice");
                 }
-                if (RoomForCream == false)
+                if (RoomForCream == true)
                 {
                     instructions.Add("Add cream");
                 }
