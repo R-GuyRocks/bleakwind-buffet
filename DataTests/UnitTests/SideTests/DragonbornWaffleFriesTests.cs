@@ -32,11 +32,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(Size.Small, dbwf.Size);
         }
 
- /*       [Fact]
+        [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
-
-        } */
+            DragonbornWaffleFries dbwf = new DragonbornWaffleFries();
+            Assert.Empty(dbwf.SpecialInstructions);
+        }
 
         [Theory]
         [InlineData(Size.Small, 0.42)]

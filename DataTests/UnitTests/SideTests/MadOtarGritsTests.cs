@@ -32,10 +32,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(Size.Small, mog.Size);
         }
 
-   /*     [Fact]
+        [Fact]
         public void ShouldReturnCorrectStringOnSpecialInstructions()
         {
-        } */
+            MadOtarGrits mog = new MadOtarGrits();
+            Assert.Empty(mog.SpecialInstructions);
+        }
 
         [Theory]
         [InlineData(Size.Small, 1.22)]

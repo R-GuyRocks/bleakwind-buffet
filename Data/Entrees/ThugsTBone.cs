@@ -12,19 +12,19 @@ namespace BleakwindBuffet.Data.Entrees
     public class ThugsTBone
     {
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the sandwhich.
-        /// </summary>
+        /// </value>
         public double Price { get; } = 6.44;
 
-        /// <summary>
+        /// <value>
         /// Gets the number of calories in the sandwhich.
-        /// </summary>
+        /// </value>
         public uint Calories { get; } = 982;
 
-        /// <summary>
+        /// <value>
         /// Gets an empty list of instructions.
-        /// </summary>
+        /// </value>
         public List<String> SpecialInstructions
         {
             get

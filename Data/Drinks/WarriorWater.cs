@@ -14,19 +14,19 @@ namespace BleakwindBuffet.Data.Drinks
     public class WarriorWater
     {
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the drink.
-        /// </summary>
+        /// </value>
         public double Price { get; } = 0;
 
-        /// <summary>
+        /// <value>
         /// Gets the calorie amount for the drink.
-        /// </summary>
+        /// </value>
         public uint Calories { get; } = 0;
 
-        /// <summary>
+        /// <value>
         /// Gets the list of special instructions on how to make the drink.
-        /// </summary>
+        /// </value>
         public List<String> SpecialInstructions
         {
             get
@@ -52,19 +52,19 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ice in their drink.
-        /// </summary>
+        /// </value>
         public bool Ice { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a lemon in their drink.
-        /// </summary>
+        /// </value>
         public bool Lemon { get; set; } = false;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets the size that the customer ordered.
-        /// </summary>
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
         /// <summary>

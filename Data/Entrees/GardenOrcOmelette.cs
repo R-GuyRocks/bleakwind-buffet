@@ -12,19 +12,19 @@ namespace BleakwindBuffet.Data.Entrees
     public class GardenOrcOmelette
     {
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the omelette.
-        /// </summary>
+        /// </value>
         public double Price { get; } = 4.57;
 
-        /// <summary>
+        /// <value>
         /// Gets the number of calories in the omelette.
-        /// </summary>
+        /// </value>
         public uint Calories { get; } = 404;
 
-        /// <summary>
+        /// <value>
         /// Gets the list of special instructions on how to make the omelette.
-        /// </summary>
+        /// </value>
         public List<String> SpecialInstructions
         {
             get
@@ -66,24 +66,24 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants broccoli in their omelette.
-        /// </summary>
+        /// </value>
         public bool Broccoli { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants mushrooms in their omelette.
-        /// </summary>
+        /// </value>
         public bool Mushrooms { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants tomato in their omelette.
-        /// </summary>
+        /// </value>
         public bool Tomato { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants cheddar cheese in their omelette.
-        /// </summary>
+        /// </value>
         public bool Cheddar { get; set; } = true;
 
         /// <summary>

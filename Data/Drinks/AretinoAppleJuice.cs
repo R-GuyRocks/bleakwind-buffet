@@ -14,14 +14,14 @@ namespace BleakwindBuffet.Data.Drinks
     public class AretinoAppleJuice
     {
 
-        /// <summary>
+        /// <value>
         /// The price of the drink.
-        /// </summary>
+        /// </value>
         public double price;
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the drink, which is dependent on its size.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get
@@ -45,14 +45,14 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// The number of calories in the drink.
-        /// </summary>
+        /// </value>
         public uint calories;
 
-        /// <summary>
+        /// <value>
         /// Gets the calorie amount for the drink, which is dependent on its size.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get
@@ -76,9 +76,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets the list of special instructions on how to make the drink.
-        /// </summary>
+        /// </value>
         public List<String> SpecialInstructions
         {
             get
@@ -96,15 +96,14 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ice in their drink.
-        /// </summary>
+        /// </value>
         public bool Ice { get; set; } = false;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets the size that the customer ordered.
-        /// </summary>
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
         /// <summary>

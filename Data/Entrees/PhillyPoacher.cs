@@ -12,19 +12,19 @@ namespace BleakwindBuffet.Data.Entrees
     public class PhillyPoacher
     {
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the sandwhich.
-        /// </summary>
+        /// </value>
         public double Price { get; } = 7.23;
 
-        /// <summary>
+        /// <value>
         /// Gets the number of calories in the sandwhich.
-        /// </summary>
+        /// </value>
         public uint Calories { get; } = 784;
 
-        /// <summary>
+        /// <value>
         /// Gets the list of special instructions on how to make the sandwhich.
-        /// </summary>
+        /// </value>
         public List<String> SpecialInstructions {
             get
             {
@@ -57,19 +57,19 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a sirloin on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Sirloin { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants onion on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Onion { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a roll.
-        /// </summary>
+        /// </value>
         public bool Roll { get; set; } = true;
 
         /// <summary>

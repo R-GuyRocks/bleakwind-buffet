@@ -12,19 +12,19 @@ namespace BleakwindBuffet.Data.Entrees
     public class SmokehouseSkeleton
     {
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the combo.
-        /// </summary>
+        /// </value>
         public double Price { get; } = 5.62;
 
-        /// <summary>
+        /// <value>
         /// Gets the number of calories in the combo.
-        /// </summary>
+        /// </value>
         public uint Calories { get; } = 602;
 
-        /// <summary>
+        /// <value>
         /// Gets the list of special instructions on what to include in the combo.
-        /// </summary>
+        /// </value>
         public List<String> SpecialInstructions
         {
             get
@@ -66,24 +66,24 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a sausage link included in the combo.
-        /// </summary>
+        /// </value>
         public bool SausageLink { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants an egg included in the combo.
-        /// </summary>
+        /// </value>
         public bool Egg { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants hashbrowns included in the combo.
-        /// </summary>
+        /// </value>
         public bool Hashbrown { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants pancakes included in the combo.
-        /// </summary>
+        /// </value>
         public bool Pancake { get; set; } = true;
 
         /// <summary>

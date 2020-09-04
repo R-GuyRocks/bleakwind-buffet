@@ -32,10 +32,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(Size.Small, fm.Size);
         }
 
-     /*   [Fact]
+        [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
-        } */
+            FriedMiraak fm = new FriedMiraak();
+            Assert.Empty(fm.SpecialInstructions);
+        }
 
         [Theory]
         [InlineData(Size.Small, 1.78)]

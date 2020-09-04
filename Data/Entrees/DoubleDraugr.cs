@@ -12,19 +12,19 @@ namespace BleakwindBuffet.Data.Entrees
     public class DoubleDraugr
     {
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the sandwhich.
-        /// </summary>
+        /// </value>
         public double Price { get; } = 7.32;
 
-        /// <summary>
+        /// <value>
         /// Gets the number of calories in the sandwhich.
-        /// </summary>
+        /// </value>
         public uint Calories { get; } = 843;
 
-        /// <summary>
+        /// <value>
         /// Gets the list of special instructions on how to make the sandwhich.
-        /// </summary>
+        /// </value>
         public List<String> SpecialInstructions 
         { 
             get
@@ -98,44 +98,44 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a bun on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Bun { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ketchup on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Ketchup { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants mustard on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Mustard { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants pickles on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Pickle { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants cheese on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Cheese { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants tomato on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Tomato { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants lettuce on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Lettuce { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants mayo on their sandwhich.
-        /// </summary>
+        /// </value>
         public bool Mayo { get; set; } = true;
 
         /// <summary>

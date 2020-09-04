@@ -14,14 +14,14 @@ namespace BleakwindBuffet.Data.Sides
     public class FriedMiraak
     {
 
-        /// <summary>
+        /// <value>
         /// The price of the Fried Miraak.
-        /// </summary>
+        /// </value>
         public double price;
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the Fried Miraak, which is dependent on its size.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get
@@ -45,14 +45,14 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-        /// <summary>
+        /// <value>
         /// The number of calories in the Fried Miraak.
-        /// </summary>
+        /// </value>
         public uint calories;
 
-        /// <summary>
+        /// <value>
         /// Gets the number of calories in the Fried Miraak, which is dependent on its size.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get
@@ -76,10 +76,22 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets the size of the Fried Miraak.
-        /// </summary>
+        /// </value>
         public Size Size { get; set; } = Size.Small;
+
+        /// <value>
+        /// Gets the list of special instructions on how to make the drink.
+        /// </value>
+        public List<String> SpecialInstructions
+        {
+            get
+            {
+                List<String> instructions = new List<String>();
+                return instructions;
+            }
+        }
 
         /// <summary>
         /// Redefines the ToString method to output name of the entree.

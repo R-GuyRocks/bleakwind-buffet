@@ -12,21 +12,21 @@ namespace BleakwindBuffet.Data.Entrees
     public class BriarheartBurger
     {
 
-        /// <summary>
+        /// <value>
         /// Gets the price of the burger.
-        /// </summary>
+        /// </value>
         public double Price { get; } = 6.32;
 
 
-        /// <summary>
+        /// <value>
         /// Gets the number of calories in the burger.
-        /// </summary>
+        /// </value>
         public uint Calories { get; } = 743;
 
 
-        /// <summary>
+        /// <value>
         /// Gets the list of special instructions on how to make the burger.
-        /// </summary>
+        /// </value>
         public List<String> SpecialInstructions { 
             get
             {
@@ -75,29 +75,29 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a bun on their burger.
-        /// </summary>
+        /// </value>
         public bool Bun { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ketchup on their burger.
-        /// </summary>
+        /// </value>
         public bool Ketchup { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants mustard on their burger.
-        /// </summary>
+        /// </value>
         public bool Mustard { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants pickles on their burger.
-        /// </summary>
+        /// </value>
         public bool Pickle { get; set; } = true;
 
-        /// <summary>
+        /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants cheese on their burger.
-        /// </summary>
+        /// </value>
         public bool Cheese { get; set; } = true;
 
         /// <summary>

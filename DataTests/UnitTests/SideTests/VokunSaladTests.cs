@@ -32,10 +32,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(Size.Small, vs.Size);
         }
 
-    /*    [Fact]
+        [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
-        } */
+            VokunSalad vs = new VokunSalad();
+            Assert.Empty(vs.SpecialInstructions);
+        }
 
         [Theory]
         [InlineData(Size.Small, 0.93)]
