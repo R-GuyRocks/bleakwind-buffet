@@ -30,7 +30,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldIlncludeHashbrownsByDefault()
         {
             SmokehouseSkeleton ss = new SmokehouseSkeleton();
-            Assert.True(ss.Hashbrown);
+            Assert.True(ss.Hashbrowns);
         }
 
         [Fact]
@@ -64,10 +64,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldBeAbleToSetHashbrowns()
         {
             SmokehouseSkeleton ss = new SmokehouseSkeleton();
-            ss.Hashbrown = true;
-            Assert.True(ss.Hashbrown);
-            ss.Hashbrown = false;
-            Assert.False(ss.Hashbrown);
+            ss.Hashbrowns = true;
+            Assert.True(ss.Hashbrowns);
+            ss.Hashbrowns = false;
+            Assert.False(ss.Hashbrowns);
         }
 
         [Fact]
@@ -103,7 +103,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             SmokehouseSkeleton ss = new SmokehouseSkeleton();
             ss.SausageLink = includeSausage;
             ss.Egg = includeEgg;
-            ss.Hashbrown = includeHashbrowns;
+            ss.Hashbrowns = includeHashbrowns;
             ss.Pancake = includePancake;
             if (!includeSausage) Assert.Contains("Hold sausage", ss.SpecialInstructions);
             if (!includeEgg) Assert.Contains("Hold eggs", ss.SpecialInstructions);

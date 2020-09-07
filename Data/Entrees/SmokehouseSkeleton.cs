@@ -46,7 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
                 {
                     instructions.Remove("Hold eggs");
                 }
-                if (Hashbrown == false)
+                if (Hashbrowns == false)
                 {
                     instructions.Add("Hold hash browns");
                 }
@@ -79,7 +79,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants hashbrowns included in the combo.
         /// </value>
-        public bool Hashbrown { get; set; } = true;
+        public bool Hashbrowns { get; set; } = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants pancakes included in the combo.
