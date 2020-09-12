@@ -9,23 +9,23 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree, IOrderItem
     {
 
         /// <value>
         /// Gets the price of the combo.
         /// </value>
-        public double Price { get; } = 5.62;
+        public override double Price { get; } = 5.62;
 
         /// <value>
         /// Gets the number of calories in the combo.
         /// </value>
-        public uint Calories { get; } = 602;
+        public override uint Calories { get; } = 602;
 
         /// <value>
         /// Gets the list of special instructions on what to include in the combo.
         /// </value>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {

@@ -9,25 +9,25 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger
+    public class BriarheartBurger : Entree, IOrderItem
     {
 
         /// <value>
         /// Gets the price of the burger.
         /// </value>
-        public double Price { get; } = 6.32;
+        public override double Price { get; } = 6.32;
 
 
         /// <value>
         /// Gets the number of calories in the burger.
         /// </value>
-        public uint Calories { get; } = 743;
+        public override uint Calories { get; } = 743;
 
 
         /// <value>
         /// Gets the list of special instructions on how to make the burger.
         /// </value>
-        public List<String> SpecialInstructions { 
+        public override List<String> SpecialInstructions { 
             get
             {
                 List<String> instructions = new List<String>();

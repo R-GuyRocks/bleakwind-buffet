@@ -9,23 +9,23 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class DoubleDraugr
+    public class DoubleDraugr : Entree, IOrderItem
     {
 
         /// <value>
         /// Gets the price of the sandwhich.
         /// </value>
-        public double Price { get; } = 7.32;
+        public override double Price { get; } = 7.32;
 
         /// <value>
         /// Gets the number of calories in the sandwhich.
         /// </value>
-        public uint Calories { get; } = 843;
+        public override uint Calories { get; } = 843;
 
         /// <value>
         /// Gets the list of special instructions on how to make the sandwhich.
         /// </value>
-        public List<String> SpecialInstructions 
+        public override List<String> SpecialInstructions 
         { 
             get
             {

@@ -11,23 +11,23 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater
+    public class WarriorWater : Drink, IOrderItem
     {
 
         /// <value>
         /// Gets the price of the drink.
         /// </value>
-        public double Price { get; } = 0;
+        public override double Price { get; } = 0;
 
         /// <value>
         /// Gets the calorie amount for the drink.
         /// </value>
-        public uint Calories { get; } = 0;
+        public override uint Calories { get; } = 0;
 
         /// <value>
         /// Gets the list of special instructions on how to make the drink.
         /// </value>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {

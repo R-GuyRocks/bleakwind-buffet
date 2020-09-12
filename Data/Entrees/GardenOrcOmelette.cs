@@ -9,23 +9,23 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette
+    public class GardenOrcOmelette : Entree, IOrderItem
     {
 
         /// <value>
         /// Gets the price of the omelette.
         /// </value>
-        public double Price { get; } = 4.57;
+        public override double Price { get; } = 4.57;
 
         /// <value>
         /// Gets the number of calories in the omelette.
         /// </value>
-        public uint Calories { get; } = 404;
+        public override uint Calories { get; } = 404;
 
         /// <value>
         /// Gets the list of special instructions on how to make the omelette.
         /// </value>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {

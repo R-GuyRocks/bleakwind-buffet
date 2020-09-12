@@ -11,7 +11,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink, IOrderItem
     {
 
         /// <value>
@@ -22,7 +22,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// Gets the price of the drink, which is dependent on its size.
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -53,7 +53,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// Gets the calorie amount for the drink, which is dependent on its size.
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -79,7 +79,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// Gets the list of special instructions on how to make the drink.
         /// </value>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {
@@ -105,7 +105,6 @@ namespace BleakwindBuffet.Data.Drinks
         /// Gets and sets the size that the customer ordered.
         /// </value>
         public Size Size { get; set; } = Size.Small;
-
 
         /// <summary>
         /// Redefines the ToString method to output the size and name of the drink.

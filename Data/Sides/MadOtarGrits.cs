@@ -11,7 +11,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class MadOtarGrits
+    public class MadOtarGrits : Side, IOrderItem
     {
 
         /// <value>
@@ -22,7 +22,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         /// Gets the price of the grits, which is dependent on its size.
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -53,7 +53,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         /// Gets the number of calories in the grits, which is dependent on its size.
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -79,12 +79,12 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         /// Gets the size of the grits.
         /// </value>
-        public Size Size { get; set; } = Size.Small;
+        public override Size Size { get; set; } = Size.Small;
 
         /// <value>
         /// Gets the list of special instructions on how to make the drink.
         /// </value>
-        public List<String> SpecialInstructions
+        public override List<String> SpecialInstructions
         {
             get
             {
