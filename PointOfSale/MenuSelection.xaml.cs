@@ -8,6 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PointOfSale
@@ -15,11 +16,17 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for MenuSelection.xaml
     /// </summary>
-    public partial class MenuSelection : Window
+    public partial class MenuSelection : UserControl
     {
+        ItemCustomization i = new ItemCustomization();
         public MenuSelection()
         {
             InitializeComponent();
+        }
+
+        private void briarheartBurgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            i.customize.Visibility = Visibility.Visible;
         }
     }
 }

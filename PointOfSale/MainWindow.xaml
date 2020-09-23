@@ -5,60 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="440" Width="500">
+        Title="MainWindow" Height="420" Width="750">
     <DockPanel>
-        <Border BorderBrush="Black" BorderThickness="1">
-            <Grid Height="434" Width="250" HorizontalAlignment="Left">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="160"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="120"/>
-                    <RowDefinition Height="25"/>
-                </Grid.RowDefinitions>
-                <StackPanel Grid.Row="1">
-                    <Button Content="Entrees" IsEnabled="False"/>
-                    <Button Content="Briarheart Burger" Click="BriarheartBurgerClick" ClickMode="Hover"/>
-                    <Button Content="Double Draugr"/>
-                    <Button Content="Garden Orc Omelette"/>
-                    <Button Content="Philly Poacher"/>
-                    <Button Content="Smokehouse Skeleton"/>
-                    <Button Content="Thalmor Triple"/>
-                    <Button Content="Thugs T-Bone"/>
-                </StackPanel>
-                <StackPanel Grid.Row="2">
-                    <Button Content="Sides" IsEnabled="False" ClickMode="Hover"/>
-                    <Button Content="Dragonborn Waffle Fries"/>
-                    <Button Content="Fried Miraak"/>
-                    <Button Content="Mad Otar Grits"/>
-                    <Button Content="Vokun Salad"/>
-                </StackPanel>
-                <StackPanel Grid.Row="3">
-                    <Button Content="Drinks" IsEnabled="False" ClickMode="Hover"/>
-                    <Button Content="Aretino Apple Juice"/>
-                    <Button Content="Candleheart Coffee"/>
-                    <Button Content="Markarth Milk"/>
-                    <Button Content="Sailor Soda"/>
-                    <Button Content="Warrior Water"/>
-                </StackPanel>
-            </Grid>
-        </Border>
-        <Border BorderBrush="Black" BorderThickness="1">
-            <Grid Height="434" Width="250" HorizontalAlignment="Right">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="260"/>
-                    <RowDefinition Height="120"/>
-                    <RowDefinition Height="25"/>
-                </Grid.RowDefinitions>
-            </Grid>
-        </Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <local:ItemCustomization Grid.Column="0" VerticalAlignment="Top"/>
+            <local:MenuSelection Grid.Column="1" VerticalAlignment="Top"/>
+        </Grid>
     </DockPanel>
  
 </Window>
