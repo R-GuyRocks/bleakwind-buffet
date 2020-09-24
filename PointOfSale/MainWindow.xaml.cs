@@ -29,5 +29,10 @@ namespace PointOfSale
         {
 
         }
+
+        private void MenuSelection_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

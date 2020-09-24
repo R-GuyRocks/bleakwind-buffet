@@ -6,8 +6,34 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="250">
-    <StackPanel>
-        <TextBlock Name="customize" HorizontalAlignment="Center">Customize</TextBlock>
-        <CheckBox Name="bunCheckBox">Bun</CheckBox>
-    </StackPanel>
+    <Border>
+        <StackPanel>
+            <TextBlock Name="customize" HorizontalAlignment="Center">Customize your meal!</TextBlock>
+            <Button Name="chooseButon" Width="250" Visibility="Collapsed">Choose between the following options.</Button>
+            <CheckBox x:Name="bunCheckBox" Width="250" Content="Bun" Visibility="Collapsed"/>
+            <CheckBox x:Name="ketchupCheckBox" Width="250" Content="Ketchup" Visibility="Collapsed"/>
+            <CheckBox x:Name="mustardCheckBox" Width="250" Content="Mustard" Visibility="Collapsed"/>
+            <CheckBox x:Name="pickleCheckBox" Width="250" Content="Pickle" Visibility="Collapsed"/>
+            <CheckBox x:Name="cheeseCheckBox" Width="250" Content="Cheese" Visibility="Collapsed"/>
+            <CheckBox x:Name="tomatoCheckBox" Width="250" Content="Tomato" Visibility="Collapsed"/>
+            <CheckBox x:Name="lettuceCheckBox" Width="250" Content="Lettuce" Visibility="Collapsed"/>
+            <CheckBox x:Name="mayoCheckBox" Width="250" Content="Mayo" Visibility="Collapsed"/>
+            <CheckBox x:Name="broccoliCheckBox" Width="250" Content="Broccoli" Visibility="Collapsed"/>
+            <CheckBox x:Name="mushroomsCheckBox" Width="250" Content="Mushrooms" Visibility="Collapsed"/>
+            <CheckBox x:Name="cheddarCheckBox" Width="250" Content="Cheddar" Visibility="Collapsed"/>
+            <CheckBox x:Name="sirloinCheckBox" Width="250" Content="Sirloin" Visibility="Collapsed"/>
+            <CheckBox x:Name="onionCheckBox" Width="250" Content="Onion" Visibility="Collapsed"/>
+            <CheckBox x:Name="rollCheckBox" Width="250" Content="Roll" Visibility="Collapsed"/>
+            <CheckBox x:Name="sausageLinkCheckBox" Width="250" Content="Sausage Link" Visibility="Collapsed"/>
+            <CheckBox x:Name="eggCheckBox" Width="250" Content="Egg" Visibility="Collapsed"/>
+            <CheckBox x:Name="hashbrownCheckBox" Width="250" Content="Hashbrown" Visibility="Collapsed"/>
+            <CheckBox x:Name="pancakeCheckBox" Width="250" Content="Pancake" Visibility="Collapsed"/>
+            <CheckBox x:Name="baconCheckBox" Width="250" Content="Bacon" Visibility="Collapsed"/>
+            <CheckBox x:Name="iceCheckBox" Width="250" Content="Ice" Visibility="Collapsed"/>
+            <CheckBox x:Name="creamCheckBox" Width="250" Content="Cream" Visibility="Collapsed"/>
+            <CheckBox x:Name="decafCheckBox" Width="250" Content="Decaf" Visibility="Collapsed"/>
+            <Button Name="finishedButton" Visibility="Hidden" IsEnabled="False" Click="finishedButton_Click">Finished</Button>
+        </StackPanel>
+    </Border>
+    
 </UserControl>

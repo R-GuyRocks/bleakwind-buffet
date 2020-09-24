@@ -22,5 +22,33 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        private void finishedButton_Click(object sender, RoutedEventArgs e)
+        {
+            bunCheckBox.Visibility = Visibility.Collapsed;
+            ketchupCheckBox.Visibility = Visibility.Collapsed;
+            mustardCheckBox.Visibility = Visibility.Collapsed;
+            pickleCheckBox.Visibility = Visibility.Collapsed;
+            cheeseCheckBox.Visibility = Visibility.Collapsed;
+            tomatoCheckBox.Visibility = Visibility.Collapsed;
+            lettuceCheckBox.Visibility = Visibility.Collapsed;
+            mayoCheckBox.Visibility = Visibility.Collapsed;
+            broccoliCheckBox.Visibility = Visibility.Collapsed;
+            mushroomsCheckBox.Visibility = Visibility.Collapsed;
+            cheddarCheckBox.Visibility = Visibility.Collapsed;
+            sirloinCheckBox.Visibility = Visibility.Collapsed;
+            onionCheckBox.Visibility = Visibility.Collapsed;
+            rollCheckBox.Visibility = Visibility.Collapsed;
+            sausageLinkCheckBox.Visibility = Visibility.Collapsed;
+            eggCheckBox.Visibility = Visibility.Collapsed;
+            hashbrownCheckBox.Visibility = Visibility.Collapsed;
+            pancakeCheckBox.Visibility = Visibility.Collapsed;
+            baconCheckBox.Visibility = Visibility.Collapsed;
+            iceCheckBox.Visibility = Visibility.Collapsed;
+            creamCheckBox.Visibility = Visibility.Collapsed;
+            decafCheckBox.Visibility = Visibility.Collapsed;
+            finishedButton.Visibility = Visibility.Hidden;
+            finishedButton.IsEnabled = false;
+        }
     }
 }

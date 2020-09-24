@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="420" Width="750">
+        Title="MainWindow" Height="440" Width="750">
     <DockPanel>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -13,8 +13,7 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
-            <local:ItemCustomization Grid.Column="0" VerticalAlignment="Top"/>
-            <local:MenuSelection Grid.Column="1" VerticalAlignment="Top"/>
+            <local:MenuSelection Grid.Column="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Loaded="MenuSelection_Loaded"/>
         </Grid>
     </DockPanel>
  
