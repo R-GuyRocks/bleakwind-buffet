@@ -25,6 +25,9 @@ namespace PointOfSale
 
         private void finishedButton_Click(object sender, RoutedEventArgs e)
         {
+            customizeMeal.Visibility = Visibility.Collapsed;
+            customizeDrink.Visibility = Visibility.Collapsed;
+            chooseButton.Visibility = Visibility.Collapsed;
             bunCheckBox.Visibility = Visibility.Collapsed;
             ketchupCheckBox.Visibility = Visibility.Collapsed;
             mustardCheckBox.Visibility = Visibility.Collapsed;
@@ -47,8 +50,16 @@ namespace PointOfSale
             iceCheckBox.Visibility = Visibility.Collapsed;
             creamCheckBox.Visibility = Visibility.Collapsed;
             decafCheckBox.Visibility = Visibility.Collapsed;
+            lemonCheckBox.Visibility = Visibility.Collapsed;
+            nuffSaidButton.Visibility = Visibility.Collapsed;
+            nuffSaidButton.Visibility = Visibility.Collapsed;
             finishedButton.Visibility = Visibility.Hidden;
             finishedButton.IsEnabled = false;
+        }
+
+        private void nuffSaidButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

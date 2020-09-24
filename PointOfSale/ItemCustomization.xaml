@@ -8,8 +8,9 @@
              d:DesignHeight="380" d:DesignWidth="250">
     <Border>
         <StackPanel>
-            <TextBlock Name="customize" HorizontalAlignment="Center">Customize your meal!</TextBlock>
-            <Button Name="chooseButon" Width="250" Visibility="Collapsed">Choose between the following options.</Button>
+            <TextBlock Name="customizeMeal" HorizontalAlignment="Center" Visibility="Collapsed">Customize your meal!</TextBlock>
+            <TextBlock Name="customizeDrink" HorizontalAlignment="Center" Visibility="Collapsed">Customize your drink!</TextBlock>
+            <Button Name="chooseButton" Width="250" Visibility="Collapsed" IsEnabled="False">Choose the following option(s).</Button>
             <CheckBox x:Name="bunCheckBox" Width="250" Content="Bun" Visibility="Collapsed"/>
             <CheckBox x:Name="ketchupCheckBox" Width="250" Content="Ketchup" Visibility="Collapsed"/>
             <CheckBox x:Name="mustardCheckBox" Width="250" Content="Mustard" Visibility="Collapsed"/>
@@ -30,9 +31,11 @@
             <CheckBox x:Name="pancakeCheckBox" Width="250" Content="Pancake" Visibility="Collapsed"/>
             <CheckBox x:Name="baconCheckBox" Width="250" Content="Bacon" Visibility="Collapsed"/>
             <CheckBox x:Name="iceCheckBox" Width="250" Content="Ice" Visibility="Collapsed"/>
+            <CheckBox x:Name="lemonCheckBox" Width="250" Content="Lemon" Visibility="Collapsed"/>
             <CheckBox x:Name="creamCheckBox" Width="250" Content="Cream" Visibility="Collapsed"/>
             <CheckBox x:Name="decafCheckBox" Width="250" Content="Decaf" Visibility="Collapsed"/>
-            <Button Name="finishedButton" Visibility="Hidden" IsEnabled="False" Click="finishedButton_Click">Finished</Button>
+            <Button Name="nuffSaidButton" Width ="250" Visibility="Collapsed" IsEnabled="False" Click="nuffSaidButton_Click">'Nuff said!</Button>
+            <Button Name="finishedButton" Width="250" Visibility="Hidden" IsEnabled="False" Click="finishedButton_Click">Finished</Button>
         </StackPanel>
     </Border>
     
