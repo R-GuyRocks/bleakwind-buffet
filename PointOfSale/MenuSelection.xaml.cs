@@ -20,11 +20,20 @@ namespace PointOfSale
     public partial class MenuSelection : UserControl
     {
         ItemCustomization i = new ItemCustomization();
+
+        /// <summary>
+        /// Initializes this component.
+        /// </summary>
         public MenuSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Briarheart Burger.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void briarheartBurgerButton_Click(object sender, RoutedEventArgs e)
         {
             var bb = new ItemCustomization();
@@ -40,6 +49,11 @@ namespace PointOfSale
             bb.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Double Draugr.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void Button_Click(object sender, RoutedEventArgs e) // Should've been named doubleDraugrButton_Click
         {
             var dd = new ItemCustomization();
@@ -58,6 +72,11 @@ namespace PointOfSale
             dd.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Garden Orc Omelette.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void gardenOrcOmeletteButton_Click(object sender, RoutedEventArgs e)
         {
             var goo = new ItemCustomization();
@@ -72,6 +91,11 @@ namespace PointOfSale
             goo.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Philly Poacher.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void phillyPoacherButton_Click(object sender, RoutedEventArgs e)
         {
             var goo = new ItemCustomization();
@@ -85,6 +109,11 @@ namespace PointOfSale
             goo.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Smokehouse Skeleton.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void smokehouseSkeletonButton_Click(object sender, RoutedEventArgs e)
         {
             var ss = new ItemCustomization();
@@ -99,6 +128,11 @@ namespace PointOfSale
             ss.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Thalmor Triple.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void thalmorTripleButton_Click(object sender, RoutedEventArgs e)
         {
             var tt = new ItemCustomization();
@@ -119,6 +153,11 @@ namespace PointOfSale
             tt.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Thugs T-Bone.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void thugsTBoneButton_Click(object sender, RoutedEventArgs e)
         {
             var ttb = new ItemCustomization();
@@ -129,6 +168,11 @@ namespace PointOfSale
             containerBorder.Child = ttb;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Aretino Apple Juice.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void aretinoAppleJuiceButton_Click(object sender, RoutedEventArgs e)
         {
             var aaj = new ItemCustomization();
@@ -141,6 +185,11 @@ namespace PointOfSale
             aaj.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to Candlehearth Coffee.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void candlehearthCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
             var cc = new ItemCustomization();
@@ -155,6 +204,11 @@ namespace PointOfSale
             cc.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to Markarth Milk.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void markarthMilkButton_Click(object sender, RoutedEventArgs e)
         {
             var mm = new ItemCustomization();
@@ -167,6 +221,11 @@ namespace PointOfSale
             mm.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to Sailor Soda.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void sailorSodaButton_Click(object sender, RoutedEventArgs e)
         {
             var ss = new ItemCustomization();
@@ -180,6 +239,11 @@ namespace PointOfSale
             ss.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to Warrior Water.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void warriorWaterButton_Click(object sender, RoutedEventArgs e)
         {
             var ww = new ItemCustomization();
@@ -193,6 +257,11 @@ namespace PointOfSale
             ww.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Dragonborn Waffle Fries.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void dragonbornWaffleFriesButton_Click(object sender, RoutedEventArgs e)
         {
             var dbwf = new ItemCustomization();
@@ -203,6 +272,11 @@ namespace PointOfSale
             dbwf.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Fried Miraak.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void friedMiraakButton_Click(object sender, RoutedEventArgs e)
         {
             var fm = new ItemCustomization();
@@ -213,6 +287,11 @@ namespace PointOfSale
             fm.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Mad Otar Grits.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void madOtarGritsButton_Click(object sender, RoutedEventArgs e)
         {
             var mog = new ItemCustomization();
@@ -223,6 +302,11 @@ namespace PointOfSale
             mog.finishedButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Enables the buttons, checkboxes and listboxes pertaining to the Vokun Salad.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void vokunSaladButton_Click(object sender, RoutedEventArgs e)
         {
             var vs = new ItemCustomization();

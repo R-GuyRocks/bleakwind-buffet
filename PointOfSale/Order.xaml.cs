@@ -20,6 +20,10 @@ namespace PointOfSale
     public partial class Order : UserControl
     {
         ItemCustomization i = new ItemCustomization();
+
+        /// <summary>
+        /// Initializes this component.
+        /// </summary>
         public Order()
         {
             InitializeComponent();

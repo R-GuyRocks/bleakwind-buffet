@@ -13,22 +13,22 @@
                     <ColumnDefinition Width="250"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-                <StackPanel Height="50" Grid.Row="0">
-                <TextBlock>Small DragonbornWaffleFries</TextBlock>
-                <TextBlock>Large Decaf Candlehearth Coffee</TextBlock>
-                <TextBlock>Double Draugr</TextBlock>
+                <StackPanel Height="100" Grid.Row="0" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center">Order #2</TextBlock>
+                <TextBlock HorizontalAlignment="Center">Small DragonbornWaffleFries</TextBlock>
+                <TextBlock HorizontalAlignment="Center">Large Decaf Candlehearth Coffee</TextBlock>
+                <TextBlock HorizontalAlignment="Center">Double Draugr</TextBlock>
                 </StackPanel>
-                <StackPanel Height="100" Grid.Row="5">
-                    <TextBlock>Subtotal: $3.82</TextBlock>
-                    <TextBlock>Tax: $0.57</TextBlock>
-                    <TextBlock>Total: $3.25</TextBlock>
+                <StackPanel Height="100" Grid.Row="5" HorizontalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center">Subtotal: $3.82</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Tax: $0.57</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Total: $3.25</TextBlock>
                 </StackPanel>
             </Grid>
         </Border>

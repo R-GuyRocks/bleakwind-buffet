@@ -18,11 +18,19 @@ namespace PointOfSale
     /// </summary>
     public partial class ItemCustomization : UserControl
     {
+        /// <summary>
+        /// Initializes this component.
+        /// </summary>
         public ItemCustomization()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Changes the visibility of all check boxes and most buttons to collapsed. The finishedButton is hidden and disabled.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void finishedButton_Click(object sender, RoutedEventArgs e)
         {
             customizeMeal.Visibility = Visibility.Collapsed;
@@ -59,9 +67,6 @@ namespace PointOfSale
             finishedButton.IsEnabled = false;
         }
 
-        private void nuffSaidButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void nuffSaidButton_Click(object sender, RoutedEventArgs e) {} // Created this on accident. This button will always be disabled.
     }
 }

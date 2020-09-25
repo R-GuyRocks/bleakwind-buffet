@@ -20,19 +20,16 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Initializes this component.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void BriarheartBurgerClick(object sender, RoutedEventArgs e)
-        {
+        private void BriarheartBurgerClick(object sender, RoutedEventArgs e) {} // Created this on accident.
 
-        }
-
-        private void MenuSelection_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void MenuSelection_Loaded(object sender, RoutedEventArgs e) {} // Created this on accident.
     }
 }
