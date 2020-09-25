@@ -27,6 +27,7 @@ namespace PointOfSale
         {
             customizeMeal.Visibility = Visibility.Collapsed;
             customizeDrink.Visibility = Visibility.Collapsed;
+            customizeSide.Visibility = Visibility.Collapsed;
             chooseButton.Visibility = Visibility.Collapsed;
             bunCheckBox.Visibility = Visibility.Collapsed;
             ketchupCheckBox.Visibility = Visibility.Collapsed;
@@ -52,7 +53,8 @@ namespace PointOfSale
             decafCheckBox.Visibility = Visibility.Collapsed;
             lemonCheckBox.Visibility = Visibility.Collapsed;
             nuffSaidButton.Visibility = Visibility.Collapsed;
-            nuffSaidButton.Visibility = Visibility.Collapsed;
+            sizeListBox.Visibility = Visibility.Collapsed;
+            sodaFlavorListBox.Visibility = Visibility.Collapsed;
             finishedButton.Visibility = Visibility.Hidden;
             finishedButton.IsEnabled = false;
         }

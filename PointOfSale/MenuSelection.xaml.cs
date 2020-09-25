@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -135,6 +136,7 @@ namespace PointOfSale
             aaj.customizeDrink.Visibility = Visibility.Visible;
             aaj.chooseButton.Visibility = Visibility.Visible;
             aaj.iceCheckBox.Visibility = Visibility.Visible;
+            aaj.sizeListBox.Visibility = Visibility.Visible;
             aaj.finishedButton.Visibility = Visibility.Visible;
             aaj.finishedButton.IsEnabled = true;
         }
@@ -148,6 +150,7 @@ namespace PointOfSale
             cc.iceCheckBox.Visibility = Visibility.Visible;
             cc.creamCheckBox.Visibility = Visibility.Visible;
             cc.decafCheckBox.Visibility = Visibility.Visible;
+            cc.sizeListBox.Visibility = Visibility.Visible;
             cc.finishedButton.Visibility = Visibility.Visible;
             cc.finishedButton.IsEnabled = true;
         }
@@ -159,6 +162,7 @@ namespace PointOfSale
             mm.customizeDrink.Visibility = Visibility.Visible;
             mm.chooseButton.Visibility = Visibility.Visible;
             mm.iceCheckBox.Visibility = Visibility.Visible;
+            mm.sizeListBox.Visibility = Visibility.Visible;
             mm.finishedButton.Visibility = Visibility.Visible;
             mm.finishedButton.IsEnabled = true;
         }
@@ -170,6 +174,8 @@ namespace PointOfSale
             ss.customizeDrink.Visibility = Visibility.Visible;
             ss.chooseButton.Visibility = Visibility.Visible;
             ss.iceCheckBox.Visibility = Visibility.Visible;
+            ss.sizeListBox.Visibility = Visibility.Visible;
+            ss.sodaFlavorListBox.Visibility = Visibility.Visible;
             ss.finishedButton.Visibility = Visibility.Visible;
             ss.finishedButton.IsEnabled = true;
         }
@@ -182,28 +188,49 @@ namespace PointOfSale
             ww.chooseButton.Visibility = Visibility.Visible;
             ww.iceCheckBox.Visibility = Visibility.Visible;
             ww.lemonCheckBox.Visibility = Visibility.Visible;
+            ww.sizeListBox.Visibility = Visibility.Visible;
             ww.finishedButton.Visibility = Visibility.Visible;
             ww.finishedButton.IsEnabled = true;
         }
 
         private void dragonbornWaffleFriesButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var dbwf = new ItemCustomization();
+            containerBorder.Child = dbwf;
+            dbwf.customizeSide.Visibility = Visibility.Visible;
+            dbwf.sizeListBox.Visibility = Visibility.Visible;
+            dbwf.finishedButton.Visibility = Visibility.Visible;
+            dbwf.finishedButton.IsEnabled = true;
         }
 
         private void friedMiraakButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var fm = new ItemCustomization();
+            containerBorder.Child = fm;
+            fm.customizeSide.Visibility = Visibility.Visible;
+            fm.sizeListBox.Visibility = Visibility.Visible;
+            fm.finishedButton.Visibility = Visibility.Visible;
+            fm.finishedButton.IsEnabled = true;
         }
 
         private void madOtarGritsButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var mog = new ItemCustomization();
+            containerBorder.Child = mog;
+            mog.customizeSide.Visibility = Visibility.Visible;
+            mog.sizeListBox.Visibility = Visibility.Visible;
+            mog.finishedButton.Visibility = Visibility.Visible;
+            mog.finishedButton.IsEnabled = true;
         }
 
         private void vokunSaladButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var vs = new ItemCustomization();
+            containerBorder.Child = vs;
+            vs.customizeSide.Visibility = Visibility.Visible;
+            vs.sizeListBox.Visibility = Visibility.Visible;
+            vs.finishedButton.Visibility = Visibility.Visible;
+            vs.finishedButton.IsEnabled = true;
         }
     }
 }

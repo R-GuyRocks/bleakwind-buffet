@@ -10,6 +10,7 @@
         <StackPanel>
             <TextBlock Name="customizeMeal" HorizontalAlignment="Center" Visibility="Collapsed">Customize your meal!</TextBlock>
             <TextBlock Name="customizeDrink" HorizontalAlignment="Center" Visibility="Collapsed">Customize your drink!</TextBlock>
+            <TextBlock Name="customizeSide" HorizontalAlignment="Center" Visibility="Collapsed">Customize your side!</TextBlock>
             <Button Name="chooseButton" Width="250" Visibility="Collapsed" IsEnabled="False">Choose the following option(s).</Button>
             <CheckBox x:Name="bunCheckBox" Width="250" Content="Bun" Visibility="Collapsed"/>
             <CheckBox x:Name="ketchupCheckBox" Width="250" Content="Ketchup" Visibility="Collapsed"/>
@@ -34,6 +35,19 @@
             <CheckBox x:Name="lemonCheckBox" Width="250" Content="Lemon" Visibility="Collapsed"/>
             <CheckBox x:Name="creamCheckBox" Width="250" Content="Cream" Visibility="Collapsed"/>
             <CheckBox x:Name="decafCheckBox" Width="250" Content="Decaf" Visibility="Collapsed"/>
+            <ListBox Name="sizeListBox" Width="250" Visibility="Collapsed">
+                <ListBoxItem>Small</ListBoxItem>
+                <ListBoxItem>Medium</ListBoxItem>
+                <ListBoxItem>Large</ListBoxItem>
+            </ListBox>
+            <ListBox Name="sodaFlavorListBox" Width="250" Visibility="Collapsed">
+                <ListBoxItem>Blackberry</ListBoxItem>
+                <ListBoxItem>Cherry</ListBoxItem>
+                <ListBoxItem>Grapefruit</ListBoxItem>
+                <ListBoxItem>Lemon</ListBoxItem>
+                <ListBoxItem>Peach</ListBoxItem>
+                <ListBoxItem>Watermelon</ListBoxItem>
+            </ListBox>
             <Button Name="nuffSaidButton" Width ="250" Visibility="Collapsed" IsEnabled="False" Click="nuffSaidButton_Click">'Nuff said!</Button>
             <Button Name="finishedButton" Width="250" Visibility="Hidden" IsEnabled="False" Click="finishedButton_Click">Finished</Button>
         </StackPanel>

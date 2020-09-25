@@ -14,6 +14,7 @@
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
             <local:MenuSelection Grid.Column="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Loaded="MenuSelection_Loaded"/>
+            <local:Order Grid.Column="2"/>
         </Grid>
     </DockPanel>
  
