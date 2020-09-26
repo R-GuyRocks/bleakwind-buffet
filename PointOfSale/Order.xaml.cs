@@ -19,8 +19,6 @@ namespace PointOfSale
     /// </summary>
     public partial class Order : UserControl
     {
-        ItemCustomization i = new ItemCustomization();
-
         /// <summary>
         /// Initializes this component.
         /// </summary>

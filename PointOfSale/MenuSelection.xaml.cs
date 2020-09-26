@@ -19,8 +19,6 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuSelection : UserControl
     {
-        ItemCustomization i = new ItemCustomization();
-
         /// <summary>
         /// Initializes this component.
         /// </summary>
