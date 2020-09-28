@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak : Side, IOrderItem
+    public class FriedMiraak : Side, IOrderItem, INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;

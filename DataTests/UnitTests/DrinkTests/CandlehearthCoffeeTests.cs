@@ -42,7 +42,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Fact]
-        public void ShouldNotHaveRoomForCreamByDefault() {
+        public void ShouldNotHaveRoomForCreamByDefault()
+        {
             CandlehearthCoffee chc = new CandlehearthCoffee();
             Assert.False(chc.RoomForCream);
         }
@@ -134,7 +135,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             CandlehearthCoffee chc = new CandlehearthCoffee();
             chc.Ice = includeIce;
             chc.RoomForCream = includeCream;
-            if (includeIce && includeCream) {
+            if (includeIce && includeCream)
+            {
                 Assert.Contains("Add ice", chc.SpecialInstructions);
                 Assert.Contains("Add cream", chc.SpecialInstructions);
             }
@@ -157,5 +159,55 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             chc.Decaf = decaf;
             Assert.Equal(name, chc.ToString());
         }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var cc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(cc, "Ice", () =>
+            {
+                cc.Ice = true;
+            });
+
+            Assert.PropertyChanged(cc, "Ice", () =>
+            {
+                cc.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingRoomForCreamNotifiesRoomForCreamProperty()
+        {
+            var cc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(cc, "RoomForCream", () =>
+            {
+                cc.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(cc, "RoomForCream", () =>
+            {
+                cc.RoomForCream = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingDecafNotifiesDecafProperty()
+        {
+            var cc = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(cc, "Decaf", () =>
+            {
+                cc.Decaf = true;
+            });
+
+            Assert.PropertyChanged(cc, "Decaf", () =>
+            {
+                cc.Decaf = false;
+            });
+        }
+
+        //Size
     }
 }
