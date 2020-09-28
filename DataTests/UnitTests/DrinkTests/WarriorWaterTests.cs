@@ -156,12 +156,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 
             Assert.PropertyChanged(ww, "Lemon", () =>
             {
-                ww.Ice = true;
+                ww.Lemon = true;
             });
 
             Assert.PropertyChanged(ww, "Lemon", () =>
             {
-                ww.Ice = false;
+                ww.Lemon = false;
             });
         }
 

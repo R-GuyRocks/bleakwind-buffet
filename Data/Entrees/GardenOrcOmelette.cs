@@ -114,7 +114,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool cheddar = true;
+        private bool cheddar = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants cheddar cheese in their omelette.

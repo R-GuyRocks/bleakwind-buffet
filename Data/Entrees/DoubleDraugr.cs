@@ -101,7 +101,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool bun = true;
+        private bool bun = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a bun on their sandwhich.
@@ -116,7 +116,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool ketchup = true;
+        private bool ketchup = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ketchup on their sandwhich.
@@ -131,7 +131,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool mustard = true;
+        private bool mustard = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants mustard on their sandwhich.
@@ -146,7 +146,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool pickle = true;
+        private bool pickle = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants pickles on their sandwhich.
@@ -161,7 +161,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool cheese = true;
+        private bool cheese = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants cheese on their sandwhich.
@@ -176,7 +176,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool tomato = true;
+        private bool tomato = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants tomato on their sandwhich.
@@ -191,7 +191,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool lettuce = true;
+        private bool lettuce = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants lettuce on their sandwhich.
@@ -206,7 +206,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        public bool mayo = true;
+        private bool mayo = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants cheese on their sandwhich.
