@@ -6,11 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     public class PhillyPoacher : Entree, IOrderItem
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// Gets the price of the sandwhich.
@@ -57,20 +60,50 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool sirloin = true;
+
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a sirloin on their sandwhich.
         /// </value>
-        public bool Sirloin { get; set; } = true;
+        public bool Sirloin
+        {
+            get { return sirloin; }
+            set
+            {
+                sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+            }
+        }
+
+        private bool onion = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants onion on their sandwhich.
         /// </value>
-        public bool Onion { get; set; } = true;
+        public bool Onion
+        {
+            get { return onion; }
+            set
+            {
+                onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+            }
+        }
+
+        private bool roll = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a roll.
         /// </value>
-        public bool Roll { get; set; } = true;
+        public bool Roll
+        {
+            get { return roll; }
+            set
+            {
+                roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+            }
+        }
 
         /// <summary>
         /// Redefines the ToString method to output name of the sandwhich.

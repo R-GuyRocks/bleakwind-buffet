@@ -8,11 +8,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class SailorSoda : Drink, IOrderItem
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// The price of the drink.
@@ -95,20 +98,49 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        private bool ice = true;
+
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ice in their drink.
         /// </value>
-        public bool Ice { get; set; } = true;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
+
+        private Size size = Size.Small;
 
         /// <value>
         /// Gets and sets the size that the customer ordered.
         /// </value>
-        public Size Size { get; set; } = Size.Small;
+        public Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
+        private SodaFlavor flavor = SodaFlavor.Cherry;
         /// <value>
         /// Gets and sets the flavor that the customer ordered for their Sailor Soda.
         /// </value>
-        public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
+        public SodaFlavor Flavor
+        {
+            get { return flavor; }
+            set
+            {
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+            }
+        }
 
         /// <summary>
         /// Redefines the ToString method to output the size and name of the drink.

@@ -6,11 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     public class SmokehouseSkeleton : Entree, IOrderItem
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// Gets the price of the combo.
@@ -66,25 +69,65 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool sausageLink = true;
+
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a sausage link included in the combo.
         /// </value>
-        public bool SausageLink { get; set; } = true;
+        public bool SausageLink
+        {
+            get { return sausageLink; }
+            set
+            {
+                sausageLink = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
+            }
+        }
+
+        private bool egg = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants an egg included in the combo.
         /// </value>
-        public bool Egg { get; set; } = true;
+        public bool Egg
+        {
+            get { return egg; }
+            set
+            {
+                egg = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+            }
+        }
+
+        private bool hashbrowns = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants hashbrowns included in the combo.
         /// </value>
-        public bool Hashbrowns { get; set; } = true;
+        public bool Hashbrowns
+        {
+            get { return hashbrowns; }
+            set
+            {
+                hashbrowns = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Hashbrowns"));
+            }
+        }
+
+        private bool pancake = true;
 
         /// <value>
-        /// Gets and sets a boolean representing whether or not the customer wants pancakes included in the combo.
+        /// Gets and sets a boolean representing whether or not the customer wants a pancake included in the combo.
         /// </value>
-        public bool Pancake { get; set; } = true;
+        public bool Pancake
+        {
+            get { return pancake; }
+            set
+            {
+                pancake = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
+            }
+        }
 
         /// <summary>
         /// Redefines the ToString method to output name of the combo.

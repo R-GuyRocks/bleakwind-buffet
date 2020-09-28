@@ -8,12 +8,15 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class WarriorWater : Drink, IOrderItem
     {
 
+
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <value>
         /// Gets the price of the drink.
         /// </value>
@@ -52,20 +55,50 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        private bool ice = true;
+
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ice in their drink.
         /// </value>
-        public bool Ice { get; set; } = true;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
+
+        private bool lemon = false;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a lemon in their drink.
         /// </value>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+            }
+        }
+
+        private Size size = Size.Small;
 
         /// <value>
         /// Gets and sets the size that the customer ordered.
         /// </value>
-        public Size Size { get; set; } = Size.Small;
+        public Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         /// <summary>
         /// Redefines the ToString method to output the size and name of the drink.

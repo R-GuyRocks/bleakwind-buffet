@@ -6,11 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     public class DoubleDraugr : Entree, IOrderItem
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// Gets the price of the sandwhich.
@@ -98,45 +101,125 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        public bool bun = true;
+
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants a bun on their sandwhich.
         /// </value>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get { return bun; }
+            set
+            {
+                bun = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+            }
+        }
+
+        public bool ketchup = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ketchup on their sandwhich.
         /// </value>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get { return ketchup; }
+            set
+            {
+                ketchup = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+            }
+        }
+
+        public bool mustard = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants mustard on their sandwhich.
         /// </value>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get { return mustard; }
+            set
+            {
+                mustard = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+            }
+        }
+
+        public bool pickle = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants pickles on their sandwhich.
         /// </value>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set
+            {
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+            }
+        }
+
+        public bool cheese = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants cheese on their sandwhich.
         /// </value>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get { return cheese; }
+            set
+            {
+                cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+            }
+        }
+
+        public bool tomato = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants tomato on their sandwhich.
         /// </value>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get { return tomato; }
+            set
+            {
+                tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+            }
+        }
+
+        public bool lettuce = true;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants lettuce on their sandwhich.
         /// </value>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce
+        {
+            get { return lettuce; }
+            set
+            {
+                lettuce = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
+            }
+        }
+
+        public bool mayo = true;
 
         /// <value>
-        /// Gets and sets a boolean representing whether or not the customer wants mayo on their sandwhich.
+        /// Gets and sets a boolean representing whether or not the customer wants cheese on their sandwhich.
         /// </value>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo
+        {
+            get { return mayo; }
+            set
+            {
+                mayo = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
+            }
+        }
 
         /// <summary>
         /// Redefines the ToString method to output name of the sandwhich.

@@ -8,11 +8,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
     public class DragonbornWaffleFries : Side, IOrderItem
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// The price of the fries.
@@ -76,10 +79,20 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        private Size size = Size.Small;
+
         /// <value>
-        /// Gets the size of the fries.
+        /// Gets and sets the size of the fries.
         /// </value>
-        public override Size Size { get; set; } = Size.Small;
+        public Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         /// <value>
         /// Gets the list of special instructions on how to make the drink.

@@ -8,11 +8,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class CandlehearthCoffee : Drink, IOrderItem
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// The price of the drink.
@@ -104,26 +107,65 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        private bool ice = false;
+
         /// <value>
         /// Gets and sets a boolean representing whether or not the customer wants ice in their drink.
         /// </value>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+            }
+        }
+
+        private bool roomForCream = false;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the user wants cream in their coffee.
         /// </value>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+            }
+        }
 
+        private bool decaf = false;
 
         /// <value>
         /// Gets and sets a boolean representing whether or not the user wants their coffee to be decaffinated.
         /// </value>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+            }
+        }
+
+        private Size size = Size.Small;
 
         /// <value>
         /// Gets and sets the size that the customer ordered.
         /// </value>
-        public Size Size { get; set; } = Size.Small;
+        public Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         /// <summary>
         /// Redefines the ToString method to output the size and name of the drink.
