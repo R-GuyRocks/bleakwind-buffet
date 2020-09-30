@@ -1,4 +1,6 @@
 ﻿using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,6 +37,7 @@ namespace PointOfSale
         private void briarheartBurgerButton_Click(object sender, RoutedEventArgs e)
         {
             var bb = new ItemCustomization();
+            bb.DataContext = new BriarheartBurger();
             containerBorder.Child = bb;
             bb.customizeMeal.Visibility = Visibility.Visible;
             bb.chooseButton.Visibility = Visibility.Visible;
@@ -55,6 +58,7 @@ namespace PointOfSale
         private void Button_Click(object sender, RoutedEventArgs e) // Should've been named doubleDraugrButton_Click
         {
             var dd = new ItemCustomization();
+            dd.DataContext = new DoubleDraugr();
             containerBorder.Child = dd;
             dd.customizeMeal.Visibility = Visibility.Visible;
             dd.chooseButton.Visibility = Visibility.Visible;
@@ -78,6 +82,7 @@ namespace PointOfSale
         private void gardenOrcOmeletteButton_Click(object sender, RoutedEventArgs e)
         {
             var goo = new ItemCustomization();
+            goo.DataContext = new GardenOrcOmelette();
             containerBorder.Child = goo;
             goo.customizeMeal.Visibility = Visibility.Visible;
             goo.chooseButton.Visibility = Visibility.Visible;
@@ -97,6 +102,7 @@ namespace PointOfSale
         private void phillyPoacherButton_Click(object sender, RoutedEventArgs e)
         {
             var goo = new ItemCustomization();
+            goo.DataContext = new PhillyPoacher();
             containerBorder.Child = goo;
             goo.customizeMeal.Visibility = Visibility.Visible;
             goo.chooseButton.Visibility = Visibility.Visible;
@@ -115,6 +121,7 @@ namespace PointOfSale
         private void smokehouseSkeletonButton_Click(object sender, RoutedEventArgs e)
         {
             var ss = new ItemCustomization();
+            ss.DataContext = new SmokehouseSkeleton();
             containerBorder.Child = ss;
             ss.customizeMeal.Visibility = Visibility.Visible;
             ss.chooseButton.Visibility = Visibility.Visible;
@@ -134,6 +141,7 @@ namespace PointOfSale
         private void thalmorTripleButton_Click(object sender, RoutedEventArgs e)
         {
             var tt = new ItemCustomization();
+            tt.DataContext = new ThalmorTriple();
             containerBorder.Child = tt;
             tt.customizeMeal.Visibility = Visibility.Visible;
             tt.chooseButton.Visibility = Visibility.Visible;
@@ -174,6 +182,7 @@ namespace PointOfSale
         private void aretinoAppleJuiceButton_Click(object sender, RoutedEventArgs e)
         {
             var aaj = new ItemCustomization();
+            aaj.DataContext = new AretinoAppleJuice();
             containerBorder.Child = aaj;
             aaj.customizeDrink.Visibility = Visibility.Visible;
             aaj.chooseButton.Visibility = Visibility.Visible;
@@ -191,6 +200,7 @@ namespace PointOfSale
         private void candlehearthCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
             var cc = new ItemCustomization();
+            cc.DataContext = new CandlehearthCoffee();
             containerBorder.Child = cc;
             cc.customizeDrink.Visibility = Visibility.Visible;
             cc.chooseButton.Visibility = Visibility.Visible;
@@ -210,6 +220,7 @@ namespace PointOfSale
         private void markarthMilkButton_Click(object sender, RoutedEventArgs e)
         {
             var mm = new ItemCustomization();
+            mm.DataContext = new MarkarthMilk();
             containerBorder.Child = mm;
             mm.customizeDrink.Visibility = Visibility.Visible;
             mm.chooseButton.Visibility = Visibility.Visible;
@@ -227,6 +238,7 @@ namespace PointOfSale
         private void sailorSodaButton_Click(object sender, RoutedEventArgs e)
         {
             var ss = new ItemCustomization();
+            ss.DataContext = new SailorSoda();
             containerBorder.Child = ss;
             ss.customizeDrink.Visibility = Visibility.Visible;
             ss.chooseButton.Visibility = Visibility.Visible;
@@ -245,6 +257,7 @@ namespace PointOfSale
         private void warriorWaterButton_Click(object sender, RoutedEventArgs e)
         {
             var ww = new ItemCustomization();
+            ww.DataContext = new WarriorWater();
             containerBorder.Child = ww;
             ww.customizeDrink.Visibility = Visibility.Visible;
             ww.chooseButton.Visibility = Visibility.Visible;
@@ -263,6 +276,7 @@ namespace PointOfSale
         private void dragonbornWaffleFriesButton_Click(object sender, RoutedEventArgs e)
         {
             var dbwf = new ItemCustomization();
+            dbwf.DataContext = new DragonbornWaffleFries();
             containerBorder.Child = dbwf;
             dbwf.customizeSide.Visibility = Visibility.Visible;
             dbwf.sizeListBox.Visibility = Visibility.Visible;
@@ -278,6 +292,7 @@ namespace PointOfSale
         private void friedMiraakButton_Click(object sender, RoutedEventArgs e)
         {
             var fm = new ItemCustomization();
+            fm.DataContext = new FriedMiraak();
             containerBorder.Child = fm;
             fm.customizeSide.Visibility = Visibility.Visible;
             fm.sizeListBox.Visibility = Visibility.Visible;
@@ -293,6 +308,7 @@ namespace PointOfSale
         private void madOtarGritsButton_Click(object sender, RoutedEventArgs e)
         {
             var mog = new ItemCustomization();
+            mog.DataContext = new MadOtarGrits();
             containerBorder.Child = mog;
             mog.customizeSide.Visibility = Visibility.Visible;
             mog.sizeListBox.Visibility = Visibility.Visible;
@@ -308,6 +324,7 @@ namespace PointOfSale
         private void vokunSaladButton_Click(object sender, RoutedEventArgs e)
         {
             var vs = new ItemCustomization();
+            vs.DataContext = new VokunSalad();
             containerBorder.Child = vs;
             vs.customizeSide.Visibility = Visibility.Visible;
             vs.sizeListBox.Visibility = Visibility.Visible;

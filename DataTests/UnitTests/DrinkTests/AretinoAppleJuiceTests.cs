@@ -123,6 +123,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             });
         }
 
-        //Size
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            var aj = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(aj, "Size", () =>
+            {
+                aj.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(aj, "Size", () =>
+            {
+                aj.Size = Size.Large;
+            });
+        }
     }
 }

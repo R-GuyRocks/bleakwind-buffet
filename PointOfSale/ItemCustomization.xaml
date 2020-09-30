@@ -4,43 +4,59 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:enums="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="250">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="sizes" MethodName="GetSizes" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enums:Size"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+    </UserControl.Resources>
     <Border>
         <StackPanel>
             <TextBlock Name="customizeMeal" HorizontalAlignment="Center" Visibility="Collapsed">Customize your meal!</TextBlock>
             <TextBlock Name="customizeDrink" HorizontalAlignment="Center" Visibility="Collapsed">Customize your drink!</TextBlock>
             <TextBlock Name="customizeSide" HorizontalAlignment="Center" Visibility="Collapsed">Customize your side!</TextBlock>
             <Button Name="chooseButton" Width="250" Visibility="Collapsed" IsEnabled="False">Choose the following option(s).</Button>
-            <CheckBox x:Name="bunCheckBox" Width="250" Content="Bun" Visibility="Collapsed"/>
-            <CheckBox x:Name="ketchupCheckBox" Width="250" Content="Ketchup" Visibility="Collapsed"/>
-            <CheckBox x:Name="mustardCheckBox" Width="250" Content="Mustard" Visibility="Collapsed"/>
-            <CheckBox x:Name="pickleCheckBox" Width="250" Content="Pickle" Visibility="Collapsed"/>
-            <CheckBox x:Name="cheeseCheckBox" Width="250" Content="Cheese" Visibility="Collapsed"/>
-            <CheckBox x:Name="tomatoCheckBox" Width="250" Content="Tomato" Visibility="Collapsed"/>
-            <CheckBox x:Name="lettuceCheckBox" Width="250" Content="Lettuce" Visibility="Collapsed"/>
-            <CheckBox x:Name="mayoCheckBox" Width="250" Content="Mayo" Visibility="Collapsed"/>
-            <CheckBox x:Name="broccoliCheckBox" Width="250" Content="Broccoli" Visibility="Collapsed"/>
-            <CheckBox x:Name="mushroomsCheckBox" Width="250" Content="Mushrooms" Visibility="Collapsed"/>
-            <CheckBox x:Name="cheddarCheckBox" Width="250" Content="Cheddar" Visibility="Collapsed"/>
-            <CheckBox x:Name="sirloinCheckBox" Width="250" Content="Sirloin" Visibility="Collapsed"/>
-            <CheckBox x:Name="onionCheckBox" Width="250" Content="Onion" Visibility="Collapsed"/>
-            <CheckBox x:Name="rollCheckBox" Width="250" Content="Roll" Visibility="Collapsed"/>
-            <CheckBox x:Name="sausageLinkCheckBox" Width="250" Content="Sausage Link" Visibility="Collapsed"/>
-            <CheckBox x:Name="eggCheckBox" Width="250" Content="Egg" Visibility="Collapsed"/>
-            <CheckBox x:Name="hashbrownCheckBox" Width="250" Content="Hashbrown" Visibility="Collapsed"/>
-            <CheckBox x:Name="pancakeCheckBox" Width="250" Content="Pancake" Visibility="Collapsed"/>
-            <CheckBox x:Name="baconCheckBox" Width="250" Content="Bacon" Visibility="Collapsed"/>
-            <CheckBox x:Name="iceCheckBox" Width="250" Content="Ice" Visibility="Collapsed"/>
-            <CheckBox x:Name="lemonCheckBox" Width="250" Content="Lemon" Visibility="Collapsed"/>
-            <CheckBox x:Name="creamCheckBox" Width="250" Content="Cream" Visibility="Collapsed"/>
-            <CheckBox x:Name="decafCheckBox" Width="250" Content="Decaf" Visibility="Collapsed"/>
-            <ListBox Name="sizeListBox" Width="250" Visibility="Collapsed">
+            <CheckBox x:Name="bunCheckBox" Width="250" Content="Bun" Visibility="Collapsed" IsChecked="{Binding Path=Bun}"/>
+            <CheckBox x:Name="ketchupCheckBox" Width="250" Content="Ketchup" Visibility="Collapsed" IsChecked="{Binding Path=Ketchup}"/>
+            <CheckBox x:Name="mustardCheckBox" Width="250" Content="Mustard" Visibility="Collapsed" IsChecked="{Binding Path=Mustard}"/>
+            <CheckBox x:Name="pickleCheckBox" Width="250" Content="Pickle" Visibility="Collapsed" IsChecked="{Binding Path=Pickle}"/>
+            <CheckBox x:Name="cheeseCheckBox" Width="250" Content="Cheese" Visibility="Collapsed" IsChecked="{Binding Path=Cheese}"/>
+            <CheckBox x:Name="tomatoCheckBox" Width="250" Content="Tomato" Visibility="Collapsed" IsChecked="{Binding Path=Tomato}"/>
+            <CheckBox x:Name="lettuceCheckBox" Width="250" Content="Lettuce" Visibility="Collapsed" IsChecked="{Binding Path=Lettuce}"/>
+            <CheckBox x:Name="mayoCheckBox" Width="250" Content="Mayo" Visibility="Collapsed" IsChecked="{Binding Path=Mayo}"/>
+            <CheckBox x:Name="broccoliCheckBox" Width="250" Content="Broccoli" Visibility="Collapsed" IsChecked="{Binding Path=Broccoli}"/>
+            <CheckBox x:Name="mushroomsCheckBox" Width="250" Content="Mushrooms" Visibility="Collapsed" IsChecked="{Binding Path=Mushrooms}"/>
+            <CheckBox x:Name="cheddarCheckBox" Width="250" Content="Cheddar" Visibility="Collapsed" IsChecked="{Binding Path=Cheddar}"/>
+            <CheckBox x:Name="sirloinCheckBox" Width="250" Content="Sirloin" Visibility="Collapsed" IsChecked="{Binding Path=Sirloin}"/>
+            <CheckBox x:Name="onionCheckBox" Width="250" Content="Onion" Visibility="Collapsed" IsChecked="{Binding Path=Onion}"/>
+            <CheckBox x:Name="rollCheckBox" Width="250" Content="Roll" Visibility="Collapsed" IsChecked="{Binding Path=Roll}"/>
+            <CheckBox x:Name="sausageLinkCheckBox" Width="250" Content="Sausage Link" Visibility="Collapsed" IsChecked="{Binding Path=SausageLink}"/>
+            <CheckBox x:Name="eggCheckBox" Width="250" Content="Egg" Visibility="Collapsed" IsChecked="{Binding Path=Egg}"/>
+            <CheckBox x:Name="hashbrownCheckBox" Width="250" Content="Hashbrown" Visibility="Collapsed" IsChecked="{Binding Path=Hashbrowns}"/>
+            <CheckBox x:Name="pancakeCheckBox" Width="250" Content="Pancake" Visibility="Collapsed" IsChecked="{Binding Path=Pancake}"/>
+            <CheckBox x:Name="baconCheckBox" Width="250" Content="Bacon" Visibility="Collapsed" IsChecked="{Binding Path=Bacon}"/>
+            <CheckBox x:Name="iceCheckBox" Width="250" Content="Ice" Visibility="Collapsed" IsChecked="{Binding Path=Ice}"/>
+            <CheckBox x:Name="lemonCheckBox" Width="250" Content="Lemon" Visibility="Collapsed" IsChecked="{Binding Path=Lemon}"/>
+            <CheckBox x:Name="creamCheckBox" Width="250" Content="Cream" Visibility="Collapsed" IsChecked="{Binding Path=RoomForCream}"/>
+            <CheckBox x:Name="decafCheckBox" Width="250" Content="Decaf" Visibility="Collapsed" IsChecked="{Binding Path=Decaf}"/>
+<!--            <CheckBox x:Name="smallCheckBox" Width="250" Content="Small" Visibility="Collapsed" IsChecked="{Binding Path=IsSmall}"/>
+            <CheckBox x:Name="mediumCheckBox" Width="250" Content="Medium" Visibility="Collapsed" IsChecked="{Binding Path=IsMedium}"/>
+            <CheckBox x:Name="largeCheckBox" Width="250" Content="Large" Visibility="Collapsed" IsChecked="{Binding Path=IsLarge}"/> -->
+
+            
+            <ListBox Name="sizeListBox" Width="250" Visibility="Collapsed" ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}">
                 <ListBoxItem>Small</ListBoxItem>
                 <ListBoxItem>Medium</ListBoxItem>
                 <ListBoxItem>Large</ListBoxItem>
             </ListBox>
-            <ListBox Name="sodaFlavorListBox" Width="250" Visibility="Collapsed">
+            
+            <ListBox Name="sodaFlavorListBox" Width="250" Visibility="Collapsed" SelectedItem="{Binding Path=Flavor}">
                 <ListBoxItem>Blackberry</ListBoxItem>
                 <ListBoxItem>Cherry</ListBoxItem>
                 <ListBoxItem>Grapefruit</ListBoxItem>
