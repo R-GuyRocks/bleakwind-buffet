@@ -100,6 +100,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             {
                 dbwf.Size = Size.Large;
             });
+
+            Assert.PropertyChanged(dbwf, "Size", () =>
+            {
+                dbwf.Size = Size.Small;
+            });
         }
     }
 }

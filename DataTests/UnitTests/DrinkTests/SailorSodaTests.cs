@@ -185,6 +185,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 ss.Size = Size.Large;
             });
+
+            Assert.PropertyChanged(ss, "Size", () =>
+            {
+                ss.Size = Size.Small;
+            });
         }
 
         [Fact]
@@ -215,6 +220,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(ss, "Flavor", () =>
             {
                 ss.Flavor = SodaFlavor.Watermelon;
+            });
+
+            Assert.PropertyChanged(ss, "Flavor", () =>
+            {
+                ss.Flavor = SodaFlavor.Cherry;
             });
         }
     }

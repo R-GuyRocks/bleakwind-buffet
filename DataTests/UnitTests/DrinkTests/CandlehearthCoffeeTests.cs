@@ -222,6 +222,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 cc.Size = Size.Large;
             });
+
+            Assert.PropertyChanged(cc, "Size", () =>
+            {
+                cc.Size = Size.Small;
+            });
         }
     }
 }

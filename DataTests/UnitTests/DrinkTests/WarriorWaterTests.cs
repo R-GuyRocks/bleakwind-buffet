@@ -179,6 +179,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 ww.Size = Size.Large;
             });
+
+            Assert.PropertyChanged(ww, "Size", () =>
+            {
+                ww.Size = Size.Small;
+            });
         }
 
     }
