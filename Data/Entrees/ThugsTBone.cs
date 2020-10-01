@@ -6,11 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThugsTBone : Entree, IOrderItem
+    public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// Gets the price of the sandwhich.
