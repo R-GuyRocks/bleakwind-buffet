@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -227,6 +228,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 cc.Size = Size.Small;
             });
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChangedInterface()
+        {
+            var cc = new CandlehearthCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(cc);
         }
     }
 }

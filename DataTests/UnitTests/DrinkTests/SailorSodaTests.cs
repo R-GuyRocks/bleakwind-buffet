@@ -10,6 +10,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -226,6 +227,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 ss.Flavor = SodaFlavor.Cherry;
             });
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChangedInterface()
+        {
+            var ss = new SailorSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
         }
     }
 }

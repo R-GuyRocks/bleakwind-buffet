@@ -9,12 +9,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="250">
     <UserControl.Resources>
-        <ObjectDataProvider x:Key="sizes" MethodName="GetSizes" ObjectType="{x:Type system:Enum}">
+        <ObjectDataProvider x:Key="sizes" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="enums:Size"></x:Type>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-
+        <ObjectDataProvider x:Key="flavors" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enums:SodaFlavor"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </UserControl.Resources>
     <Border>
         <StackPanel>
@@ -45,25 +49,9 @@
             <CheckBox x:Name="lemonCheckBox" Width="250" Content="Lemon" Visibility="Collapsed" IsChecked="{Binding Path=Lemon}"/>
             <CheckBox x:Name="creamCheckBox" Width="250" Content="Cream" Visibility="Collapsed" IsChecked="{Binding Path=RoomForCream}"/>
             <CheckBox x:Name="decafCheckBox" Width="250" Content="Decaf" Visibility="Collapsed" IsChecked="{Binding Path=Decaf}"/>
-<!--            <CheckBox x:Name="smallCheckBox" Width="250" Content="Small" Visibility="Collapsed" IsChecked="{Binding Path=IsSmall}"/>
-            <CheckBox x:Name="mediumCheckBox" Width="250" Content="Medium" Visibility="Collapsed" IsChecked="{Binding Path=IsMedium}"/>
-            <CheckBox x:Name="largeCheckBox" Width="250" Content="Large" Visibility="Collapsed" IsChecked="{Binding Path=IsLarge}"/> -->
+            <ListBox Name="sizeListBox" Width="250" Visibility="Collapsed" ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}"/>
 
-            
-            <ListBox Name="sizeListBox" Width="250" Visibility="Collapsed" ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}">
-                <ListBoxItem>Small</ListBoxItem>
-                <ListBoxItem>Medium</ListBoxItem>
-                <ListBoxItem>Large</ListBoxItem>
-            </ListBox>
-            
-            <ListBox Name="sodaFlavorListBox" Width="250" Visibility="Collapsed" SelectedItem="{Binding Path=Flavor}">
-                <ListBoxItem>Blackberry</ListBoxItem>
-                <ListBoxItem>Cherry</ListBoxItem>
-                <ListBoxItem>Grapefruit</ListBoxItem>
-                <ListBoxItem>Lemon</ListBoxItem>
-                <ListBoxItem>Peach</ListBoxItem>
-                <ListBoxItem>Watermelon</ListBoxItem>
-            </ListBox>
+            <ListBox Name="sodaFlavorListBox" Width="250" Visibility="Collapsed" ItemsSource="{Binding Source={StaticResource flavors}}" SelectedItem="{Binding Path=Flavor}"/>
             <Button Name="nuffSaidButton" Width ="250" Visibility="Collapsed" IsEnabled="False" Click="nuffSaidButton_Click">'Nuff said!</Button>
             <Button Name="finishedButton" Width="250" Visibility="Hidden" IsEnabled="False" Click="finishedButton_Click">Finished</Button>
         </StackPanel>
