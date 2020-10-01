@@ -5,54 +5,53 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="500">
     <DockPanel>
         <Border Name="containerBorder">
-            <Grid Name ="containerGrid" Height="400" Width="250" HorizontalAlignment="Center">
+            <Grid Name ="containerGrid" Height="500" Width="250" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250"/>
                 </Grid.ColumnDefinitions>
             </Grid>
         </Border>
         <Border BorderBrush="Black" BorderThickness="1">
-            <Grid Height="400" Width="250" HorizontalAlignment="Left">
+            <Grid Height="500" Width="250" HorizontalAlignment="Left">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="160"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="120"/>
                     <RowDefinition Height="25"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="125"/>
+                    <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
                 <StackPanel Height="15" HorizontalAlignment="Center"  Grid.Row="0">
                     <TextBlock>Select a menu item!</TextBlock>
                 </StackPanel>
                 <StackPanel Grid.Row="1">
-                    <Button Content="Entrees" IsEnabled="False"/>
-                    <Button Name="briarheartBurgerButton" Content="Briarheart Burger" Click="briarheartBurgerButton_Click"/>
-                    <Button Name="doubleDraugrButton" Content="Double Draugr" Click="Button_Click"/>
-                    <Button Name="gardenOrcOmeletteButton" Content="Garden Orc Omelette" Click="gardenOrcOmeletteButton_Click"/>
-                    <Button Name="phillyPoacherButton" Content="Philly Poacher" Click="phillyPoacherButton_Click"/>
-                    <Button Name="smokehouseSkeletonButton" Content="Smokehouse Skeleton" Click="smokehouseSkeletonButton_Click"/>
-                    <Button Name="thalmorTripleButton" Content="Thalmor Triple" Click="thalmorTripleButton_Click"/>
-                    <Button Name="thugsTBoneButton" Content="Thugs T-Bone" Click="thugsTBoneButton_Click"/>
+                    <Button Content="Entrees" IsEnabled="False" Height="25"/>
+                    <Button Name="briarheartBurgerButton" Content="Briarheart Burger" Click="briarheartBurgerButton_Click" Height="25"/>
+                    <Button Name="doubleDraugrButton" Content="Double Draugr" Click="Button_Click" Height="25"/>
+                    <Button Name="gardenOrcOmeletteButton" Content="Garden Orc Omelette" Click="gardenOrcOmeletteButton_Click" Height="25"/>
+                    <Button Name="phillyPoacherButton" Content="Philly Poacher" Click="phillyPoacherButton_Click" Height="25"/>
+                    <Button Name="smokehouseSkeletonButton" Content="Smokehouse Skeleton" Click="smokehouseSkeletonButton_Click" Height="25"/>
+                    <Button Name="thalmorTripleButton" Content="Thalmor Triple" Click="thalmorTripleButton_Click" Height="25"/>
+                    <Button Name="thugsTBoneButton" Content="Thugs T-Bone" Click="thugsTBoneButton_Click" Height="25"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2">
-                    <Button Content="Sides" IsEnabled="False" ClickMode="Hover"/>
-                    <Button Name="dragonbornWaffleFriesButton" Content="Dragonborn Waffle Fries" Click="dragonbornWaffleFriesButton_Click"/>
-                    <Button Name="friedMiraakButton" Content="Fried Miraak" Click="friedMiraakButton_Click"/>
-                    <Button Name="madOtarGritsButton" Content="Mad Otar Grits" Click="madOtarGritsButton_Click"/>
-                    <Button Name="vokunSaladButton" Content="Vokun Salad" Click="vokunSaladButton_Click"/>
+                    <Button Content="Sides" IsEnabled="False" ClickMode="Hover" Height="25"/>
+                    <Button Name="dragonbornWaffleFriesButton" Content="Dragonborn Waffle Fries" Click="dragonbornWaffleFriesButton_Click" Height="25"/>
+                    <Button Name="friedMiraakButton" Content="Fried Miraak" Click="friedMiraakButton_Click" Height="25"/>
+                    <Button Name="madOtarGritsButton" Content="Mad Otar Grits" Click="madOtarGritsButton_Click" Height="25"/>
+                    <Button Name="vokunSaladButton" Content="Vokun Salad" Click="vokunSaladButton_Click" Height="25"/>
                 </StackPanel>
                 <StackPanel Grid.Row="3">
-                    <Button Content="Drinks" IsEnabled="False" ClickMode="Hover"/>
-                    <Button Name="aretinoAppleJuiceButton" Content="Aretino Apple Juice" Click="aretinoAppleJuiceButton_Click"/>
-                    <Button Name="candlehearthCoffeeButton" Content="Candlehearth Coffee" Click="candlehearthCoffeeButton_Click"/>
-                    <Button Name="markarthMilkButton" Content="Markarth Milk" Click="markarthMilkButton_Click"/>
-                    <Button Name="sailorSodaButton" Content="Sailor Soda" Click="sailorSodaButton_Click"/>
-                    <Button Name="warriorWaterButton" Content="Warrior Water" Click="warriorWaterButton_Click"/>
+                    <Button Content="Drinks" IsEnabled="False" ClickMode="Hover" Height="25"/>
+                    <Button Name="aretinoAppleJuiceButton" Content="Aretino Apple Juice" Click="aretinoAppleJuiceButton_Click" Height="25"/>
+                    <Button Name="candlehearthCoffeeButton" Content="Candlehearth Coffee" Click="candlehearthCoffeeButton_Click" Height="25"/>
+                    <Button Name="markarthMilkButton" Content="Markarth Milk" Click="markarthMilkButton_Click" Height="25"/>
+                    <Button Name="sailorSodaButton" Content="Sailor Soda" Click="sailorSodaButton_Click" Height="25"/>
+                    <Button Name="warriorWaterButton" Content="Warrior Water" Click="warriorWaterButton_Click" Height="25"/>
                 </StackPanel>
             </Grid>
         </Border>

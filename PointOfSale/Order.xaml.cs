@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿/*
+ * Author: Riley Smith
+ * Class: Order.xaml.cs
+ * Purpose: Contains the functionality for the Order component. Right now it only initializes this component.
+ */
+
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;

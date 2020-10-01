@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿/*
+ * Author: Riley Smith
+ * Class: MenuSelection.xaml.cs
+ * Purpose: Implements the functionality of displaying the right controls for the menu item corresponding to the button that was clicked.
+ */
+
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using System;

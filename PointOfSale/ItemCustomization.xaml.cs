@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Riley Smith
+ * Class: ItemCustomization.xaml.cs
+ * Purpose: Contains the functionality for hidding all controls whenever the user pressed the finished button.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

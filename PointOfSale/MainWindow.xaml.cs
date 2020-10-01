@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Riley Smith
+ * Class: MainWindow.xaml.cs
+ * Purpose: Contains the functionality for the MainWindow component. Right now it only initializes this component.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

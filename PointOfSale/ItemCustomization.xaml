@@ -7,7 +7,7 @@
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:enums="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="250">
+             d:DesignHeight="500" d:DesignWidth="250">
     <UserControl.Resources>
         <ObjectDataProvider x:Key="sizes" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -21,39 +21,138 @@
         </ObjectDataProvider>
     </UserControl.Resources>
     <Border>
-        <StackPanel>
-            <TextBlock Name="customizeMeal" HorizontalAlignment="Center" Visibility="Collapsed">Customize your meal!</TextBlock>
-            <TextBlock Name="customizeDrink" HorizontalAlignment="Center" Visibility="Collapsed">Customize your drink!</TextBlock>
-            <TextBlock Name="customizeSide" HorizontalAlignment="Center" Visibility="Collapsed">Customize your side!</TextBlock>
-            <Button Name="chooseButton" Width="250" Visibility="Collapsed" IsEnabled="False">Choose the following option(s).</Button>
-            <CheckBox x:Name="bunCheckBox" Width="250" Content="Bun" Visibility="Collapsed" IsChecked="{Binding Path=Bun}"/>
-            <CheckBox x:Name="ketchupCheckBox" Width="250" Content="Ketchup" Visibility="Collapsed" IsChecked="{Binding Path=Ketchup}"/>
-            <CheckBox x:Name="mustardCheckBox" Width="250" Content="Mustard" Visibility="Collapsed" IsChecked="{Binding Path=Mustard}"/>
-            <CheckBox x:Name="pickleCheckBox" Width="250" Content="Pickle" Visibility="Collapsed" IsChecked="{Binding Path=Pickle}"/>
-            <CheckBox x:Name="cheeseCheckBox" Width="250" Content="Cheese" Visibility="Collapsed" IsChecked="{Binding Path=Cheese}"/>
-            <CheckBox x:Name="tomatoCheckBox" Width="250" Content="Tomato" Visibility="Collapsed" IsChecked="{Binding Path=Tomato}"/>
-            <CheckBox x:Name="lettuceCheckBox" Width="250" Content="Lettuce" Visibility="Collapsed" IsChecked="{Binding Path=Lettuce}"/>
-            <CheckBox x:Name="mayoCheckBox" Width="250" Content="Mayo" Visibility="Collapsed" IsChecked="{Binding Path=Mayo}"/>
-            <CheckBox x:Name="broccoliCheckBox" Width="250" Content="Broccoli" Visibility="Collapsed" IsChecked="{Binding Path=Broccoli}"/>
-            <CheckBox x:Name="mushroomsCheckBox" Width="250" Content="Mushrooms" Visibility="Collapsed" IsChecked="{Binding Path=Mushrooms}"/>
-            <CheckBox x:Name="cheddarCheckBox" Width="250" Content="Cheddar" Visibility="Collapsed" IsChecked="{Binding Path=Cheddar}"/>
-            <CheckBox x:Name="sirloinCheckBox" Width="250" Content="Sirloin" Visibility="Collapsed" IsChecked="{Binding Path=Sirloin}"/>
-            <CheckBox x:Name="onionCheckBox" Width="250" Content="Onion" Visibility="Collapsed" IsChecked="{Binding Path=Onion}"/>
-            <CheckBox x:Name="rollCheckBox" Width="250" Content="Roll" Visibility="Collapsed" IsChecked="{Binding Path=Roll}"/>
-            <CheckBox x:Name="sausageLinkCheckBox" Width="250" Content="Sausage Link" Visibility="Collapsed" IsChecked="{Binding Path=SausageLink}"/>
-            <CheckBox x:Name="eggCheckBox" Width="250" Content="Egg" Visibility="Collapsed" IsChecked="{Binding Path=Egg}"/>
-            <CheckBox x:Name="hashbrownCheckBox" Width="250" Content="Hashbrown" Visibility="Collapsed" IsChecked="{Binding Path=Hashbrowns}"/>
-            <CheckBox x:Name="pancakeCheckBox" Width="250" Content="Pancake" Visibility="Collapsed" IsChecked="{Binding Path=Pancake}"/>
-            <CheckBox x:Name="baconCheckBox" Width="250" Content="Bacon" Visibility="Collapsed" IsChecked="{Binding Path=Bacon}"/>
-            <CheckBox x:Name="iceCheckBox" Width="250" Content="Ice" Visibility="Collapsed" IsChecked="{Binding Path=Ice}"/>
-            <CheckBox x:Name="lemonCheckBox" Width="250" Content="Lemon" Visibility="Collapsed" IsChecked="{Binding Path=Lemon}"/>
-            <CheckBox x:Name="creamCheckBox" Width="250" Content="Cream" Visibility="Collapsed" IsChecked="{Binding Path=RoomForCream}"/>
-            <CheckBox x:Name="decafCheckBox" Width="250" Content="Decaf" Visibility="Collapsed" IsChecked="{Binding Path=Decaf}"/>
-            <ListBox Name="sizeListBox" Width="250" Visibility="Collapsed" ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}"/>
-
-            <ListBox Name="sodaFlavorListBox" Width="250" Visibility="Collapsed" ItemsSource="{Binding Source={StaticResource flavors}}" SelectedItem="{Binding Path=Flavor}"/>
-            <Button Name="nuffSaidButton" Width ="250" Visibility="Collapsed" IsEnabled="False" Click="nuffSaidButton_Click">'Nuff said!</Button>
-            <Button Name="finishedButton" Width="250" Visibility="Hidden" IsEnabled="False" Click="finishedButton_Click">Finished</Button>
+        <StackPanel MaxWidth="250">
+            <TextBlock Name="customizeMeal" HorizontalAlignment="Center" Visibility="Collapsed" Height="25">Customize your meal!</TextBlock>
+            <TextBlock Name="customizeDrink" HorizontalAlignment="Center" Visibility="Collapsed" Height="25">Customize your drink!</TextBlock>
+            <TextBlock Name="customizeSide" HorizontalAlignment="Center" Visibility="Collapsed" Height="25">Customize your side!</TextBlock>
+            <Button Name="chooseButton" Width="250" Visibility="Collapsed" IsEnabled="False" Height="25">Choose the following option(s).</Button>
+            <CheckBox x:Name="bunCheckBox" Width="250" Content="Bun" Visibility="Collapsed" IsChecked="{Binding Path=Bun}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="ketchupCheckBox" Width="250" Content="Ketchup" Visibility="Collapsed" IsChecked="{Binding Path=Ketchup}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="mustardCheckBox" Width="250" Content="Mustard" Visibility="Collapsed" IsChecked="{Binding Path=Mustard}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="pickleCheckBox" Width="250" Content="Pickle" Visibility="Collapsed" IsChecked="{Binding Path=Pickle}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="cheeseCheckBox" Width="250" Content="Cheese" Visibility="Collapsed" IsChecked="{Binding Path=Cheese}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="tomatoCheckBox" Width="250" Content="Tomato" Visibility="Collapsed" IsChecked="{Binding Path=Tomato}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="lettuceCheckBox" Width="250" Content="Lettuce" Visibility="Collapsed" IsChecked="{Binding Path=Lettuce}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="mayoCheckBox" Width="250" Content="Mayo" Visibility="Collapsed" IsChecked="{Binding Path=Mayo}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="broccoliCheckBox" Width="250" Content="Broccoli" Visibility="Collapsed" IsChecked="{Binding Path=Broccoli}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="mushroomsCheckBox" Width="250" Content="Mushrooms" Visibility="Collapsed" IsChecked="{Binding Path=Mushrooms}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="cheddarCheckBox" Width="250" Content="Cheddar" Visibility="Collapsed" IsChecked="{Binding Path=Cheddar}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="sirloinCheckBox" Width="250" Content="Sirloin" Visibility="Collapsed" IsChecked="{Binding Path=Sirloin}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="onionCheckBox" Width="250" Content="Onion" Visibility="Collapsed" IsChecked="{Binding Path=Onion}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="rollCheckBox" Width="250" Content="Roll" Visibility="Collapsed" IsChecked="{Binding Path=Roll}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="sausageLinkCheckBox" Width="250" Content="Sausage Link" Visibility="Collapsed" IsChecked="{Binding Path=SausageLink}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="eggCheckBox" Width="250" Content="Egg" Visibility="Collapsed" IsChecked="{Binding Path=Egg}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="hashbrownCheckBox" Width="250" Content="Hashbrown" Visibility="Collapsed" IsChecked="{Binding Path=Hashbrowns}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="pancakeCheckBox" Width="250" Content="Pancake" Visibility="Collapsed" IsChecked="{Binding Path=Pancake}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="baconCheckBox" Width="250" Content="Bacon" Visibility="Collapsed" IsChecked="{Binding Path=Bacon}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="iceCheckBox" Width="250" Content="Ice" Visibility="Collapsed" IsChecked="{Binding Path=Ice}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="lemonCheckBox" Width="250" Content="Lemon" Visibility="Collapsed" IsChecked="{Binding Path=Lemon}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="creamCheckBox" Width="250" Content="Cream" Visibility="Collapsed" IsChecked="{Binding Path=RoomForCream}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="decafCheckBox" Width="250" Content="Decaf" Visibility="Collapsed" IsChecked="{Binding Path=Decaf}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <ListBox Name="sizeListBox" Width="167" Visibility="Collapsed" ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}">
+                <ListBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </ListBox.LayoutTransform>
+            </ListBox>
+            <ListBox Name="sodaFlavorListBox" Width="167" Visibility="Collapsed" ItemsSource="{Binding Source={StaticResource flavors}}" SelectedItem="{Binding Path=Flavor}">
+                <ListBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </ListBox.LayoutTransform>
+            </ListBox>
+            <Button Name="nuffSaidButton" Width ="250" Visibility="Collapsed" IsEnabled="False" Click="nuffSaidButton_Click" Height="25">'Nuff said!</Button>
+            <Button Name="finishedButton" Width="250" Visibility="Hidden" IsEnabled="False" Click="finishedButton_Click" Height="25">Finished</Button>
         </StackPanel>
     </Border>
     
