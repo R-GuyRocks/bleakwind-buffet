@@ -4,9 +4,11 @@
  * Purpose: Contains the functionality for the MainWindow component. Right now it only initializes this component.
  */
 
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,16 +28,24 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ItemCustomization ic = new ItemCustomization();
+        public MenuSelection ms = new MenuSelection();
+        public OrderComponent oc = new OrderComponent();
+
+
         /// <summary>
         /// Initializes this component.
         /// </summary>
         public MainWindow()
         {
             InitializeComponent();
+            orderBorder.Child = oc;
+            ms = menuSelection;
+            this.DataContext = new Order();
         }
 
-        private void BriarheartBurgerClick(object sender, RoutedEventArgs e) {} // Created this on accident.
+        private void BriarheartBurgerClick(object sender, RoutedEventArgs e) { } // Created this on accident.
 
-        private void MenuSelection_Loaded(object sender, RoutedEventArgs e) {} // Created this on accident.
+        private void MenuSelection_Loaded(object sender, RoutedEventArgs e) { } // Created this on accident.
     }
 }

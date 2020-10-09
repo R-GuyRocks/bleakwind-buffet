@@ -13,9 +13,8 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
-            <local:MenuSelection Grid.Column="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Loaded="MenuSelection_Loaded"/>
-            <local:Order Grid.Column="2"/>
+            <local:MenuSelection x:Name="menuSelection" Grid.Column="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Loaded="MenuSelection_Loaded"/>
+            <Border x:Name="orderBorder"  Grid.Column="2"/>
         </Grid>
     </DockPanel>
- 
 </Window>

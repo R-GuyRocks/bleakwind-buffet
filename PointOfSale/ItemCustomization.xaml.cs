@@ -4,6 +4,10 @@
  * Purpose: Contains the functionality for hidding all controls whenever the user pressed the finished button.
  */
 
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,6 +28,13 @@ namespace PointOfSale
     /// </summary>
     public partial class ItemCustomization : UserControl
     {
+
+        public OrderComponent orderComponent = new OrderComponent();
+
+        public Combo combo = new Combo();
+
+        public Order order = new Order();
+
         /// <summary>
         /// Initializes this component.
         /// </summary>
@@ -71,8 +82,27 @@ namespace PointOfSale
             sodaFlavorListBox.Visibility = Visibility.Collapsed;
             finishedButton.Visibility = Visibility.Hidden;
             finishedButton.IsEnabled = false;
+            /*            orderComponent.orderListView.Visibility = Visibility.Visible;
+                        orderComponent.paymentListView.Visibility = Visibility.Visible;
+                        orderComponent.cancelOrderButton.Visibility = Visibility.Visible; */
         }
 
-        private void nuffSaidButton_Click(object sender, RoutedEventArgs e) {} // Created this on accident. This button will always be disabled.
+        private void nuffSaidButton_Click(object sender, RoutedEventArgs e) { } // Created this on accident. This button will always be disabled.
+
+        /*       public void ReceiveItem(IOrderItem item)
+               {
+                   if(typeof(Entree).IsAssignableFrom(item.GetType())) 
+                   {
+                       combo.Entree = item;
+                   }
+                   else if (typeof(Side).IsAssignableFrom(item.GetType()))
+                   {
+                       combo.Side = item;
+                   }
+                   else if (typeof(Drink).IsAssignableFrom(item.GetType())) 
+                   {
+                       combo.Drink = item;
+                   }
+               } */
     }
 }

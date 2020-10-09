@@ -14,7 +14,7 @@
                 </Grid.ColumnDefinitions>
             </Grid>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1">
+        <Border BorderBrush="Black">
             <Grid Height="500" Width="250" HorizontalAlignment="Left">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250"/>

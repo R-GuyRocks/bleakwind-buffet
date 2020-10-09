@@ -155,5 +155,5 @@
             <Button Name="finishedButton" Width="250" Visibility="Hidden" IsEnabled="False" Click="finishedButton_Click" Height="25">Finished</Button>
         </StackPanel>
     </Border>
-    
+
 </UserControl>

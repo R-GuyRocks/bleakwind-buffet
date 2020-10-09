@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="PointOfSale.OrderComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="250">
+    <DockPanel>
+        <Border Name="containerBorder">
+            <Grid Name ="containerGrid" Height="500" Width="250" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <ListView Height="300" Name="orderListView" Grid.Row="0" HorizontalAlignment="Center">
+                          <ListViewItem Name="numberListViewItem" HorizontalAlignment="Center" FontSize="17" Content="{Binding Path=Number}"></ListViewItem>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="17">Small DragonbornWaffleFries</ListViewItem>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="17">Large Decaf Candlehearth Coffee</ListViewItem>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="17">Double Draugr</ListViewItem> 
+                </ListView>
+                <ListView Height="100" Width="250" Name="paymentListView"  Grid.Row="1" HorizontalAlignment="Center" >
+                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="33">Subtotal: $3.25</ListViewItem>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="33" >Tax: $0.57</ListViewItem>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="34">Total: $3.82</ListViewItem>
+                </ListView>
+                <StackPanel Height="100" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Button Name="completeOrderButton" Height="60" Width="250" VerticalAlignment="Center">Complete Order</Button>
+                    <Button Name="cancelOrderButton" Height="40" Width="250" VerticalAlignment="Center">Cancel Order</Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DockPanel>
+</UserControl>

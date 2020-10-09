@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Riley Smith
- * Class: Order.xaml.cs
+ * Class: OrderComponent.xaml.cs
  * Purpose: Contains the functionality for the Order component. Right now it only initializes this component.
  */
 
@@ -17,21 +17,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Collections.Specialized;
 
 namespace PointOfSale
 {
-    /// <summary>
-    /// Interaction logic for MenuSelection.xaml
-    /// </summary>
-    public partial class Order : UserControl
+    public partial class OrderComponent : UserControl
     {
-        /// <summary>
-        /// Initializes this component.
-        /// </summary>
-        public Order()
+        public OrderComponent()
         {
             InitializeComponent();
         }
-
     }
 }
