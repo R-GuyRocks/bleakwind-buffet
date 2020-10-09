@@ -18,7 +18,7 @@
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <ListView Height="300" Name="orderListView" Grid.Row="0" HorizontalAlignment="Center">
-                          <ListViewItem Name="numberListViewItem" HorizontalAlignment="Center" FontSize="17" Content="{Binding Path=Number}"></ListViewItem>
+                    <ListViewItem Name="numberListViewItem" HorizontalAlignment="Center" FontSize="17" Content="{Binding Path=NumberString}"></ListViewItem>
                     <ListViewItem HorizontalAlignment="Center" FontSize="17">Small DragonbornWaffleFries</ListViewItem>
                     <ListViewItem HorizontalAlignment="Center" FontSize="17">Large Decaf Candlehearth Coffee</ListViewItem>
                     <ListViewItem HorizontalAlignment="Center" FontSize="17">Double Draugr</ListViewItem> 

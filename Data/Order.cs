@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace BleakwindBuffet.Data
@@ -30,6 +31,14 @@ namespace BleakwindBuffet.Data
             set
             {
                 number = value;
+            }
+        }
+
+        public string NumberString
+        {
+            get
+            {
+                return "Order #" + Number;
             }
         }
 
