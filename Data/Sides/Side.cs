@@ -6,6 +6,7 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
@@ -15,6 +16,15 @@ namespace BleakwindBuffet.Data.Sides
     /// </summary>
     public abstract class Side
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public string Name
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
         /// <summary>
         /// The side's size.
         /// </summary>

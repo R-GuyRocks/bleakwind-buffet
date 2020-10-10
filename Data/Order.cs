@@ -3,37 +3,27 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.ComponentModel;
+using System.Collections;
+using System.Collections.Specialized;
 
 namespace BleakwindBuffet.Data
 {
-    public class Order
+    public class Order: INotifyPropertyChanged, ICollection<IOrderItem>, INotifyCollectionChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public List<IOrderItem> list = new List<IOrderItem>();
-        public List<IOrderItem> List
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+        protected void OnPropertyChanged(string name)
         {
-            get
-            {
-                return list;
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        public string name = "";
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
-            }
-        }
+        List<IOrderItem> list = new List<IOrderItem>();
 
+        static int orderNum = 1;
+     
         public int Price { get; set; }
 
         public List<string> SpecialInstructions { get; set; }
@@ -122,7 +112,88 @@ namespace BleakwindBuffet.Data
         public void Add(IOrderItem item)
         {
             list.Add(item);
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
+            OnPropertyChanged("Subtotal");
+            OnPropertyChanged("Tax");
+            OnPropertyChanged("Total");
+            OnPropertyChanged("Calories");
         }
 
+        public bool Remove(IOrderItem item)
+        {
+            bool didRemove = list.Remove(item);
+            list.Remove(item);
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item));
+            OnPropertyChanged("Subtotal");
+            OnPropertyChanged("Tax");
+            OnPropertyChanged("Total");
+            OnPropertyChanged("Calories");
+            return didRemove;
+        } 
+
+        public int Count => list.Count;
+        public bool IsReadOnly => false;
+
+        public void Clear()
+        {
+            foreach(IOrderItem i in list)
+            {
+                list.Remove(i);
+            }
+            list.Clear();
+        }
+        public bool Contains(IOrderItem item)
+        {
+            return list.Contains(item);
+        }
+
+        public IEnumerator<IOrderItem> GetEnumerator()
+        {
+            return list.GetEnumerator();
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return list.GetEnumerator();
+        }
+
+        public void CopyTo(IOrderItem[] array, int index)
+        {
+            list.CopyTo(array, index);
+        }
+
+        void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Price")
+            {
+                OnPropertyChanged("Total");
+                OnPropertyChanged("Subtotal");
+                OnPropertyChanged("Tax");
+            }
+            else if (e.PropertyName == "Calories")
+            {
+                OnPropertyChanged("Calories");
+            }
+        }
+
+        void CollectionChagedListener(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            switch(e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    foreach(IOrderItem i in e.NewItems)
+                    {
+                        i.PropertyChanged += CollectionItemChangedListener;
+                    }
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+                    foreach(IOrderItem i in e.OldItems)
+                    {
+                        i.PropertyChanged -= CollectionItemChangedListener;
+                    }
+                    break;
+                case NotifyCollectionChangedAction.Reset:
+                    throw new NotImplementedException("Not supported.");
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
@@ -15,6 +16,16 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public abstract class Entree
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string Name
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
         /// <summary>
         /// The entree's price.
         /// </summary>

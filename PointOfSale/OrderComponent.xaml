@@ -17,8 +17,8 @@
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
-                <ListView Height="300" Width="250" Name="orderListView" Grid.Row="0" HorizontalAlignment="Center" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
-                    <ListViewItem Name="numberListViewItem" HorizontalAlignment="Center" FontSize="16" Content="{Binding Path=NumberString}"/>
+                <ListView Height="300" Width="250" Name="orderListView" Grid.Row="0" HorizontalAlignment="Center"  IsSynchronizedWithCurrentItem="True">
+               <!--     <ListViewItem Name="numberListViewItem" HorizontalAlignment="Center" FontSize="16" Content="{Binding Path=NumberString}"/> -->
                     <ListViewItem Name="nameListViewItem" HorizontalAlignment="Center" FontSize="16" Content="{Binding Path=Name}"/>
                     <ListViewItem HorizontalAlignment="Center" FontSize="16"/>
                 </ListView>
