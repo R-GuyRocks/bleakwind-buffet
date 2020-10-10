@@ -130,6 +130,11 @@ namespace PointOfSale
             goo.cheddarCheckBox.Visibility = Visibility.Visible;
             goo.finishedButton.Visibility = Visibility.Visible;
             goo.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(omelette);
+            }
+            omelette = new GardenOrcOmelette();
         }
 
         /// <summary>
@@ -149,6 +154,11 @@ namespace PointOfSale
             goo.rollCheckBox.Visibility = Visibility.Visible;
             goo.finishedButton.Visibility = Visibility.Visible;
             goo.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(philly);
+            }
+            philly = new PhillyPoacher();
         }
 
         /// <summary>
@@ -169,6 +179,11 @@ namespace PointOfSale
             ss.pancakeCheckBox.Visibility = Visibility.Visible;
             ss.finishedButton.Visibility = Visibility.Visible;
             ss.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(smokehouse);
+            }
+            smokehouse = new SmokehouseSkeleton();
         }
 
         /// <summary>
@@ -195,6 +210,11 @@ namespace PointOfSale
             tt.eggCheckBox.Visibility = Visibility.Visible;
             tt.finishedButton.Visibility = Visibility.Visible;
             tt.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(thalmor);
+            }
+            thalmor = new ThalmorTriple();
         }
 
         /// <summary>
@@ -210,6 +230,10 @@ namespace PointOfSale
             ttb.finishedButton.Visibility = Visibility.Visible;
             ttb.finishedButton.IsEnabled = true;
             containerBorder.Child = ttb;
+            if (this.DataContext is Order o)
+            {
+                o.Add(tbone);
+            }
         }
 
         /// <summary>
@@ -228,6 +252,11 @@ namespace PointOfSale
             aaj.sizeListBox.Visibility = Visibility.Visible;
             aaj.finishedButton.Visibility = Visibility.Visible;
             aaj.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(aretino);
+            }
+            aretino = new AretinoAppleJuice();
         }
 
         /// <summary>
@@ -248,6 +277,11 @@ namespace PointOfSale
             cc.sizeListBox.Visibility = Visibility.Visible;
             cc.finishedButton.Visibility = Visibility.Visible;
             cc.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(candlehearth);
+            }
+            candlehearth = new CandlehearthCoffee();
         }
 
         /// <summary>
@@ -266,6 +300,11 @@ namespace PointOfSale
             mm.sizeListBox.Visibility = Visibility.Visible;
             mm.finishedButton.Visibility = Visibility.Visible;
             mm.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(markarth);
+            }
+            markarth = new MarkarthMilk();
         }
 
         /// <summary>
@@ -285,6 +324,11 @@ namespace PointOfSale
             ss.sodaFlavorListBox.Visibility = Visibility.Visible;
             ss.finishedButton.Visibility = Visibility.Visible;
             ss.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(sailor);
+            }
+            sailor = new SailorSoda();
         }
 
         /// <summary>
@@ -304,6 +348,11 @@ namespace PointOfSale
             ww.sizeListBox.Visibility = Visibility.Visible;
             ww.finishedButton.Visibility = Visibility.Visible;
             ww.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(warrior);
+            }
+            warrior = new WarriorWater();
         }
 
         /// <summary>
@@ -320,6 +369,11 @@ namespace PointOfSale
             dbwf.sizeListBox.Visibility = Visibility.Visible;
             dbwf.finishedButton.Visibility = Visibility.Visible;
             dbwf.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(dragon);
+            }
+            dragon = new DragonbornWaffleFries();
         }
 
         /// <summary>
@@ -336,6 +390,11 @@ namespace PointOfSale
             fm.sizeListBox.Visibility = Visibility.Visible;
             fm.finishedButton.Visibility = Visibility.Visible;
             fm.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(miraak);
+            }
+            miraak = new FriedMiraak();
         }
 
         /// <summary>
@@ -352,6 +411,11 @@ namespace PointOfSale
             mog.sizeListBox.Visibility = Visibility.Visible;
             mog.finishedButton.Visibility = Visibility.Visible;
             mog.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(otar);
+            }
+            otar = new MadOtarGrits();
         }
 
         /// <summary>
@@ -368,6 +432,11 @@ namespace PointOfSale
             vs.sizeListBox.Visibility = Visibility.Visible;
             vs.finishedButton.Visibility = Visibility.Visible;
             vs.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order o)
+            {
+                o.Add(vokun);
+            }
+            vokun = new VokunSalad();
         }
     }
 }

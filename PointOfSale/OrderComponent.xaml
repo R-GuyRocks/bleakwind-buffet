@@ -17,16 +17,15 @@
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
-                <ListView Height="300" Name="orderListView" Grid.Row="0" HorizontalAlignment="Center">
-                    <ListViewItem Name="numberListViewItem" HorizontalAlignment="Center" FontSize="17" Content="{Binding Path=NumberString}"></ListViewItem>
-                    <ListViewItem HorizontalAlignment="Center" FontSize="17">Small DragonbornWaffleFries</ListViewItem>
-                    <ListViewItem HorizontalAlignment="Center" FontSize="17">Large Decaf Candlehearth Coffee</ListViewItem>
-                    <ListViewItem HorizontalAlignment="Center" FontSize="17">Double Draugr</ListViewItem> 
+                <ListView Height="300" Width="250" Name="orderListView" Grid.Row="0" HorizontalAlignment="Center" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+                    <ListViewItem Name="numberListViewItem" HorizontalAlignment="Center" FontSize="16" Content="{Binding Path=NumberString}"/>
+                    <ListViewItem Name="nameListViewItem" HorizontalAlignment="Center" FontSize="16" Content="{Binding Path=Name}"/>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="16"/>
                 </ListView>
                 <ListView Height="100" Width="250" Name="paymentListView"  Grid.Row="1" HorizontalAlignment="Center" >
-                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="33">Subtotal: $3.25</ListViewItem>
-                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="33" >Tax: $0.57</ListViewItem>
-                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="34">Total: $3.82</ListViewItem>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="33" Content="{Binding Path=SubtotalString}"/>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="33" Content="{Binding Path=TaxString}"/>
+                    <ListViewItem HorizontalAlignment="Center" FontSize="20" Height="34" Content="{Binding Path=TotalString}"/>
                 </ListView>
                 <StackPanel Height="100" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top">
                     <Button Name="completeOrderButton" Height="60" Width="250" VerticalAlignment="Center">Complete Order</Button>

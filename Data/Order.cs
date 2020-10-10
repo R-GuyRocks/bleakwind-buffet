@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data
 {
     public class Order
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public List<IOrderItem> list = new List<IOrderItem>();
         public List<IOrderItem> List
         {
@@ -15,11 +19,24 @@ namespace BleakwindBuffet.Data
                 return list;
             }
         }
-        public string Name { get; set; }
+
+        public string name = "";
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+            }
+        }
 
         public int Price { get; set; }
 
-        public int SpecialInstructions { get; set; }
+        public List<string> SpecialInstructions { get; set; }
 
         private int number = 1;
         public int Number
@@ -55,8 +72,18 @@ namespace BleakwindBuffet.Data
             }
         }
 
-        private int tax = 0;
-        public int Tax
+        public string SubtotalString
+        {
+            get
+            {
+                return "Subtotal: $" + Subtotal;
+            }
+        }
+
+        private double taxRate = 0.12;
+
+        private double tax;
+        public double Tax
         {
             get
             {
@@ -64,15 +91,31 @@ namespace BleakwindBuffet.Data
             }
             set
             {
-                tax = value;
+                tax = Subtotal * taxRate;
             }
         }
 
-        public int Total
+        public string TaxString
+        {
+            get
+            {
+                return "Tax: $" + Tax;
+            }
+        }
+
+        public double Total
         {
             get
             {
                 return Subtotal + Tax;
+            }
+        }
+
+        public string TotalString
+        {
+            get
+            {
+                return "Total: $" + Total;
             }
         }
 
