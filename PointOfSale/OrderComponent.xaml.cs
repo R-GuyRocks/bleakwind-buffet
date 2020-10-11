@@ -21,6 +21,7 @@ using System.ComponentModel;
 using System.Collections.Specialized;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
 
 namespace PointOfSale
 {
@@ -56,6 +57,54 @@ namespace PointOfSale
                             else if (orderListView.SelectedItem is PhillyPoacher pp)
                             {
                                 PhillyPoacher phil = mw.menuSelection.editPhillyPoacher(pp);
+                            }
+                            else if (orderListView.SelectedItem is SmokehouseSkeleton ss)
+                            {
+                                SmokehouseSkeleton smokehouse = mw.menuSelection.editSmokehouseSkeleton(ss);
+                            }
+                            else if (orderListView.SelectedItem is ThalmorTriple tt)
+                            {
+                                ThalmorTriple thal = mw.menuSelection.editThalmorTriple(tt);
+                            }
+                            else if (orderListView.SelectedItem is ThugsTBone ttb)
+                            {
+                                ThugsTBone thugs = mw.menuSelection.editThugsTBone(ttb);
+                            }
+                            else if (orderListView.SelectedItem is AretinoAppleJuice aaj)
+                            {
+                                AretinoAppleJuice aret = mw.menuSelection.editAretinoAppleJuice(aaj);
+                            }
+                            else if (orderListView.SelectedItem is CandlehearthCoffee cc)
+                            {
+                                CandlehearthCoffee cand = mw.menuSelection.editCandlehearthCoffee(cc);
+                            }
+                            else if (orderListView.SelectedItem is MarkarthMilk mm)
+                            {
+                                MarkarthMilk mark = mw.menuSelection.editMarkarthMilk(mm);
+                            }
+                            else if (orderListView.SelectedItem is SailorSoda sas)
+                            {
+                                SailorSoda sail = mw.menuSelection.editSailorSoda(sas);
+                            }
+                            else if (orderListView.SelectedItem is WarriorWater ww)
+                            {
+                                WarriorWater war = mw.menuSelection.editWarriorWater(ww);
+                            }
+                            else if (orderListView.SelectedItem is DragonbornWaffleFries dbwf)
+                            {
+                                DragonbornWaffleFries drag = mw.menuSelection.editDragonbornWaffleFries(dbwf);
+                            }
+                            else if (orderListView.SelectedItem is FriedMiraak fm)
+                            {
+                                FriedMiraak fri = mw.menuSelection.editFriedMiraak(fm);
+                            }
+                            else if (orderListView.SelectedItem is MadOtarGrits mog)
+                            {
+                                MadOtarGrits mad = mw.menuSelection.editMadOtarGrits(mog);
+                            }
+                            else if (orderListView.SelectedItem is VokunSalad vs)
+                            {
+                                VokunSalad sal = mw.menuSelection.editVokunSalad(vs);
                             }
                         }
                     }

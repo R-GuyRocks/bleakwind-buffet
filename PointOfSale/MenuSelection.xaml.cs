@@ -667,5 +667,65 @@ namespace PointOfSale
             warrior = new WarriorWater();
             return water;
         }
+
+        public DragonbornWaffleFries editDragonbornWaffleFries(DragonbornWaffleFries d)
+        {
+            var dbwf = new ItemCustomization();
+            dragon = d;
+            dbwf.DataContext = dragon;
+            containerBorder.Child = dbwf;
+            dbwf.customizeSide.Visibility = Visibility.Visible;
+            dbwf.sizeListBox.Visibility = Visibility.Visible;
+            dbwf.finishedButton.Visibility = Visibility.Visible;
+            dbwf.finishedButton.IsEnabled = true;
+            DragonbornWaffleFries fries = dragon;
+            dragon = new DragonbornWaffleFries();
+            return fries;
+        }
+
+        public FriedMiraak editFriedMiraak(FriedMiraak f)
+        {
+            var fm = new ItemCustomization();
+            miraak = f;
+            fm.DataContext = miraak;
+            containerBorder.Child = fm;
+            fm.customizeSide.Visibility = Visibility.Visible;
+            fm.sizeListBox.Visibility = Visibility.Visible;
+            fm.finishedButton.Visibility = Visibility.Visible;
+            fm.finishedButton.IsEnabled = true;
+            FriedMiraak fried = miraak;
+            miraak = new FriedMiraak();
+            return fried;
+        }
+
+        public MadOtarGrits editMadOtarGrits(MadOtarGrits m)
+        {
+            var mog = new ItemCustomization();
+            otar = m;
+            mog.DataContext = otar;
+            containerBorder.Child = mog;
+            mog.customizeSide.Visibility = Visibility.Visible;
+            mog.sizeListBox.Visibility = Visibility.Visible;
+            mog.finishedButton.Visibility = Visibility.Visible;
+            mog.finishedButton.IsEnabled = true;
+            MadOtarGrits grits = otar;
+            otar = new MadOtarGrits();
+            return grits;
+        }
+
+        public VokunSalad editVokunSalad(VokunSalad v)
+        {
+            var vs = new ItemCustomization();
+            vokun = v;
+            vs.DataContext = vokun;
+            containerBorder.Child = vs;
+            vs.customizeSide.Visibility = Visibility.Visible;
+            vs.sizeListBox.Visibility = Visibility.Visible;
+            vs.finishedButton.Visibility = Visibility.Visible;
+            vs.finishedButton.IsEnabled = true;
+            VokunSalad salad = vokun;
+            vokun = new VokunSalad();
+            return salad;
+        }
     }
 }
