@@ -10,6 +10,7 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -438,13 +439,9 @@ namespace PointOfSale
             vokun = new VokunSalad();
         }
 
-        public void editBriarheartBurger(BriarheartBurger b)
+        public BriarheartBurger editBriarheartBurger(BriarheartBurger b)
         {
             var bb = new ItemCustomization();
-            if (this.DataContext is Order o)
-            {
-                o.Remove(b);
-            }
             briarheart = b;
             bb.DataContext = briarheart;
             containerBorder.Child = bb;
@@ -457,11 +454,218 @@ namespace PointOfSale
             bb.cheeseCheckBox.Visibility = Visibility.Visible;
             bb.finishedButton.Visibility = Visibility.Visible;
             bb.finishedButton.IsEnabled = true;
-            if (this.DataContext is Order or)
-            {
-                or.Add(briarheart);
-            }
+            BriarheartBurger bri = briarheart;
             briarheart = new BriarheartBurger();
+            return bri;
+        }
+
+        public DoubleDraugr editDoubleDraugr(DoubleDraugr d)
+        {
+            var dd = new ItemCustomization();
+            draugr = d;
+            dd.DataContext = draugr;
+            containerBorder.Child = dd;
+            dd.customizeMeal.Visibility = Visibility.Visible;
+            dd.chooseButton.Visibility = Visibility.Visible;
+            dd.bunCheckBox.Visibility = Visibility.Visible;
+            dd.ketchupCheckBox.Visibility = Visibility.Visible;
+            dd.mustardCheckBox.Visibility = Visibility.Visible;
+            dd.pickleCheckBox.Visibility = Visibility.Visible;
+            dd.cheeseCheckBox.Visibility = Visibility.Visible;
+            dd.tomatoCheckBox.Visibility = Visibility.Visible;
+            dd.lettuceCheckBox.Visibility = Visibility.Visible;
+            dd.mayoCheckBox.Visibility = Visibility.Visible;
+            dd.finishedButton.Visibility = Visibility.Visible;
+            dd.finishedButton.IsEnabled = true;
+            DoubleDraugr dou = draugr;
+            draugr = new DoubleDraugr();
+            return dou;
+        }
+
+        public GardenOrcOmelette editGardenOrcOmelette(GardenOrcOmelette g)
+        {
+            var goo = new ItemCustomization();
+            omelette = g;
+            goo.DataContext = omelette;
+            containerBorder.Child = goo;
+            goo.customizeMeal.Visibility = Visibility.Visible;
+            goo.chooseButton.Visibility = Visibility.Visible;
+            goo.broccoliCheckBox.Visibility = Visibility.Visible;
+            goo.mushroomsCheckBox.Visibility = Visibility.Visible;
+            goo.tomatoCheckBox.Visibility = Visibility.Visible;
+            goo.cheddarCheckBox.Visibility = Visibility.Visible;
+            goo.finishedButton.Visibility = Visibility.Visible;
+            goo.finishedButton.IsEnabled = true;
+            GardenOrcOmelette gar = omelette;
+            omelette = new GardenOrcOmelette();
+            return gar;
+        }
+
+        public PhillyPoacher editPhillyPoacher(PhillyPoacher p)
+        {
+            var pp = new ItemCustomization();
+            philly = p;
+            pp.DataContext = philly;
+            containerBorder.Child = pp;
+            pp.customizeMeal.Visibility = Visibility.Visible;
+            pp.chooseButton.Visibility = Visibility.Visible;
+            pp.sirloinCheckBox.Visibility = Visibility.Visible;
+            pp.onionCheckBox.Visibility = Visibility.Visible;
+            pp.rollCheckBox.Visibility = Visibility.Visible;
+            pp.finishedButton.Visibility = Visibility.Visible;
+            pp.finishedButton.IsEnabled = true;
+            PhillyPoacher phil = philly;
+            philly = new PhillyPoacher();
+            return phil;
+        }
+
+        public SmokehouseSkeleton editSmokehouseSkeleton(SmokehouseSkeleton s)
+        {
+            var ss = new ItemCustomization();
+            smokehouse = s;
+            ss.DataContext = smokehouse;
+            containerBorder.Child = ss;
+            ss.customizeMeal.Visibility = Visibility.Visible;
+            ss.chooseButton.Visibility = Visibility.Visible;
+            ss.sausageLinkCheckBox.Visibility = Visibility.Visible;
+            ss.eggCheckBox.Visibility = Visibility.Visible;
+            ss.hashbrownCheckBox.Visibility = Visibility.Visible;
+            ss.pancakeCheckBox.Visibility = Visibility.Visible;
+            ss.finishedButton.Visibility = Visibility.Visible;
+            ss.finishedButton.IsEnabled = true;
+            SmokehouseSkeleton smo = smokehouse;
+            smokehouse = new SmokehouseSkeleton();
+            return smo;
+        }
+
+        public ThalmorTriple editThalmorTriple(ThalmorTriple t)
+        {
+            var tt = new ItemCustomization();
+            thalmor = t;
+            tt.DataContext = thalmor;
+            containerBorder.Child = tt;
+            tt.customizeMeal.Visibility = Visibility.Visible;
+            tt.chooseButton.Visibility = Visibility.Visible;
+            tt.bunCheckBox.Visibility = Visibility.Visible;
+            tt.ketchupCheckBox.Visibility = Visibility.Visible;
+            tt.mustardCheckBox.Visibility = Visibility.Visible;
+            tt.pickleCheckBox.Visibility = Visibility.Visible;
+            tt.cheeseCheckBox.Visibility = Visibility.Visible;
+            tt.tomatoCheckBox.Visibility = Visibility.Visible;
+            tt.lettuceCheckBox.Visibility = Visibility.Visible;
+            tt.mayoCheckBox.Visibility = Visibility.Visible;
+            tt.baconCheckBox.Visibility = Visibility.Visible;
+            tt.eggCheckBox.Visibility = Visibility.Visible;
+            tt.finishedButton.Visibility = Visibility.Visible;
+            tt.finishedButton.IsEnabled = true;
+            ThalmorTriple thal = thalmor;
+            thalmor = new ThalmorTriple();
+            return thal;
+        }
+
+        public ThugsTBone editThugsTBone(ThugsTBone t)
+        {
+            var ttb = new ItemCustomization();
+            tbone = t;
+            ttb.DataContext = tbone;
+            containerBorder.Child = ttb;
+            ttb.customizeMeal.Visibility = Visibility.Visible;
+            ttb.nuffSaidButton.Visibility = Visibility.Visible;
+            ttb.finishedButton.Visibility = Visibility.Visible;
+            ttb.finishedButton.IsEnabled = true;
+            ThugsTBone thugs = tbone;
+            tbone = new ThugsTBone();
+            return thugs;
+        }
+
+        public AretinoAppleJuice editAretinoAppleJuice(AretinoAppleJuice a)
+        {
+            var aaj = new ItemCustomization();
+            aretino = a;
+            aaj.DataContext = aretino;
+            containerBorder.Child = aaj;
+            aaj.customizeDrink.Visibility = Visibility.Visible;
+            aaj.chooseButton.Visibility = Visibility.Visible;
+            aaj.iceCheckBox.Visibility = Visibility.Visible;
+            aaj.sizeListBox.Visibility = Visibility.Visible;
+            aaj.finishedButton.Visibility = Visibility.Visible;
+            aaj.finishedButton.IsEnabled = true;
+            AretinoAppleJuice apple = aretino;
+            aretino = new AretinoAppleJuice();
+            return apple;
+        }
+
+        public CandlehearthCoffee editCandlehearthCoffee(CandlehearthCoffee c)
+        {
+            var cc = new ItemCustomization();
+            candlehearth = c;
+            cc.DataContext = candlehearth;
+            containerBorder.Child = cc;
+            cc.customizeDrink.Visibility = Visibility.Visible;
+            cc.chooseButton.Visibility = Visibility.Visible;
+            cc.iceCheckBox.Visibility = Visibility.Visible;
+            cc.creamCheckBox.Visibility = Visibility.Visible;
+            cc.decafCheckBox.Visibility = Visibility.Visible;
+            cc.sizeListBox.Visibility = Visibility.Visible;
+            cc.finishedButton.Visibility = Visibility.Visible;
+            cc.finishedButton.IsEnabled = true;
+            CandlehearthCoffee coffee = candlehearth;
+            candlehearth = new CandlehearthCoffee();
+            return coffee;
+        }
+
+        public MarkarthMilk editMarkarthMilk(MarkarthMilk m)
+        {
+            var mm = new ItemCustomization();
+            markarth = m;
+            mm.DataContext = candlehearth;
+            containerBorder.Child = mm;
+            mm.customizeDrink.Visibility = Visibility.Visible;
+            mm.chooseButton.Visibility = Visibility.Visible;
+            mm.iceCheckBox.Visibility = Visibility.Visible;
+            mm.sizeListBox.Visibility = Visibility.Visible;
+            mm.finishedButton.Visibility = Visibility.Visible;
+            mm.finishedButton.IsEnabled = true;
+            MarkarthMilk milk = markarth;
+            markarth = new MarkarthMilk();
+            return milk;
+        }
+
+        public SailorSoda editSailorSoda(SailorSoda s)
+        {
+            var ss = new ItemCustomization();
+            sailor = s;
+            ss.DataContext = candlehearth;
+            containerBorder.Child = ss;
+            ss.customizeDrink.Visibility = Visibility.Visible;
+            ss.customizeDrink.Visibility = Visibility.Visible;
+            ss.chooseButton.Visibility = Visibility.Visible;
+            ss.iceCheckBox.Visibility = Visibility.Visible;
+            ss.sizeListBox.Visibility = Visibility.Visible;
+            ss.sodaFlavorListBox.Visibility = Visibility.Visible;
+            ss.finishedButton.Visibility = Visibility.Visible;
+            ss.finishedButton.IsEnabled = true;
+            SailorSoda soda = sailor;
+            sailor = new SailorSoda();
+            return soda;
+        }
+
+        public WarriorWater editWarriorWater(WarriorWater w)
+        {
+            var ww = new ItemCustomization();
+            warrior = w;
+            ww.DataContext = warrior;
+            containerBorder.Child = ww;
+            ww.customizeDrink.Visibility = Visibility.Visible;
+            ww.chooseButton.Visibility = Visibility.Visible;
+            ww.iceCheckBox.Visibility = Visibility.Visible;
+            ww.lemonCheckBox.Visibility = Visibility.Visible;
+            ww.sizeListBox.Visibility = Visibility.Visible;
+            ww.finishedButton.Visibility = Visibility.Visible;
+            ww.finishedButton.IsEnabled = true;
+            WarriorWater water = warrior;
+            warrior = new WarriorWater();
+            return water;
         }
     }
 }

@@ -43,7 +43,19 @@ namespace PointOfSale
                         {
                             if(orderListView.SelectedItem is BriarheartBurger bb)
                             {
-                                mw.menuSelection.editBriarheartBurger(bb);
+                                BriarheartBurger bri = mw.menuSelection.editBriarheartBurger(bb);
+                            }
+                            else if (orderListView.SelectedItem is DoubleDraugr dd)
+                            {
+                                DoubleDraugr dou = mw.menuSelection.editDoubleDraugr(dd);
+                            }
+                            else if (orderListView.SelectedItem is GardenOrcOmelette goo)
+                            {
+                                GardenOrcOmelette gar = mw.menuSelection.editGardenOrcOmelette(goo);
+                            }
+                            else if (orderListView.SelectedItem is PhillyPoacher pp)
+                            {
+                                PhillyPoacher phil = mw.menuSelection.editPhillyPoacher(pp);
                             }
                         }
                     }
