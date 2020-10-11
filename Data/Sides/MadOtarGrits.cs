@@ -17,6 +17,17 @@ namespace BleakwindBuffet.Data.Sides
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Gets the name of the grits.
+        /// </summary>
+        public String Name
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
         /// <value>
         /// The price of the grits.
         /// </value>
@@ -82,7 +93,7 @@ namespace BleakwindBuffet.Data.Sides
         private Size size = Size.Small;
 
         /// <value>
-        /// Gets and sets the size of the grits
+        /// Gets and sets the size of the grits.
         /// </value>
         public Size Size
         {
@@ -91,6 +102,9 @@ namespace BleakwindBuffet.Data.Sides
             {
                 size = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
         }
 

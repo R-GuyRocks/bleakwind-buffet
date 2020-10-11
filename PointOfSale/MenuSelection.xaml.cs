@@ -80,7 +80,6 @@ namespace PointOfSale
             }
             briarheart = new BriarheartBurger();
 
-
         }
 
         /// <summary>
@@ -144,16 +143,16 @@ namespace PointOfSale
         /// <param name="e">Contains event data.</param>
         private void phillyPoacherButton_Click(object sender, RoutedEventArgs e)
         {
-            var goo = new ItemCustomization();
-            goo.DataContext = philly;
-            containerBorder.Child = goo;
-            goo.customizeMeal.Visibility = Visibility.Visible;
-            goo.chooseButton.Visibility = Visibility.Visible;
-            goo.sirloinCheckBox.Visibility = Visibility.Visible;
-            goo.onionCheckBox.Visibility = Visibility.Visible;
-            goo.rollCheckBox.Visibility = Visibility.Visible;
-            goo.finishedButton.Visibility = Visibility.Visible;
-            goo.finishedButton.IsEnabled = true;
+            var pp = new ItemCustomization();
+            pp.DataContext = philly;
+            containerBorder.Child = pp;
+            pp.customizeMeal.Visibility = Visibility.Visible;
+            pp.chooseButton.Visibility = Visibility.Visible;
+            pp.sirloinCheckBox.Visibility = Visibility.Visible;
+            pp.onionCheckBox.Visibility = Visibility.Visible;
+            pp.rollCheckBox.Visibility = Visibility.Visible;
+            pp.finishedButton.Visibility = Visibility.Visible;
+            pp.finishedButton.IsEnabled = true;
             if (this.DataContext is Order o)
             {
                 o.Add(philly);
@@ -437,6 +436,32 @@ namespace PointOfSale
                 o.Add(vokun);
             }
             vokun = new VokunSalad();
+        }
+
+        public void editBriarheartBurger(BriarheartBurger b)
+        {
+            var bb = new ItemCustomization();
+            if (this.DataContext is Order o)
+            {
+                o.Remove(b);
+            }
+            briarheart = b;
+            bb.DataContext = briarheart;
+            containerBorder.Child = bb;
+            bb.customizeMeal.Visibility = Visibility.Visible;
+            bb.chooseButton.Visibility = Visibility.Visible;
+            bb.bunCheckBox.Visibility = Visibility.Visible;
+            bb.ketchupCheckBox.Visibility = Visibility.Visible;
+            bb.mustardCheckBox.Visibility = Visibility.Visible;
+            bb.pickleCheckBox.Visibility = Visibility.Visible;
+            bb.cheeseCheckBox.Visibility = Visibility.Visible;
+            bb.finishedButton.Visibility = Visibility.Visible;
+            bb.finishedButton.IsEnabled = true;
+            if (this.DataContext is Order or)
+            {
+                or.Add(briarheart);
+            }
+            briarheart = new BriarheartBurger();
         }
     }
 }

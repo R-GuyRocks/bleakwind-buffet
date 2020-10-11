@@ -5,24 +5,31 @@ using System.Text;
 using System.ComponentModel;
 using System.Collections;
 using System.Collections.Specialized;
+using System.Collections.ObjectModel;
 
 namespace BleakwindBuffet.Data
 {
-    public class Order: INotifyPropertyChanged, ICollection<IOrderItem>, INotifyCollectionChanged
+    public class Order : ObservableCollection<IOrderItem>, INotifyPropertyChanged, ICollection<IOrderItem>, INotifyCollectionChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
+        //       public event PropertyChangedEventHandler PropertyChanged;
+        //       public event NotifyCollectionChangedEventHandler CollectionChanged;
 
-        protected void OnPropertyChanged(string name)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-        List<IOrderItem> list = new List<IOrderItem>();
+        /*       protected void OnPropertyChanged(string name)
+               {
+                   PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+               } */
 
         static int orderNum = 1;
+        public Order()
+        {
+            Number = orderNum;
+            orderNum++;
+            CollectionChanged += CollectionChagedListener;
+        }
+
+        
      
         public int Price { get; set; }
 
@@ -38,6 +45,7 @@ namespace BleakwindBuffet.Data
             set
             {
                 number = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("Number"));
             }
         }
 
@@ -49,16 +57,18 @@ namespace BleakwindBuffet.Data
             }
         }
 
-        private int subtotal = 0;
-        public int Subtotal
+
+        public double Subtotal
         {
             get
             {
+
+                double subtotal = 0;
+                foreach(IOrderItem i in this)
+                {
+                    subtotal += i.Price;
+                }
                 return subtotal;
-            }
-            set
-            {
-                subtotal = value;
             }
         }
 
@@ -76,13 +86,10 @@ namespace BleakwindBuffet.Data
         public double Tax
         {
             get
-            {
-                return tax;
+            { 
+                return Subtotal * taxRate;
             }
-            set
-            {
-                tax = Subtotal * taxRate;
-            }
+ 
         }
 
         public string TaxString
@@ -109,10 +116,10 @@ namespace BleakwindBuffet.Data
             }
         }
 
-        public void Add(IOrderItem item)
+/*        public void Add(IOrderItem item)
         {
             list.Add(item);
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
+//            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
             OnPropertyChanged("Subtotal");
             OnPropertyChanged("Tax");
             OnPropertyChanged("Total");
@@ -123,18 +130,18 @@ namespace BleakwindBuffet.Data
         {
             bool didRemove = list.Remove(item);
             list.Remove(item);
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item));
+    //        CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item));
             OnPropertyChanged("Subtotal");
             OnPropertyChanged("Tax");
             OnPropertyChanged("Total");
             OnPropertyChanged("Calories");
             return didRemove;
-        } 
+        } */
 
-        public int Count => list.Count;
-        public bool IsReadOnly => false;
+ //       public int Count => list.Count;
+ //       public bool IsReadOnly => false;
 
-        public void Clear()
+ /*       public void Clear()
         {
             foreach(IOrderItem i in list)
             {
@@ -159,19 +166,19 @@ namespace BleakwindBuffet.Data
         public void CopyTo(IOrderItem[] array, int index)
         {
             list.CopyTo(array, index);
-        }
+        } */
 
         void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "Price")
             {
-                OnPropertyChanged("Total");
-                OnPropertyChanged("Subtotal");
-                OnPropertyChanged("Tax");
+                OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
+                OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
             }
             else if (e.PropertyName == "Calories")
             {
-                OnPropertyChanged("Calories");
+                OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
             }
         }
 

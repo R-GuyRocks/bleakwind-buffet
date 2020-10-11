@@ -42,6 +42,7 @@ namespace PointOfSale
             orderBorder.Child = oc;
             ms = menuSelection;
             this.DataContext = new Order();
+     //       menuSelection.ic.DataContext = oc;
         }
 
         private void BriarheartBurgerClick(object sender, RoutedEventArgs e) { } // Created this on accident.

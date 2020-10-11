@@ -29,12 +29,6 @@ namespace PointOfSale
     public partial class ItemCustomization : UserControl
     {
 
-        public OrderComponent orderComponent = new OrderComponent();
-
-        public Combo combo = new Combo();
-
-        public Order order = new Order();
-
         /// <summary>
         /// Initializes this component.
         /// </summary>
@@ -82,6 +76,8 @@ namespace PointOfSale
             sodaFlavorListBox.Visibility = Visibility.Collapsed;
             finishedButton.Visibility = Visibility.Hidden;
             finishedButton.IsEnabled = false;
+       //     OrderComponent oc = (OrderComponent)this.DataContext;
+            
             /*            orderComponent.orderListView.Visibility = Visibility.Visible;
                         orderComponent.paymentListView.Visibility = Visibility.Visible;
                         orderComponent.cancelOrderButton.Visibility = Visibility.Visible; */

@@ -19,6 +19,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Collections.Specialized;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 
 namespace PointOfSale
 {
@@ -27,6 +29,39 @@ namespace PointOfSale
         public OrderComponent()
         {
             InitializeComponent();
+        }
+
+        private void orderListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.Parent is Border b)
+            {
+                if (b.Parent is Grid g)
+                {
+                    if (g.Parent is DockPanel dp)
+                    {
+                        if (dp.Parent is MainWindow mw)
+                        {
+                            if(orderListView.SelectedItem is BriarheartBurger bb)
+                            {
+                                mw.menuSelection.editBriarheartBurger(bb);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void completeOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is Order o)
+            {
+                o.Remove(orderListView.SelectedItem as IOrderItem);
+            }
         }
     }
 }

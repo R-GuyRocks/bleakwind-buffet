@@ -23,7 +23,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 return this.ToString();
             }
-        }
+        }  
 
         /// <summary>
         /// The drink's size.

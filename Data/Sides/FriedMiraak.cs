@@ -17,6 +17,18 @@ namespace BleakwindBuffet.Data.Sides
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+        /// <summary>
+        /// Gets the name of the Fried Miraak.
+        /// </summary>
+        public String Name
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
         /// <value>
         /// The price of the Fried Miraak.
         /// </value>
@@ -91,8 +103,12 @@ namespace BleakwindBuffet.Data.Sides
             {
                 size = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
         }
+    
 
         /// <value>
         /// Gets the list of special instructions on how to make the drink.
