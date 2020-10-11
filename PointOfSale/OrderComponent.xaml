@@ -24,8 +24,7 @@
                         <DataTemplate>
                             <StackPanel>
                                 <TextBlock x:Name="nameListViewItem" HorizontalAlignment="Center" FontSize="16" Text="{Binding Path=Name}"/>
-                            <!--    <TextBlock x:Name="instructionsListViewItem" HorizontalAlignment="Center" FontSize="12" Text="{Binding Path=FormatInstructions}"/> -->
-                                 <ListView ItemsSource="{Binding Path=SpecialInstructions}">
+                                <ListView ItemsSource="{Binding Path=SpecialInstructions}">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <TextBlock Text="{Binding}"/>

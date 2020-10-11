@@ -79,19 +79,6 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
- /*      private String formatInstructions;
-        public String FormatInstructions
-        {
-            get
-            {
-                foreach(String s in SpecialInstructions)
-                {
-                    formatInstructions += "-" + s + "\n";
-                }
-                return formatInstructions;
-            }
-        } */
-
         private bool bun = true;
 
         /// <value>
