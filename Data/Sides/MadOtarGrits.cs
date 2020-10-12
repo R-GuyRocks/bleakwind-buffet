@@ -15,6 +15,9 @@ namespace BleakwindBuffet.Data.Sides
     public class MadOtarGrits : Side, IOrderItem, INotifyPropertyChanged
     {
 
+        /// <summary>
+        /// An event for when properties change.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

@@ -18,7 +18,6 @@
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
        
-                <!--     <ListViewItem Name="numberListViewItem" HorizontalAlignment="Center" FontSize="16" Content="{Binding Path=NumberString}"/> -->
                 <ListView Height="300" Width="250" Name="orderListView" Grid.Row="0" HorizontalAlignment="Center"  IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" SelectionChanged="orderListView_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>

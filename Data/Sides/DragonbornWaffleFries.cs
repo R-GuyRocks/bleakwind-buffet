@@ -16,6 +16,11 @@ namespace BleakwindBuffet.Data.Sides
     {
 
         /// <summary>
+        /// An event for when properties change.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
         /// Gets the name of the fries.
         /// </summary>
         public String Name
@@ -25,8 +30,6 @@ namespace BleakwindBuffet.Data.Sides
                 return this.ToString();
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
         /// The price of the fries.

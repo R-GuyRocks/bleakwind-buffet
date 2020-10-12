@@ -11,10 +11,18 @@ namespace BleakwindBuffet.Data
 {
     public class Combo : IOrderItem, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// An event for when properties change.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
 
         private IOrderItem entree;
+
+        /// <summary>
+        /// The entree component of the combo.
+        /// </summary>
         public IOrderItem Entree
         {
             get
@@ -32,6 +40,10 @@ namespace BleakwindBuffet.Data
         }
 
         private IOrderItem side;
+
+        /// <summary>
+        /// The side component of the combo.
+        /// </summary>
         public IOrderItem Side
         {
             get
@@ -50,6 +62,10 @@ namespace BleakwindBuffet.Data
         }
 
         private IOrderItem drink;
+
+        /// <summary>
+        /// The drink component of the combo.
+        /// </summary>
         public IOrderItem Drink
         {
             get
@@ -88,6 +104,10 @@ namespace BleakwindBuffet.Data
         }
 
         private uint calories;
+
+        /// <summary>
+        /// The calories in the combo.
+        /// </summary>
         public uint Calories
         {
             get
@@ -101,6 +121,9 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// The special instructions for the combo.
+        /// </summary>
         public List<String> SpecialInstructions
         {
             get

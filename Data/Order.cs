@@ -12,30 +12,34 @@ namespace BleakwindBuffet.Data
     public class Order : ObservableCollection<IOrderItem>, INotifyPropertyChanged, ICollection<IOrderItem>, INotifyCollectionChanged
     {
 
-
-        //       public event PropertyChangedEventHandler PropertyChanged;
-        //       public event NotifyCollectionChangedEventHandler CollectionChanged;
-
-        /*       protected void OnPropertyChanged(string name)
-               {
-                   PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-               } */
-
         static int orderNum = 1;
+
+        /// <summary>
+        /// Constructor for the order class that sets the order number and increments it.
+        /// </summary>
         public Order()
         {
             Number = orderNum;
             orderNum++;
-            CollectionChanged += CollectionChagedListener;
+            CollectionChanged += CollectionChangedListener;
         }
 
         
-     
+        /// <summary>
+        /// The price of the order.
+        /// </summary>
         public int Price { get; set; }
 
+        /// <summary>
+        /// The special instructions for the order.
+        /// </summary>
         public List<string> SpecialInstructions { get; set; }
 
         private int number = 1;
+
+        /// <summary>
+        /// The order number;
+        /// </summary>
         public int Number
         {
             get
@@ -49,6 +53,9 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// The order number converted to string form.
+        /// </summary>
         public string NumberString
         {
             get
@@ -57,7 +64,9 @@ namespace BleakwindBuffet.Data
             }
         }
 
-
+        /// <summary>
+        /// The subtotal for the order.
+        /// </summary>
         public double Subtotal
         {
             get
@@ -72,34 +81,49 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// The subtotal of the order converted to string form.
+        /// </summary>
         public string SubtotalString
         {
             get
             {
-                return "Subtotal: $" + Subtotal;
+                String s = String.Format("{0:.00}", Subtotal);
+                return "Subtotal: $" + s;
             }
         }
 
         private double taxRate = 0.12;
 
         private double tax;
+
+        /// <summary>
+        /// The tax on the order.
+        /// </summary>
         public double Tax
         {
             get
-            { 
+            {
                 return Subtotal * taxRate;
             }
  
         }
 
+        /// <summary>
+        /// The tax on the order converted to string form.
+        /// </summary>
         public string TaxString
         {
             get
             {
-                return "Tax: $" + Tax;
+                String s = String.Format("{0:.00}", Tax);
+                return "Tax: $" + s;
             }
         }
 
+        /// <summary>
+        /// The total price for the order.
+        /// </summary>
         public double Total
         {
             get
@@ -108,66 +132,23 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// The total price for the order converted to string form.
+        /// </summary>
         public string TotalString
         {
             get
             {
-                return "Total: $" + Total;
+                String s = String.Format("{0:.00}", Total);
+                return "Total: $" + s;
             }
         }
 
-/*        public void Add(IOrderItem item)
-        {
-            list.Add(item);
-//            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
-            OnPropertyChanged("Subtotal");
-            OnPropertyChanged("Tax");
-            OnPropertyChanged("Total");
-            OnPropertyChanged("Calories");
-        }
-
-        public bool Remove(IOrderItem item)
-        {
-            bool didRemove = list.Remove(item);
-            list.Remove(item);
-    //        CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item));
-            OnPropertyChanged("Subtotal");
-            OnPropertyChanged("Tax");
-            OnPropertyChanged("Total");
-            OnPropertyChanged("Calories");
-            return didRemove;
-        } */
-
- //       public int Count => list.Count;
- //       public bool IsReadOnly => false;
-
- /*       public void Clear()
-        {
-            foreach(IOrderItem i in list)
-            {
-                list.Remove(i);
-            }
-            list.Clear();
-        }
-        public bool Contains(IOrderItem item)
-        {
-            return list.Contains(item);
-        }
-
-        public IEnumerator<IOrderItem> GetEnumerator()
-        {
-            return list.GetEnumerator();
-        }
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return list.GetEnumerator();
-        }
-
-        public void CopyTo(IOrderItem[] array, int index)
-        {
-            list.CopyTo(array, index);
-        } */
-
+        /// <summary>
+        /// An event listener for when a collection item changes.
+        /// </summary>
+        /// <param name="sender">Reference to object that raised event.</param>
+        /// <param name="e">Event data.</param>
         void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "Price")
@@ -175,6 +156,9 @@ namespace BleakwindBuffet.Data
                 OnPropertyChanged(new PropertyChangedEventArgs("Total"));
                 OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
                 OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+                OnPropertyChanged(new PropertyChangedEventArgs("SubtotalString"));
+                OnPropertyChanged(new PropertyChangedEventArgs("TaxString"));
+                OnPropertyChanged(new PropertyChangedEventArgs("TotalString"));
             }
             else if (e.PropertyName == "Calories")
             {
@@ -182,7 +166,12 @@ namespace BleakwindBuffet.Data
             }
         }
 
-        void CollectionChagedListener(object sender, NotifyCollectionChangedEventArgs e)
+        /// <summary>
+        /// An event listener for when the collection changes.
+        /// </summary>
+        /// <param name="sender">Reference to object that raised event.</param>
+        /// <param name="e">Event data.</param>
+        void CollectionChangedListener(object sender, NotifyCollectionChangedEventArgs e)
         {
             switch(e.Action)
             {
@@ -191,12 +180,26 @@ namespace BleakwindBuffet.Data
                     {
                         i.PropertyChanged += CollectionItemChangedListener;
                     }
+                    OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("SubtotalString"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("TaxString"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("TotalString"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
                     break;
                 case NotifyCollectionChangedAction.Remove:
                     foreach(IOrderItem i in e.OldItems)
                     {
                         i.PropertyChanged -= CollectionItemChangedListener;
                     }
+                    OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("SubtotalString"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("TaxString"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("TotalString"));
+                    OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
                     break;
                 case NotifyCollectionChangedAction.Reset:
                     throw new NotImplementedException("Not supported.");

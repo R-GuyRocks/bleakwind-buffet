@@ -15,6 +15,9 @@ namespace BleakwindBuffet.Data.Drinks
     public class MarkarthMilk : Drink, IOrderItem, INotifyPropertyChanged
     {
 
+        /// <summary>
+        /// An event for when properties change.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

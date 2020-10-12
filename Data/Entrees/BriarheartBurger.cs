@@ -13,7 +13,9 @@ namespace BleakwindBuffet.Data.Entrees
     public class BriarheartBurger : Entree, IOrderItem, INotifyPropertyChanged
     {
 
-
+        /// <summary>
+        /// An event for when properties change.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>

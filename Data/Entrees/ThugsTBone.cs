@@ -13,6 +13,9 @@ namespace BleakwindBuffet.Data.Entrees
     public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged
     {
 
+        /// <summary>
+        /// An event for when properties change.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <value>
