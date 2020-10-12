@@ -209,6 +209,10 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// Adds a combo.
+        /// </summary>
+        /// <param name="i">The item to add to the combo.</param>
         public new void Add(IOrderItem i) 
         {
             ObservableCollection<IOrderItem> collection = this;
