@@ -6,6 +6,11 @@ using System.ComponentModel;
 using System.Collections;
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
+using System.Security.Cryptography.X509Certificates;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
+using System.Linq;
 
 namespace BleakwindBuffet.Data
 {
@@ -95,8 +100,6 @@ namespace BleakwindBuffet.Data
 
         private double taxRate = 0.12;
 
-        private double tax;
-
         /// <summary>
         /// The tax on the order.
         /// </summary>
@@ -173,10 +176,10 @@ namespace BleakwindBuffet.Data
         /// <param name="e">Event data.</param>
         void CollectionChangedListener(object sender, NotifyCollectionChangedEventArgs e)
         {
-            switch(e.Action)
+            switch (e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-                    foreach(IOrderItem i in e.NewItems)
+                    foreach (IOrderItem i in e.NewItems)
                     {
                         i.PropertyChanged += CollectionItemChangedListener;
                     }
@@ -189,7 +192,7 @@ namespace BleakwindBuffet.Data
                     OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
                     break;
                 case NotifyCollectionChangedAction.Remove:
-                    foreach(IOrderItem i in e.OldItems)
+                    foreach (IOrderItem i in e.OldItems)
                     {
                         i.PropertyChanged -= CollectionItemChangedListener;
                     }
@@ -203,6 +206,23 @@ namespace BleakwindBuffet.Data
                     break;
                 case NotifyCollectionChangedAction.Reset:
                     throw new NotImplementedException("Not supported.");
+            }
+        }
+
+        public new void Add(IOrderItem i) 
+        {
+            ObservableCollection<IOrderItem> collection = this;
+            collection.Add(i);
+            var entree = this.OfType<Entree>().FirstOrDefault<Entree>();
+            var side = this.OfType<Side>().FirstOrDefault<Side>();
+            var drink = this.OfType<Drink>().FirstOrDefault<Drink>();
+            if((entree != null) && (drink != null) && (side != null))
+            {
+                Combo combo = new Combo(entree, side, drink);
+                Remove((IOrderItem)entree);
+                Remove((IOrderItem)side);
+                Remove((IOrderItem)drink);
+                Add(combo);
             }
         }
     }

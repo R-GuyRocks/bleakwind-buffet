@@ -12,18 +12,31 @@ namespace BleakwindBuffet.Data
     public class Combo : IOrderItem, INotifyPropertyChanged
     {
 
+        public Combo(Entree entree, Side side, Drink drink)
+        {
+            Entree = entree;
+            Side = side;
+            Drink = drink;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Entree"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Side"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Drink"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
+
         /// <summary>
         /// An event for when properties change.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-        private IOrderItem entree;
+        private Entree entree;
 
         /// <summary>
         /// The entree component of the combo.
         /// </summary>
-        public IOrderItem Entree
+        public Entree Entree
         {
             get
             {
@@ -39,12 +52,12 @@ namespace BleakwindBuffet.Data
             }
         }
 
-        private IOrderItem side;
+        private Side side;
 
         /// <summary>
         /// The side component of the combo.
         /// </summary>
-        public IOrderItem Side
+        public Side Side
         {
             get
             {
@@ -61,12 +74,12 @@ namespace BleakwindBuffet.Data
             }
         }
 
-        private IOrderItem drink;
+        private Drink drink;
 
         /// <summary>
         /// The drink component of the combo.
         /// </summary>
-        public IOrderItem Drink
+        public Drink Drink
         {
             get
             {
@@ -94,12 +107,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return price;
-            }
-            set
-            {
-                price = Entree.Price + Side.Price + Drink.Price - 1;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                return Entree.Price + Side.Price + Drink.Price - 1;
             }
         }
 
@@ -112,12 +120,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return calories;
-            }
-            set
-            {
-                calories = Entree.Calories + Side.Calories + Drink.Calories;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                return Entree.Calories + Side.Calories + Drink.Calories;
             }
         }
 

@@ -18,17 +18,6 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /// <summary>
-        /// Gets the name of the entree.
-        /// </summary>
-        public String Name
-        {
-            get
-            {
-                return this.ToString();
-            }
-        }
-
         /// <value>
         /// Gets the price of the sandwhich.
         /// </value>
