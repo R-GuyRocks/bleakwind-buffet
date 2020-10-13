@@ -30,7 +30,6 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuSelection : UserControl
     {
-        public Order order = new Order();
         BriarheartBurger briarheart = new BriarheartBurger();
         DoubleDraugr draugr = new DoubleDraugr();
         GardenOrcOmelette omelette = new GardenOrcOmelette();

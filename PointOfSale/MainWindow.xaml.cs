@@ -40,7 +40,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             orderBorder.Child = oc;
-            ms = menuSelection;
+            menuBorder.Child = ms;
             this.DataContext = new Order();
      //       menuSelection.ic.DataContext = oc;
         }

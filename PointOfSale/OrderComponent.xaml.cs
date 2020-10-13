@@ -44,69 +44,70 @@ namespace PointOfSale
                         {
                             if(orderListView.SelectedItem is BriarheartBurger bb)
                             {
-                                BriarheartBurger bri = mw.menuSelection.editBriarheartBurger(bb);
+                                BriarheartBurger bri = mw.ms.editBriarheartBurger(bb);
                             }
                             else if (orderListView.SelectedItem is DoubleDraugr dd)
                             {
-                                DoubleDraugr dou = mw.menuSelection.editDoubleDraugr(dd);
+                                DoubleDraugr dou = mw.ms.editDoubleDraugr(dd);
                             }
                             else if (orderListView.SelectedItem is GardenOrcOmelette goo)
                             {
-                                GardenOrcOmelette gar = mw.menuSelection.editGardenOrcOmelette(goo);
+                                GardenOrcOmelette gar = mw.ms.editGardenOrcOmelette(goo);
                             }
                             else if (orderListView.SelectedItem is PhillyPoacher pp)
                             {
-                                PhillyPoacher phil = mw.menuSelection.editPhillyPoacher(pp);
+                                PhillyPoacher phil = mw.ms.editPhillyPoacher(pp);
                             }
                             else if (orderListView.SelectedItem is SmokehouseSkeleton ss)
                             {
-                                SmokehouseSkeleton smokehouse = mw.menuSelection.editSmokehouseSkeleton(ss);
+                                SmokehouseSkeleton smokehouse = mw.ms.editSmokehouseSkeleton(ss);
                             }
                             else if (orderListView.SelectedItem is ThalmorTriple tt)
                             {
-                                ThalmorTriple thal = mw.menuSelection.editThalmorTriple(tt);
+                                ThalmorTriple thal = mw.ms.editThalmorTriple(tt);
                             }
                             else if (orderListView.SelectedItem is ThugsTBone ttb)
                             {
-                                ThugsTBone thugs = mw.menuSelection.editThugsTBone(ttb);
+                                ThugsTBone thugs = mw.ms.editThugsTBone(ttb);
                             }
                             else if (orderListView.SelectedItem is AretinoAppleJuice aaj)
                             {
-                                AretinoAppleJuice aret = mw.menuSelection.editAretinoAppleJuice(aaj);
+                                AretinoAppleJuice aret = mw.ms.editAretinoAppleJuice(aaj);
                             }
                             else if (orderListView.SelectedItem is CandlehearthCoffee cc)
                             {
-                                CandlehearthCoffee cand = mw.menuSelection.editCandlehearthCoffee(cc);
+                                CandlehearthCoffee cand = mw.ms.editCandlehearthCoffee(cc);
                             }
                             else if (orderListView.SelectedItem is MarkarthMilk mm)
                             {
-                                MarkarthMilk mark = mw.menuSelection.editMarkarthMilk(mm);
+                                MarkarthMilk mark = mw.ms.editMarkarthMilk(mm);
                             }
                             else if (orderListView.SelectedItem is SailorSoda sas)
                             {
-                                SailorSoda sail = mw.menuSelection.editSailorSoda(sas);
+                                SailorSoda sail = mw.ms.editSailorSoda(sas);
                             }
                             else if (orderListView.SelectedItem is WarriorWater ww)
                             {
-                                WarriorWater war = mw.menuSelection.editWarriorWater(ww);
+                                WarriorWater war = mw.ms.editWarriorWater(ww);
                             }
                             else if (orderListView.SelectedItem is DragonbornWaffleFries dbwf)
                             {
-                                DragonbornWaffleFries drag = mw.menuSelection.editDragonbornWaffleFries(dbwf);
+                                DragonbornWaffleFries drag = mw.ms.editDragonbornWaffleFries(dbwf);
                             }
                             else if (orderListView.SelectedItem is FriedMiraak fm)
                             {
-                                FriedMiraak fri = mw.menuSelection.editFriedMiraak(fm);
+                                FriedMiraak fri = mw.ms.editFriedMiraak(fm);
                             }
                             else if (orderListView.SelectedItem is MadOtarGrits mog)
                             {
-                                MadOtarGrits mad = mw.menuSelection.editMadOtarGrits(mog);
+                                MadOtarGrits mad = mw.ms.editMadOtarGrits(mog);
                             }
                             else if (orderListView.SelectedItem is VokunSalad vs)
                             {
-                                VokunSalad sal = mw.menuSelection.editVokunSalad(vs);
+                                VokunSalad sal = mw.ms.editVokunSalad(vs);
                             }
                         }
+                        
                     }
                 }
             }
@@ -114,7 +115,20 @@ namespace PointOfSale
 
         private void completeOrderButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (this.Parent is Border b)
+            {
+                if (b.Parent is Grid g)
+                {
+                    if (g.Parent is DockPanel dp)
+                    {
+                        if (dp.Parent is MainWindow mw)
+                        {
+                            mw.MaxWidth = 500;
+                            mw.menuBorder.Child = new PaymentOptions();
+                        }
+                    }
+                }
+            }
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
@@ -122,6 +136,23 @@ namespace PointOfSale
             if(DataContext is Order o)
             {
                 o.Remove(orderListView.SelectedItem as IOrderItem);
+            }
+        }
+
+        private void cancelOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Parent is Border b)
+            {
+                if (b.Parent is Grid g)
+                {
+                    if (g.Parent is DockPanel dp)
+                    {
+                        if (dp.Parent is MainWindow mw)
+                        {
+                            mw.DataContext = new Order();
+                        }
+                    }
+                }
             }
         }
     }
