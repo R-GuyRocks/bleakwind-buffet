@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
         Title="MainWindow" Height="539" Width="765" MaxHeight="539" MaxWidth="765">
-    <DockPanel>
+    <DockPanel Name="mainDockPanel">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="500"/>

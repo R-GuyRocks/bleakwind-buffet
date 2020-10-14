@@ -123,7 +123,11 @@ namespace PointOfSale
                     {
                         if (dp.Parent is MainWindow mw)
                         {
-                            mw.menuBorder.Child = new PaymentOptions();
+                            if (mw.menuBorder.Child is MenuSelection ms)
+                            {
+                                mw.menuBorder.Child = new PaymentOptions(ms);
+                            }
+                           
                         }
                     }
                 }

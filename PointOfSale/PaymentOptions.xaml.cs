@@ -21,9 +21,12 @@ namespace PointOfSale
     /// </summary>
     public partial class PaymentOptions : UserControl
     {
-        public PaymentOptions()
+
+        MenuSelection menuSelection;
+        public PaymentOptions(MenuSelection ms)
         {
             InitializeComponent();
+            menuSelection = ms;
         }
 
         private void returnToOrderButton_Click(object sender, RoutedEventArgs e)
@@ -108,6 +111,23 @@ namespace PointOfSale
                             payForOrderButton.IsEnabled = false;
                             mw.menuBorder.Child = mw.ms;
                             mw.DataContext = new Order();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void cashButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Parent is Border b)
+            {
+                if (b.Parent is Grid g)
+                {
+                    if (g.Parent is DockPanel dp)
+                    {
+                        if (dp.Parent is MainWindow mw)
+                        {
+                             mw.menuBorder.Child = new CashPayment(menuSelection);
                         }
                     }
                 }

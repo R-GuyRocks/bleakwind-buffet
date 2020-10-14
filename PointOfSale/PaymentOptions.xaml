@@ -16,7 +16,7 @@
             <RowDefinition Height="125"/>
             <RowDefinition Height="250"/>
         </Grid.RowDefinitions>
-        <Button Name="cashButton" Grid.Row="0" Grid.Column="0">
+        <Button Name="cashButton" Grid.Row="0" Grid.Column="0" Click="cashButton_Click">
             Cash
         </Button>
         <Button Name="creditDebitButton" Grid.Row="0" Grid.Column="1" Click="creditDebitButton_Click">

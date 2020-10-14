@@ -306,8 +306,8 @@ namespace BleakwindBuffet.Data
             {
                 customerDollars = value;
             }
-        }
 
+        }
         private int customerOnes = 0;
 
         /// <summary>
@@ -708,6 +708,60 @@ namespace BleakwindBuffet.Data
             {
                 return (ChangePennies * .01) + (ChangeNickels * .05) + (ChangeDimes * .1) + (ChangeQuarters * .25) + (ChangeHalfDollars * .5) + (ChangeOnes) + (ChangeTwos * 2) + (ChangeFives * 5) + (ChangeTens * 10) + (ChangeTwenties * 20) + (ChangeFifties * 50) + (ChangeHundreds * 100);
             }
+        }
+
+        public void Finalize()
+        {
+            CashDrawer.OpenDrawer();
+
+            CashDrawer.Pennies += CustomerPennies;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerPennies"));
+            CashDrawer.Nickels += CustomerNickels;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerNickels"));
+            CashDrawer.Dimes += CustomerDimes;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerDimes"));
+            CashDrawer.Quarters += CustomerQuarters;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerQuarters"));
+            CashDrawer.HalfDollars += CustomerHalfDollars;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerHalfDollars"));
+            CashDrawer.Ones += CustomerOnes;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerOnes"));
+            CashDrawer.Twos += CustomerTwos;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerTwos"));
+            CashDrawer.Fives += CustomerFives;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerFives"));
+            CashDrawer.Tens += CustomerTens;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerTens"));
+            CashDrawer.Twos += CustomerTwenties;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerTwenties"));
+            CashDrawer.Fifties += CustomerFifties;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerFifties"));
+            CashDrawer.Hundreds += CustomerHundreds;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerHundreds"));
+            CashDrawer.Pennies -= ChangePennies;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerPennies"));
+            CashDrawer.Nickels -= ChangeNickels;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerNickels"));
+            CashDrawer.Dimes -= ChangeDimes;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerDimes"));
+            CashDrawer.Quarters -= ChangeQuarters;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerQuarters"));
+            CashDrawer.HalfDollars -= ChangeHalfDollars;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerHalfDollars"));
+            CashDrawer.Ones -= ChangeOnes;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerOnes"));
+            CashDrawer.Twos -= ChangeTwos;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerTwos"));
+            CashDrawer.Fives -= ChangeFives;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerFives"));
+            CashDrawer.Tens -= ChangeTens;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerTens"));
+            CashDrawer.Twos -= ChangeTwenties;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerTwenties"));
+            CashDrawer.Fifties -= ChangeFifties;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerFifties"));
+            CashDrawer.Hundreds -= ChangeHundreds;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerHundreds"));
         }
     }
 }
