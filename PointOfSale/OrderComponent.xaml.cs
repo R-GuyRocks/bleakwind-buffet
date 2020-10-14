@@ -123,7 +123,6 @@ namespace PointOfSale
                     {
                         if (dp.Parent is MainWindow mw)
                         {
-                            mw.MaxWidth = 500;
                             mw.menuBorder.Child = new PaymentOptions();
                         }
                     }

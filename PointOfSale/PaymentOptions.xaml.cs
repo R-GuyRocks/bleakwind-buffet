@@ -47,8 +47,8 @@ namespace PointOfSale
         {
             if (DataContext is Order o)
             {
-                CreditCardTransactionResult cr = CardReader.RunCard(o.Total);
-                if (cr == CreditCardTransactionResult.Approved) {
+                CardTransactionResult cr = CardReader.RunCard(o.Total);
+                if (cr == CardTransactionResult.Approved) {
                     foreach (IOrderItem i in o)
                     {
 
@@ -106,7 +106,6 @@ namespace PointOfSale
                         if (dp.Parent is MainWindow mw)
                         {
                             payForOrderButton.IsEnabled = false;
-                            mw.MaxWidth = 765;
                             mw.menuBorder.Child = mw.ms;
                             mw.DataContext = new Order();
                         }
