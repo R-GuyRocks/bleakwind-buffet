@@ -76,29 +76,8 @@ namespace PointOfSale
             sodaFlavorListBox.Visibility = Visibility.Collapsed;
             finishedButton.Visibility = Visibility.Hidden;
             finishedButton.IsEnabled = false;
-       //     OrderComponent oc = (OrderComponent)this.DataContext;
-            
-            /*            orderComponent.orderListView.Visibility = Visibility.Visible;
-                        orderComponent.paymentListView.Visibility = Visibility.Visible;
-                        orderComponent.cancelOrderButton.Visibility = Visibility.Visible; */
         }
 
         private void nuffSaidButton_Click(object sender, RoutedEventArgs e) { } // Created this on accident. This button will always be disabled.
-
-        /*       public void ReceiveItem(IOrderItem item)
-               {
-                   if(typeof(Entree).IsAssignableFrom(item.GetType())) 
-                   {
-                       combo.Entree = item;
-                   }
-                   else if (typeof(Side).IsAssignableFrom(item.GetType()))
-                   {
-                       combo.Side = item;
-                   }
-                   else if (typeof(Drink).IsAssignableFrom(item.GetType())) 
-                   {
-                       combo.Drink = item;
-                   }
-               } */
     }
 }

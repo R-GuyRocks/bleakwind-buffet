@@ -1,4 +1,5 @@
 ﻿using System;
+using BleakwindBuffet.Data;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,8 +19,8 @@ namespace PointOfSale
     /// </summary>
     public partial class Currency : UserControl
     {
-        public static DependencyProperty ValueProperty =
-            DependencyProperty.Register("Value", typeof(int), typeof(Currency));
+
+        public static DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(int), typeof(Currency));
         public Currency()
         {
             InitializeComponent();
@@ -37,10 +38,12 @@ namespace PointOfSale
             }
         }
 
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Value++;
-            e.Handled = true;
+            e.Handled = true;    
         }
 
         private void MinusButton_Click(object sender, RoutedEventArgs e)

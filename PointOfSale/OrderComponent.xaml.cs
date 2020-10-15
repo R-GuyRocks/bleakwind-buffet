@@ -106,6 +106,10 @@ namespace PointOfSale
                             {
                                 VokunSalad sal = mw.ms.editVokunSalad(vs);
                             }
+                            else if (orderListView.SelectedItem is Combo c)
+                            {
+
+                            }
                         }
                         
                     }

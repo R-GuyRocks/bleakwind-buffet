@@ -19,8 +19,6 @@ namespace PointOfSale
     /// </summary>
     public partial class CashPayment : Window
     {
-
-
         private Order order;
 
         public MenuSelection menuSelection;
@@ -36,8 +34,7 @@ namespace PointOfSale
 
         }
 
-
-    private void Currency_Loaded(object sender, RoutedEventArgs e)
+        private void Currency_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
