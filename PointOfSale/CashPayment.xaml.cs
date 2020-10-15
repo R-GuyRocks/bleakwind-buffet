@@ -17,12 +17,14 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CashPayment.xaml
     /// </summary>
-    public partial class CashPayment : UserControl
+    public partial class CashPayment : Window
     {
         private Order order;
 
         public MenuSelection menuSelection;
-        public CashPayment(MenuSelection ms)
+
+        public MainWindow mainWindow;
+        public CashPayment(MenuSelection ms, MainWindow mw)
         {
             InitializeComponent();
             menuSelection = ms;
@@ -31,6 +33,7 @@ namespace PointOfSale
                 order = o;
             }
             DataContext = new RegisterCashDrawer();
+            mainWindow = mw;
         }
 
         private void Currency_Loaded(object sender, RoutedEventArgs e)
@@ -41,19 +44,9 @@ namespace PointOfSale
         private void ReturnToOrderButton_Click(object sender, RoutedEventArgs e)
         {
             DataContext = order;
-            if (this.Parent is Border b)
-            {
-                if (b.Parent is Grid g)
-                {
-                    if (g.Parent is DockPanel dp)
-                    {
-                        if (dp.Parent is MainWindow mw)
-                        {
-                            mw.menuBorder.Child = menuSelection;
-                        }
-                    }
-                }
-            }
+            mainWindow.menuBorder.Child = menuSelection;
+            this.Close();
+
         }
     }
 }

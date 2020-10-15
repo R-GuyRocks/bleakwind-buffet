@@ -127,7 +127,9 @@ namespace PointOfSale
                     {
                         if (dp.Parent is MainWindow mw)
                         {
-                             mw.menuBorder.Child = new CashPayment(menuSelection);
+                            //mw.menuBorder.Child = new CashPayment(menuSelection);
+                            CashPayment window = new CashPayment(menuSelection, mw);
+                            window.Show();
                         }
                     }
                 }

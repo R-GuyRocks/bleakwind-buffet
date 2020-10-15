@@ -5,15 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="60" d:DesignWidth="200">
+             d:DesignHeight="60" d:DesignWidth="275">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="75"/>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
-        <Button Name="MinusButton" Grid.Column="0" FontSize="40" HorizontalAlignment="Left" Width="75" Click="MinusButton_Click">-</Button>
-        <TextBox Grid.Column="1" Text="{Binding Path=Value, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Currency}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button Grid.Column="2" FontSize="40" Click="Button_Click">+</Button>
+        <Button Name="MinusButton" Grid.Column="0" FontSize="40" HorizontalAlignment="Left" Width="100" Click="MinusButton_Click">-</Button>
+        <TextBox Grid.Column="1" Width="75" Text="{Binding Path=Value, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Currency}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Grid.Column="2" Width="100" FontSize="40" Click="Button_Click">+</Button>
     </Grid>
 </UserControl>
