@@ -433,6 +433,7 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerFifties"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTotal"));
             }
         }
 
@@ -713,7 +714,7 @@ namespace BleakwindBuffet.Data
 
         }
 
-
+        private double changeTotal = 0;
         /// <summary>
         /// Total amount of money to be given in change.
         /// </summary>
@@ -721,7 +722,12 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return (ChangePennies * .01) + (ChangeNickels * .05) + (ChangeDimes * .1) + (ChangeQuarters * .25) + (ChangeHalfDollars * .5) + (ChangeOnes) + (ChangeTwos * 2) + (ChangeFives * 5) + (ChangeTens * 10) + (ChangeTwenties * 20) + (ChangeFifties * 50) + (ChangeHundreds * 100);
+                return changeTotal;
+               // return (ChangePennies * .01) + (ChangeNickels * .05) + (ChangeDimes * .1) + (ChangeQuarters * .25) + (ChangeHalfDollars * .5) + (ChangeOnes) + (ChangeTwos * 2) + (ChangeFives * 5) + (ChangeTens * 10) + (ChangeTwenties * 20) + (ChangeFifties * 50) + (ChangeHundreds * 100);
+            }
+            set
+            {
+                changeTotal = value;
             }
         }
 
@@ -785,7 +791,21 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return OrderTotal - CustomerTotal;
+                if ((OrderTotal - CustomerTotal) < 0)
+                {
+                    ChangeTotal = (OrderTotal - CustomerTotal) * -1;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTotal"));
+                    return 0;
+                }
+                else
+                {
+                    if ((customerPennies==0) && (customerNickels == 0) && (customerDimes == 0) && (customerQuarters == 0) && (customerHalfDollars == 0) && (customerDollars == 0) && (customerOnes == 0) && (customerTwos == 0) && (customerFives == 0) && (customerTens == 0) && (customerTwenties == 0) && (customerFifties == 0) && (customerHundreds == 0))
+                    {
+                        ChangeTotal = 0;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTotal"));
+                    }
+                    return OrderTotal - CustomerTotal;
+                }
             }
         }
 

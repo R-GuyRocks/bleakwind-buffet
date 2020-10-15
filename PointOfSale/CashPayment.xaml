@@ -75,7 +75,7 @@
         <TextBox Grid.Row="8" Grid.Column="1" Width="100" FontSize="20" Text="Amount Due" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
         <TextBlock Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Width="175" Height="100" Text="{Binding Path=AmountDue, StringFormat={}{0:#,0.00}}" TextAlignment="Center" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox Grid.Row="8" Grid.Column="4" Width="100" FontSize="20" Text="Change Owed" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox Grid.Row="8" Grid.Column="4" Width="175" FontSize="20" Text="Put Change Owed Here" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="8" Grid.Column="4" Width="175" FontSize="20" Text="{Binding Path=ChangeTotal, StringFormat={}{0:#,0.00}}" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
         <Button Grid.Row="8" Grid.Column="5" FontSize="20" Content="Finalize" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>
