@@ -31,31 +31,31 @@
         <TextBox Width="275" Grid.Row="0" Grid.Column="4" FontSize="20" Text="From Customer" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <TextBox Width="100" Grid.Row="0" Grid.Column="5" FontSize="20" Text="Give As Change" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap"/>
         <TextBox Width="75" Grid.Row="1" Grid.Column="0" Text="$100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerHundreds}" Loaded="Currency_Loaded" Grid.Row="1" Grid.Column="1"/>
+        <local:Currency Value="{Binding Path=CustomerHundreds, Mode=TwoWay}" Loaded="Currency_Loaded" Grid.Row="1" Grid.Column="1"/>
         <TextBox Width="75" Grid.Row="2" Grid.Column="0" Text="$50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerFifties}" Loaded="Currency_Loaded"  Grid.Row="2" Grid.Column="1"/>
+        <local:Currency Value="{Binding Path=CustomerFifties, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="2" Grid.Column="1"/>
         <TextBox Width="75" Grid.Row="3" Grid.Column="0" Text="$20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerTwenties}" Loaded="Currency_Loaded"  Grid.Row="3" Grid.Column="1"/>
+        <local:Currency Value="{Binding Path=CustomerTwenties, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="3" Grid.Column="1"/>
         <TextBox Width="75" Grid.Row="4" Grid.Column="0" Text="$10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerTens}" Loaded="Currency_Loaded"  Grid.Row="4" Grid.Column="1"/>
+        <local:Currency Value="{Binding Path=CustomerTens, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="4" Grid.Column="1"/>
         <TextBox Width="75" Grid.Row="5" Grid.Column="0" Text="$5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerFives}" Loaded="Currency_Loaded"  Grid.Row="5" Grid.Column="1"/>
+        <local:Currency Value="{Binding Path=CustomerFives, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="5" Grid.Column="1"/>
         <TextBox Width="75" Grid.Row="6" Grid.Column="0" Text="$2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerTwos}" Loaded="Currency_Loaded"  Grid.Row="6" Grid.Column="1"/>
+        <local:Currency Value="{Binding Path=CustomerTwos, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="6" Grid.Column="1"/>
         <TextBox Width="75" Grid.Row="7" Grid.Column="0" Text="$1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerOnes}" Loaded="Currency_Loaded"  Grid.Row="7" Grid.Column="1"/>
+        <local:Currency Value="{Binding Path=CustomerOnes, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="7" Grid.Column="1"/>
         <TextBox Width="75" Grid.Row="1" Grid.Column="3" Text="$1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerDollars}" Loaded="Currency_Loaded" Grid.Row="1" Grid.Column="4"/>
+        <local:Currency Value="{Binding Path=CustomerDollars, Mode=TwoWay}" Loaded="Currency_Loaded" Grid.Row="1" Grid.Column="4"/>
         <TextBox Width="75" Grid.Row="2" Grid.Column="3" Text="50c" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerHalfDollars}" Loaded="Currency_Loaded"  Grid.Row="2" Grid.Column="4"/>
+        <local:Currency Value="{Binding Path=CustomerHalfDollars, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="2" Grid.Column="4"/>
         <TextBox Width="75" Grid.Row="3" Grid.Column="3" Text="25c" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerQuarters}" Loaded="Currency_Loaded"  Grid.Row="3" Grid.Column="4"/>
+        <local:Currency Value="{Binding Path=CustomerQuarters, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="3" Grid.Column="4"/>
         <TextBox Width="75" Grid.Row="4" Grid.Column="3" Text="10c" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerDimes}" Loaded="Currency_Loaded"  Grid.Row="4" Grid.Column="4"/>
+        <local:Currency Value="{Binding Path=CustomerDimes, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="4" Grid.Column="4"/>
         <TextBox Width="75" Grid.Row="5" Grid.Column="3" Text="5c" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerNickels}" Loaded="Currency_Loaded"  Grid.Row="5" Grid.Column="4"/>
+        <local:Currency Value="{Binding Path=CustomerNickels, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="5" Grid.Column="4"/>
         <TextBox Width="75" Grid.Row="6" Grid.Column="3" Text="1c" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="LightGreen"/>
-        <local:Currency Value="{Binding Path=CustomerPennies}" Loaded="Currency_Loaded"  Grid.Row="6" Grid.Column="4"/>
+        <local:Currency Value="{Binding Path=CustomerPennies, Mode=TwoWay}" Loaded="Currency_Loaded"  Grid.Row="6" Grid.Column="4"/>
         <Button Name="ReturnToOrderButton" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2" Content="Return to Order" Click="ReturnToOrderButton_Click"/>
         <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=ChangeHundreds}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
         <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=ChangeFifties}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
@@ -71,9 +71,9 @@
         <TextBox Grid.Row="5" Grid.Column="5" Text="{Binding Path=ChangeNickels}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
         <TextBox Grid.Row="6" Grid.Column="5" Text="{Binding Path=ChangePennies}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
         <TextBox Grid.Row="8" Grid.Column="0" FontSize="20" Text="Total Sale" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBox Grid.Row="8" Grid.Column="1" Width="175" FontSize="20" Text="{Binding Path=OrderTotal}" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Width="175" FontSize="20" Text="{Binding Path=OrderTotal, StringFormat={}{0:#,0.00}}" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Grid.Row="8" Grid.Column="1" Width="100" FontSize="20" Text="Amount Due" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Width="175" FontSize="20" Text="0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Width="175" Height="100" Text="{Binding Path=AmountDue, StringFormat={}{0:#,0.00}}" TextAlignment="Center" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox Grid.Row="8" Grid.Column="4" Width="100" FontSize="20" Text="Change Owed" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Grid.Row="8" Grid.Column="4" Width="175" FontSize="20" Text="Put Change Owed Here" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
         <Button Grid.Row="8" Grid.Column="5" FontSize="20" Content="Finalize" VerticalContentAlignment="Center"/>

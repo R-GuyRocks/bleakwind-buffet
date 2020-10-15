@@ -212,6 +212,7 @@ namespace BleakwindBuffet.Data
                 customerPennies = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerPennies"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -231,6 +232,7 @@ namespace BleakwindBuffet.Data
                 customerNickels = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerNickels"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -250,6 +252,7 @@ namespace BleakwindBuffet.Data
                 customerDimes = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerDimes"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -269,6 +272,7 @@ namespace BleakwindBuffet.Data
                 customerQuarters = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerQuarters"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -288,6 +292,7 @@ namespace BleakwindBuffet.Data
                 customerHalfDollars = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerHalfDollars"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -305,6 +310,9 @@ namespace BleakwindBuffet.Data
             set
             {
                 customerDollars = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerDollars"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
 
         }
@@ -324,6 +332,7 @@ namespace BleakwindBuffet.Data
                 customerOnes = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerOnes"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -343,6 +352,7 @@ namespace BleakwindBuffet.Data
                 customerTwos = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTwos"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -362,6 +372,7 @@ namespace BleakwindBuffet.Data
                 customerFives = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerFives"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -381,6 +392,7 @@ namespace BleakwindBuffet.Data
                 customerTens = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTens"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -400,6 +412,7 @@ namespace BleakwindBuffet.Data
                 customerTwenties = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTwenties"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -419,6 +432,7 @@ namespace BleakwindBuffet.Data
                 customerFifties = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerFifties"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -438,6 +452,7 @@ namespace BleakwindBuffet.Data
                 customerHundreds = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerHundreds"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
             }
         }
 
@@ -770,7 +785,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return OrderTotal - ChangeTotal;
+                return OrderTotal - CustomerTotal;
             }
         }
 

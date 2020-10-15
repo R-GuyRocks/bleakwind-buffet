@@ -48,8 +48,11 @@ namespace PointOfSale
 
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
-            Value--;
-            e.Handled = true;
+            if (Value > 0)
+            {
+                Value--;
+                e.Handled = true;
+            }
         }
     }
 }

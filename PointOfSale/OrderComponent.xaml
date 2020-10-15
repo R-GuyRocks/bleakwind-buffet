@@ -19,11 +19,14 @@
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="orderNum" Text="{Binding Path=NumberString}" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
                 <ListView Height="300" Width="250" Name="orderListView" Grid.Row="1" HorizontalAlignment="Center"  IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" SelectionChanged="orderListView_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
+                                
                                 <TextBlock x:Name="nameListViewItem" HorizontalAlignment="Center" FontSize="16" Text="{Binding Path=Name}"/>
+                                <TextBlock x:Name="itemAmount" Text="{Binding Path=Price, StringFormat={}{0:#,0.00}}"/>
                                 <ListView ItemsSource="{Binding Path=SpecialInstructions}">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
