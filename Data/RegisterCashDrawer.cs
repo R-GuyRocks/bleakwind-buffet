@@ -763,5 +763,20 @@ namespace BleakwindBuffet.Data
             CashDrawer.Hundreds -= ChangeHundreds;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerHundreds"));
         }
+
+        public double OrderTotal { get; set; } = 0;
+
+        public double AmountDue
+        {
+            get
+            {
+                return OrderTotal - ChangeTotal;
+            }
+        }
+
+        public RegisterCashDrawer(Order o)
+        {
+            OrderTotal = o.Total;
+        }
     }
 }

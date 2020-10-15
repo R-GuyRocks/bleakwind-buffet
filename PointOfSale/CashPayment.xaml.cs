@@ -24,16 +24,16 @@ namespace PointOfSale
         public MenuSelection menuSelection;
 
         public MainWindow mainWindow;
-        public CashPayment(MenuSelection ms, MainWindow mw)
+        public CashPayment(MenuSelection ms, MainWindow mw, Order o)
         {
             InitializeComponent();
             menuSelection = ms;
-            if (DataContext is Order o)
-            {
+
                 order = o;
-            }
-            DataContext = new RegisterCashDrawer();
+                DataContext = new RegisterCashDrawer(order);
+            
             mainWindow = mw;
+
         }
 
         private void Currency_Loaded(object sender, RoutedEventArgs e)

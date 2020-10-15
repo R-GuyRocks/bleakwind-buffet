@@ -69,11 +69,11 @@
         <TextBox Grid.Row="3" Grid.Column="5" Text="{Binding Path=ChangeQuarters}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
         <TextBox Grid.Row="4" Grid.Column="5" Text="{Binding Path=ChangeDimes}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
         <TextBox Grid.Row="5" Grid.Column="5" Text="{Binding Path=ChangeNickels}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
-        <TextBox Grid.Row="6" Grid.Column="5" Text="{Binding Path=CustomerPennies}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
+        <TextBox Grid.Row="6" Grid.Column="5" Text="{Binding Path=ChangePennies}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
         <TextBox Grid.Row="8" Grid.Column="0" FontSize="20" Text="Total Sale" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBox Grid.Row="8" Grid.Column="1" Width="175" FontSize="20" Text="Put Total Here" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Width="175" FontSize="20" Text="{Binding Path=OrderTotal}" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Grid.Row="8" Grid.Column="1" Width="100" FontSize="20" Text="Amount Due" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Width="175" FontSize="20" Text="Put Amount Due Here" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Width="175" FontSize="20" Text="{Binding Path=AmountDue}" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
         <TextBox Grid.Row="8" Grid.Column="4" Width="100" FontSize="20" Text="Change Owed" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Grid.Row="8" Grid.Column="4" Width="175" FontSize="20" Text="Put Change Owed Here" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
         <Button Grid.Row="8" Grid.Column="5" FontSize="20" Content="Finalize" VerticalContentAlignment="Center"/>
