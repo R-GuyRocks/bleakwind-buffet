@@ -108,6 +108,12 @@ namespace PointOfSale
                             }
                             else if (orderListView.SelectedItem is Combo c)
                             {
+                                if (DataContext is Order o)
+                                {
+                                    CombinationCustomization combinationCustomization = new CombinationCustomization(c.Entree, c.Side, c.Drink, o);
+                                    combinationCustomization.Show();
+                                    o.Remove(c);
+                                }
 
                             }
                         }
