@@ -49,5 +49,16 @@ namespace PointOfSale
             this.Close();
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is RegisterCashDrawer rgd)
+            {
+                rgd.Finalize();
+                mainWindow.menuBorder.Child = menuSelection;
+                mainWindow.DataContext = new Order();
+                this.Close();
+            }
+        }
     }
 }

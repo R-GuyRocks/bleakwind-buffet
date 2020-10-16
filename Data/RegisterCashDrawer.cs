@@ -464,7 +464,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return (CustomerPennies * .01) + (CustomerNickels * .05) + (CustomerDimes * .1) + (CustomerQuarters * .25) + (CustomerHalfDollars * .5) + (CustomerOnes) + (CustomerTwos * 2) + (CustomerFives * 5) + (CustomerTens * 10) + (CustomerTwenties * 20) + (CustomerFifties * 50) + (CustomerHundreds * 100);
+                return (CustomerPennies * .01) + (CustomerNickels * .05) + (CustomerDimes * .1) + (CustomerQuarters * .25) + (CustomerHalfDollars * .5) + (CustomerDollars) + (CustomerOnes) + (CustomerTwos * 2) + (CustomerFives * 5) + (CustomerTens * 10) + (CustomerTwenties * 20) + (CustomerFifties * 50) + (CustomerHundreds * 100);
             }
         }
 
@@ -577,6 +577,8 @@ namespace BleakwindBuffet.Data
             set
             {
                 changeDollars = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDollars"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTotal"));
             }
         }
 
@@ -723,11 +725,15 @@ namespace BleakwindBuffet.Data
             get
             {
                 return changeTotal;
-               // return (ChangePennies * .01) + (ChangeNickels * .05) + (ChangeDimes * .1) + (ChangeQuarters * .25) + (ChangeHalfDollars * .5) + (ChangeOnes) + (ChangeTwos * 2) + (ChangeFives * 5) + (ChangeTens * 10) + (ChangeTwenties * 20) + (ChangeFifties * 50) + (ChangeHundreds * 100);
             }
             set
             {
                 changeTotal = value;
+                if (changeTotal > 0)
+                {
+                    MakeChange();
+
+                }
             }
         }
 
@@ -745,6 +751,8 @@ namespace BleakwindBuffet.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerQuarters"));
             CashDrawer.HalfDollars += CustomerHalfDollars;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerHalfDollars"));
+            CashDrawer.HalfDollars += CustomerDollars;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerDollars"));
             CashDrawer.Ones += CustomerOnes;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerOnes"));
             CashDrawer.Twos += CustomerTwos;
@@ -812,6 +820,204 @@ namespace BleakwindBuffet.Data
         public RegisterCashDrawer(Order o)
         {
             OrderTotal = o.Total;
+        }
+
+        void MakeChange()
+        {
+            double temp = Math.Round(ChangeTotal, 2);
+            double hundreds = Math.Floor(temp / 100);
+            double prevTemp = temp;
+            temp = temp % 100;
+            ChangeHundreds = 0;
+            ChangeFifties = 0;
+            ChangeTwenties = 0;
+            ChangeTens = 0;
+            ChangeFives = 0;
+            ChangeTwos = 0;
+            ChangeOnes = 0;
+            ChangeHalfDollars = 0;
+            ChangeQuarters = 0;
+            ChangeDimes = 0;
+            ChangeNickels = 0;
+            ChangePennies = 0;
+            if (hundreds > 0)
+            {
+                if (drawerHundreds >= hundreds)
+                {
+                    ChangeHundreds = (int)hundreds;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeHundreds"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double fifties = Math.Floor(temp / 50);
+            temp = temp % 50;
+            if (fifties > 0)
+            {
+                if (drawerFifties >= 0)
+                {
+                    ChangeFifties = (int)fifties;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeFifties"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double twenties = Math.Floor(temp / 20);
+            temp = temp % 20;
+            if (twenties > 0)
+            {
+                if (drawerTwenties >= 0)
+                {
+                    ChangeTwenties = (int)twenties;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTwenties"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double tens = Math.Floor(temp / 10);
+            temp = temp % 10;
+            if (tens > 0)
+            {
+                if (drawerTens >= 0)
+                {
+                    ChangeTens = (int)tens;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTens"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double fives = Math.Floor(temp / 5);
+            temp = temp % 5;
+            if (fives > 0)
+            {
+                if (drawerFives >= 0)
+                {
+                    ChangeFives = (int)fives;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeFives"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double twos = Math.Floor(temp / 2);
+            temp = temp % 2;
+            if (twos > 0)
+            {
+                if (drawerTwos >= 0)
+                {
+                    ChangeTwos = (int)twos;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTwos"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double ones = Math.Floor(temp / 1);
+            temp = temp % 1;
+            if (ones > 0)
+            {
+                if (drawerOnes >= 0)
+                {
+                    ChangeOnes = (int)ones;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOnes"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double halfDollars = Math.Floor(temp / .5);
+            temp = temp % .5;
+            if (halfDollars > 0)
+            {
+                if (drawerHalfDollars >= 0)
+                {
+                    ChangeHalfDollars = (int)halfDollars;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeHalfDollars"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double quarters = Math.Floor(temp / .25);
+            temp = temp % .25;
+            if (quarters > 0)
+            {
+                if (drawerQuarters >= 0)
+                {
+                    ChangeQuarters = (int)quarters;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeQuarters"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double dimes = Math.Floor(temp /.1);
+            temp = Math.Round(temp % .1, 2);
+            if (dimes > 0)
+            {
+                if (drawerDimes >= 0)
+                {
+                    ChangeDimes = (int)dimes;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDimes"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double nickels = Math.Floor(temp / .05);
+            temp = temp % .05;
+            if (nickels > 0)
+            {
+                if (drawerNickels >= 0)
+                {
+                    ChangeDimes = (int)nickels;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeNickels"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
+            double pennies = Math.Floor(temp / .01);
+            temp = temp % .01;
+            if (pennies > 0)
+            {
+                if (drawerPennies >= 0)
+                {
+                    ChangePennies = (int)pennies;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangePennies"));
+                    prevTemp = temp;
+                }
+                else
+                {
+                    temp = prevTemp;
+                }
+            }
         }
     }
 }
