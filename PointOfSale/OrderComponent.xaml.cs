@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Riley Smith
  * Class: OrderComponent.xaml.cs
- * Purpose: Contains the functionality for the Order component. Right now it only initializes this component.
+ * Purpose: Contains the functionality for the Order Component component. 
  */
 
 using BleakwindBuffet.Data.Drinks;
@@ -32,6 +32,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Functionality for when the user clicks on an item that they added to their order. This method allows them to edit the item in their order.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void orderListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (this.Parent is Border b)
@@ -123,6 +128,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Functionality for the button that shows the user the payment options screen.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void completeOrderButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.Parent is Border b)
@@ -137,13 +147,17 @@ namespace PointOfSale
                             {
                                 mw.menuBorder.Child = new PaymentOptions(ms);
                             }
-                           
                         }
                     }
                 }
             }
         }
 
+        /// <summary>
+        /// Functionality for the button that removes an item from the order.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
             if(DataContext is Order o)
@@ -152,6 +166,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Functionality for the button that cancels the order and creates a new order.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void cancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.Parent is Border b)

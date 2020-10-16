@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Riley Smith
+ * Class: RegisterCashDrawer.cs
+ * Purpose: Serves as an intermediate class between the CashDrawer class and the Data class.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
@@ -737,6 +743,9 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// Opens up the cash drawer, adds the user's money to it, and removes from it the change owed to the customer.
+        /// </summary>
         public void Finalize()
         {
             CashDrawer.OpenDrawer();
@@ -793,8 +802,14 @@ namespace BleakwindBuffet.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrawerHundreds"));
         }
 
+        /// <summary>
+        /// How much the order costs.
+        /// </summary>
         public double OrderTotal { get; set; } = 0;
 
+        /// <summary>
+        /// The amount that the user still has to pay for the order.
+        /// </summary>
         public double AmountDue
         {
             get
@@ -817,11 +832,18 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// Constructor that takes in an order and uses it to receive the order total.
+        /// </summary>
+        /// <param name="o"></param>
         public RegisterCashDrawer(Order o)
         {
             OrderTotal = o.Total;
         }
 
+        /// <summary>
+        /// The method for calculating how much change the restaurant owes the customer.
+        /// </summary>
         void MakeChange()
         {
             double temp = Math.Round(ChangeTotal, 2);

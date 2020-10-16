@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Riley Smith
+ * Class: Order.cs
+ * Purpose: A class containing the funcionality for creating an order.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;

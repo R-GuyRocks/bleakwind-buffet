@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Riley Smith
+ * Class: Combo.cs
+ * Purpose: Contains the functionality for creating a combo.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Drinks;
@@ -12,6 +18,12 @@ namespace BleakwindBuffet.Data
     public class Combo : IOrderItem, INotifyPropertyChanged
     {
 
+        /// <summary>
+        /// A constructor that sets the4 entree, side and drink parameters equal to their respective properties.
+        /// </summary>
+        /// <param name="entree"></param>
+        /// <param name="side"></param>
+        /// <param name="drink"></param>
         public Combo(Entree entree, Side side, Drink drink)
         {
             Entree = entree;
@@ -29,7 +41,6 @@ namespace BleakwindBuffet.Data
         /// An event for when properties change.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-
 
         private Entree entree;
 
@@ -95,9 +106,6 @@ namespace BleakwindBuffet.Data
             }
         }
 
-        /// <value>
-        /// The price of the fries.
-        /// </value>
         private double price;
 
         /// <value>

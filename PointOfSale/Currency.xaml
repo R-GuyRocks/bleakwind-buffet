@@ -13,7 +13,7 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
         <Button Name="MinusButton" Grid.Column="0" FontSize="40" HorizontalAlignment="Left" Width="100" Click="MinusButton_Click">-</Button>
-        <TextBox Grid.Column="1" Width="75" FontSize="20" Text="{Binding Path=Value, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Currency}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox Grid.Column="1" Width="75" FontSize="20" Text="{Binding Path=Value, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Currency}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
         <Button Grid.Column="2" Width="100" FontSize="40" Click="Button_Click">+</Button>
     </Grid>
 </UserControl>

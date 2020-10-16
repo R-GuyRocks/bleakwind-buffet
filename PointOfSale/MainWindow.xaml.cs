@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Riley Smith
  * Class: MainWindow.xaml.cs
- * Purpose: Contains the functionality for the MainWindow component. Right now it only initializes this component.
+ * Purpose: Contains the functionality for the MainWindow component.
  */
 
 using BleakwindBuffet.Data;

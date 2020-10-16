@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Riley Smith
+ * Class: CombinationCustomization.xaml.cs
+ * Purpose: The functionality for the CombinationCustomization control.
+ */
+
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
@@ -26,6 +32,14 @@ namespace PointOfSale
         Side side;
         Drink drink;
         Order order;
+
+        /// <summary>
+        /// Constructor that sets parameters equal to local values and prepares the right controls for the entrees, sides, and drinks.
+        /// </summary>
+        /// <param name="e">The combo's entree.</param>
+        /// <param name="s">The combo's side.</param>
+        /// <param name="d">The combo's drink.</param>
+        /// <param name="o">The order, which is the data context of the Main Window.</param>
         public CombinationCustomization(Entree e, Side s, Drink d, Order o)
         {
             InitializeComponent();
@@ -169,6 +183,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Contains the functionality for when the finishedCombo botton is pressed. It creates a new combo, adds that combo to the order, and closes the window.
+        /// </summary>
+        /// <param name="sender">Contains a reference to the object that raised the event.</param>
+        /// <param name="e">The event data.</param>
         private void finishedCombo_Click(object sender, RoutedEventArgs e)
         {
             Combo c = new Combo(entree, side, drink);

@@ -10,6 +10,11 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data;
 using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
+using System.Linq;
 
 namespace BleakwindBuffet.DataTests
 {
@@ -35,5 +40,65 @@ namespace BleakwindBuffet.DataTests
             Assert.IsAssignableFrom<Order>(o);
         }
 
+        [Fact]
+        public void OrderShouldStartAtOne()
+        {
+            Order order = new Order();
+            Assert.Equal(1, order.Number);
+        }
+
+        [Fact]
+        public void ChangingNumberShouldNotifyNumberProperty()
+        {
+            Order order = new Order();
+            Assert.PropertyChanged(order, "Number", () =>
+            {
+                order.Number = 1;
+            });
+        }
+        
+        [Fact]
+        public void AddingToOrderShouldAddItemToCollection()
+        {
+             Order o = new Order();
+             MarkarthMilk mm = new MarkarthMilk();
+             o.Add(mm);
+             Assert.NotEmpty(o);
+
+        }
+        [Fact]
+        public void ShouldCreateCombo()
+        {
+                Order o = new Order();
+                GardenOrcOmelette goo = new GardenOrcOmelette();
+                DragonbornWaffleFries dbwf = new DragonbornWaffleFries();
+                AretinoAppleJuice aaj = new AretinoAppleJuice();
+                o.Add(goo);
+                o.Add(dbwf);
+                o.Add(aaj);
+                Combo c = new Combo(goo, dbwf, aaj);
+                Assert.NotEqual(goo, o.OfType<Entree>().FirstOrDefault<Entree>());
+                Assert.NotEqual(dbwf, o.OfType<Side>().FirstOrDefault<Side>());
+                Assert.NotEqual(aaj, o.OfType<Drink>().FirstOrDefault<Drink>());
+                Assert.Equal(1, o.Count);
+        }
+
+        [Fact]
+        public void TaxShouldBeCorrect()
+        {
+            Order o = new Order();
+            FriedMiraak fm = new FriedMiraak();
+            o.Add(fm);
+            Assert.Equal((fm.Price * .12), o.Tax);
+        }
+
+        [Fact]
+        public void ShouldReturnCorrectTotal()
+        {
+            Order o = new Order();
+            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            o.Add(aaj);
+            Assert.Equal(aaj.Price + (aaj.Price * .12), o.Total);
+        }
     }
 }

@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Riley Smith
+ * Class: PaymentOptions.xaml.cs
+ * Purpose: Contains the functionality for the PaymentOptions component. 
+ */
+
+using BleakwindBuffet.Data;
 using RoundRegister;
 using System;
 using System.Collections.Generic;
@@ -29,6 +35,11 @@ namespace PointOfSale
             menuSelection = ms;
         }
 
+        /// <summary>
+        /// Contains the functionality for the button that returns the user to the order.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void returnToOrderButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.Parent is Border b)
@@ -46,6 +57,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Contains the functionality for the button that shows the user the checkout screen if they chose to pay with a credit/debit card.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void creditDebitButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order o)
@@ -98,6 +114,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Contains the functionality for the button that is supposed to be the payment button.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void payForOrderButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.Parent is Border b)
@@ -117,6 +138,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Contains the functionality for the button that pulls up the cash payment screen if the user chose to pay with cash.
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised this event.</param>
+        /// <param name="e">Contains event data.</param>
         private void cashButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.Parent is Border b)
@@ -132,8 +158,6 @@ namespace PointOfSale
                                 CashPayment window = new CashPayment(menuSelection, mw, o);
                                 window.Show();
                             }
-                            //mw.menuBorder.Child = new CashPayment(menuSelection);
-
                         }
                     }
                 }

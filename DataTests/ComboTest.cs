@@ -1,4 +1,10 @@
-﻿using Xunit;
+﻿/*
+ * Author: Riley Smith
+ * Class: ComboTest.cs
+ * Purpose: Tests the Combo.cs class in the Data library
+ */
+
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,5 +24,7 @@ namespace BleakwindBuffet.DataTests
             var c = new Combo(new BriarheartBurger(), new FriedMiraak(), new MarkarthMilk());
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+
     }
 }
