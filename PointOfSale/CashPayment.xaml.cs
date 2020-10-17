@@ -5,6 +5,7 @@
  */
 
 using BleakwindBuffet.Data;
+using RoundRegister;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -75,6 +76,17 @@ namespace PointOfSale
                 rgd.Finalize();
                 mainWindow.menuBorder.Child = menuSelection;
                 mainWindow.DataContext = new Order();
+                RecieptPrinter.PrintLine("#" + order.Number);
+                RecieptPrinter.PrintLine(DateTime.Now + "");
+                foreach (IOrderItem i in order)
+                {
+                    RecieptPrinter.PrintLine(i.ToString() + "");
+                    RecieptPrinter.PrintLine("Price: $" + i.Price + "");
+                }
+                RecieptPrinter.PrintLine("Tax: $" + order.Tax + "");
+                RecieptPrinter.PrintLine("Total: $" + order.Total + "");
+                RecieptPrinter.PrintLine("Cash");
+                RecieptPrinter.PrintLine("Changed Owed: $0");
                 this.Close();
             }
         }
