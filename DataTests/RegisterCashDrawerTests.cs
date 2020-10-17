@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Riley Smith
+ * Class: RegisterCashDrawer.cs
+ * Purpose: Test the RegisterCashDrawer.cs class in the Data library
+ */
+
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
