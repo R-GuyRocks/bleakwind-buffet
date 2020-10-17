@@ -25,6 +25,26 @@ namespace BleakwindBuffet.DataTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
 
+        [Fact]
+        public void CaloriesShouldBeCombinationOfEntreeSideAndDrinkCalories()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            MarkarthMilk mm = new MarkarthMilk();
+            DragonbornWaffleFries dbwf = new DragonbornWaffleFries();
+            Combo c = new Combo(bb, dbwf, mm);
+            Assert.Equal(bb.Calories + dbwf.Calories + mm.Calories, c.Calories);
+        }
+
+        public void ShouldBeACombo()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            MarkarthMilk mm = new MarkarthMilk();
+            DragonbornWaffleFries dbwf = new DragonbornWaffleFries();
+            Combo c = new Combo(bb, dbwf, mm);
+            Assert.IsAssignableFrom<Combo>(c);
+        }
+        
+
 
     }
 }

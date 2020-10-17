@@ -14,7 +14,9 @@ using System.Security.Cryptography.X509Certificates;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data.Enums;
 using System.Linq;
+using System.Diagnostics.Contracts;
 
 namespace BleakwindBuffet.DataTests
 {
@@ -38,13 +40,6 @@ namespace BleakwindBuffet.DataTests
         {
             Order o = new Order();
             Assert.IsAssignableFrom<Order>(o);
-        }
-
-        [Fact]
-        public void OrderShouldStartAtOne()
-        {
-            Order order = new Order();
-            Assert.Equal(1, order.Number);
         }
 
         [Fact]
@@ -99,6 +94,39 @@ namespace BleakwindBuffet.DataTests
             AretinoAppleJuice aaj = new AretinoAppleJuice();
             o.Add(aaj);
             Assert.Equal(aaj.Price + (aaj.Price * .12), o.Total);
+        }
+
+        [Fact]
+        public void AddingItemAddsToCollection()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Order o = new Order();
+            o.Add(cc);
+            Assert.NotEmpty(o);
+        }
+
+        [Fact]
+        public void MakingChangesToPriceNotifiesCollectionItemChangedListener()
+        {
+            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            Order o = new Order();
+            o.Add(aaj);
+            Assert.PropertyChanged(o, "Total", () =>
+            {
+                aaj.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(o, "Subtotal", () =>
+            {
+                aaj.Size = Size.Large;
+            });
+            Assert.PropertyChanged(o, "Tax", () =>
+            {
+                aaj.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(o, "Calories", () =>
+            {
+                aaj.Size = Size.Large;
+            });
         }
     }
 }

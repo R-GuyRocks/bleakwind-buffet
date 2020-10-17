@@ -18,6 +18,7 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using System.Linq;
 
+
 namespace BleakwindBuffet.Data
 {
     public class Order : ObservableCollection<IOrderItem>, INotifyPropertyChanged, ICollection<IOrderItem>, INotifyCollectionChanged
