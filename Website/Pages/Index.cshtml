@@ -3,20 +3,45 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<style>
+    .name {
+        font-size: 24px;
+    }
+
+    .information {
+        font-size: 14px;
+    }
+
+    .menu-item {
+        font-size: 24px;
+        border: 1px solid gray;
+    }
+    .flavors {
+        font-size: 14px;
+    }
+    meal-type {
+        margin: auto;
+    }
+
+</style>
+
 <div class="text-center">
     <h1 class="display-4">Welcome to Bleakwind Buffet</h1>
     <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
 </div>
 
-<h2>Entrees</h2>
-<div class="menu-item">
-    @foreach (BleakwindBuffet.Data.Entrees.Entree e in Model.entrees)
-    {
-        <div class="name">@e.Name</div>
-    }
-</div>
 
-<h2>Sides</h2>
+<h2 class="meal-type">Entrees</h2>
+
+@foreach (BleakwindBuffet.Data.Entrees.Entree e in Model.entrees)
+{
+    <div class="menu-item">
+        <div class="name">@e.Name</div>
+        <div class="information">$@e.Price, @e.Calories Calories </div>
+    </div>
+}
+
+<h2 class="meal-type">Sides</h2>
 <div class="menu-item">
     <div class="name">Dragonborn Waffle Fries</div>
     @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
@@ -26,6 +51,8 @@
             <div class="information">@dbwf.Size - $@dbwf.Price, @dbwf.Calories Calories </div>
         }
     }
+</div>
+<div class="menu-item">
     <div class="name">Fried Miraak</div>
     @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
     {
@@ -34,6 +61,8 @@
             <div class="information">@fm.Size - $@fm.Price, @fm.Calories Calories </div>
         }
     }
+</div>
+<div class="menu-item">
     <div class="name">Mad Otar Grits</div>
     @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
     {
@@ -42,6 +71,8 @@
             <div class="information">@mog.Size - $@mog.Price, @mog.Calories Calories </div>
         }
     }
+</div>
+<div class="menu-item">
     <div class="name">Vokun Salad</div>
     @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
     {
@@ -51,8 +82,8 @@
         }
     }
 </div>
-<h2>Drinks</h2>
-<div>
+<h2 class="meal-type">Drinks</h2>
+<div class="menu-item">
     <div class="name">Aretino Apple Juice</div>
     @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
     {
@@ -62,5 +93,48 @@
         }
     }
 </div>
+<div class="menu-item">
+    <div class="name">Candlehearth Coffee</div>
+    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+    {
+        if (d is BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc)
+        {
+            <div class="information">@cc.Size - $@cc.Price, @cc.Calories Calories </div>
+        }
+    }
+</div>
+<div class="menu-item">
+    <div class="name">Markarth Milk</div>
+    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+    {
+        if (d is BleakwindBuffet.Data.Drinks.MarkarthMilk mm)
+        {
+            <div class="information">@mm.Size - $@mm.Price, @mm.Calories Calories </div>
+        }
+    }
+</div>
+<div class="menu-item">
+    <div class="name">Sailor Soda</div>
+    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+    {
+        if (d is BleakwindBuffet.Data.Drinks.SailorSoda ss)
+        {
+            <div class="information">@ss.Size - $@ss.Price, @ss.Calories Calories </div>
+        }
+    }
+    <div class="flavors">Available Flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, and Watermelon.</div>
+</div>
+<div class="menu-item">
+    <div class="name">Warrior Water</div>
+    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+    {
+        if (d is BleakwindBuffet.Data.Drinks.WarriorWater ww)
+        {
+            <div class="information">@ww.Size - $@ww.Price, @ww.Calories Calories </div>
+        }
+    }
+</div>
+<h2 class="meal-type">Combos</h2>
+<div class="information">Any combination of an entree, side, and drink will count as a combo, and will deduct $1 off your order!</div>
 
 
