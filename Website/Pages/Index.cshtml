@@ -7,11 +7,23 @@
     <h1 class="display-4">Welcome to Bleakwind Buffet</h1>
     <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
 </div>
-<div>
-    <h2>Entrees</h2>
-    <h2>Sides</h2>
-    <h2>Drinks</h2>
-</div>
-<div class="menu-item">
 
+
+<div class="menu-item">
+    <h2>Entrees</h2>
+    @foreach (BleakwindBuffet.Data.Entrees.Entree e in Model.entrees)
+    {
+        <div class="name">@e.Name</div>
+    }
+    <h2>Sides</h2>
+    @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
+    {
+        <div class="name">@s.Name</div>
+    }
+    <h2>Drinks</h2>
+    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+    {
+        <div class="name">@d.Name</div>
+    }
 </div>
+
