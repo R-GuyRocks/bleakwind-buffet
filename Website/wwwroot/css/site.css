@@ -78,3 +78,7 @@ div.menu-item {
     color: gray;
     width: 60px;
 }
+
+.name {
+    font-size: 12px;
+}
