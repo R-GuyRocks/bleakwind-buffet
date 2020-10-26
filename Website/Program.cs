@@ -1,4 +1,10 @@
-using System;
+/*
+/*
+ * Author: Riley Smith
+ * Class: Program.cshtml.cs
+ * Purpose: Contains the functionality for the program. 
+ */
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,11 +17,20 @@ namespace Website
 {
     public class Program
     {
+        /// <summary>
+        /// Method that's called upon starting this program.
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }
 
+        /// <summary>
+        /// Creates a host builder.
+        /// </summary>
+        /// <param name="args">String arguments.</param>
+        /// <returns>A IHostBuilder.</returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

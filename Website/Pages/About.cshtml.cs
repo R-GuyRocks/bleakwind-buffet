@@ -1,3 +1,8 @@
+/*
+ * Author: Riley Smith
+ * Class: About.cshtml.cs
+ * Purpose: Contains the functionality for the About page. 
+ */
 using System;
 using System.Collections.Generic;
 using System.Linq;

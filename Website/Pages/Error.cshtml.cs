@@ -1,3 +1,8 @@
+/*
+ * Author: Riley Smith
+ * Class: Error.cshtml.cs
+ * Purpose: Contains the functionality for the Error page. 
+ */
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

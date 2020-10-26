@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Riley Smith
+ * Class: Index.cshtml.cs
+ * Purpose: Contains the functionality for the main page of the website. 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

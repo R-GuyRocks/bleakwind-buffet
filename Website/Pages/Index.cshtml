@@ -4,8 +4,13 @@
     ViewData["Title"] = "Home page";
 }
 <style>
+    h1 {
+        color: forestgreen;
+    }
     .name {
         font-size: 24px;
+        vertical-align: middle;
+        text-align: center;
     }
 
     .information {
@@ -19,8 +24,21 @@
     .flavors {
         font-size: 14px;
     }
-    meal-type {
-        margin: auto;
+    .meal-type {
+        vertical-align: middle;
+        text-align: center;
+    }
+    .menu-item {
+        vertical-align: middle;
+        text-align: center;
+    }
+    .information {
+        vertical-align: middle;
+        text-align: center;
+    }
+    .combo-information {
+        vertical-align: middle;
+        text-align: center;
     }
 
 </style>
@@ -30,111 +48,110 @@
     <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
 </div>
 
-
-<h2 class="meal-type">Entrees</h2>
+<h2 class="meal-type" style="color: lightseagreen">Entrees</h2>
 
 @foreach (BleakwindBuffet.Data.Entrees.Entree e in Model.entrees)
 {
     <div class="menu-item">
-        <div class="name">@e.Name</div>
-        <div class="information">$@e.Price, @e.Calories Calories </div>
+        <div class="name" style="color: mediumseagreen">@e.Name</div>
+        <div class="information" style="color: mediumseagreen">$@e.Price, @e.Calories Calories </div>
     </div>
 }
 
-<h2 class="meal-type">Sides</h2>
+<h2 class="meal-type" style="color:darkorange">Sides</h2>
 <div class="menu-item">
-    <div class="name">Dragonborn Waffle Fries</div>
+    <div class="name" style="color:darkorange">Dragonborn Waffle Fries</div>
     @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
     {
         if (s is BleakwindBuffet.Data.Sides.DragonbornWaffleFries dbwf)
         {
-            <div class="information">@dbwf.Size - $@dbwf.Price, @dbwf.Calories Calories </div>
+            <div class="information" style="color:darkorange">@dbwf.Size - $@dbwf.Price, @dbwf.Calories Calories </div>
         }
     }
 </div>
 <div class="menu-item">
-    <div class="name">Fried Miraak</div>
+    <div class="name" style="color:darkorange">Fried Miraak</div>
     @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
     {
         if (s is BleakwindBuffet.Data.Sides.FriedMiraak fm)
         {
-            <div class="information">@fm.Size - $@fm.Price, @fm.Calories Calories </div>
+            <div class="information" style="color:darkorange">@fm.Size - $@fm.Price, @fm.Calories Calories </div>
         }
     }
 </div>
 <div class="menu-item">
-    <div class="name">Mad Otar Grits</div>
+    <div class="name" style="color:darkorange">Mad Otar Grits</div>
     @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
     {
         if (s is BleakwindBuffet.Data.Sides.MadOtarGrits mog)
         {
-            <div class="information">@mog.Size - $@mog.Price, @mog.Calories Calories </div>
+            <div class="information" style="color:darkorange">@mog.Size - $@mog.Price, @mog.Calories Calories </div>
         }
     }
 </div>
 <div class="menu-item">
-    <div class="name">Vokun Salad</div>
+    <div class="name" style="color:darkorange">Vokun Salad</div>
     @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
     {
         if (s is BleakwindBuffet.Data.Sides.VokunSalad vs)
         {
-            <div class="information">@vs.Size - $@vs.Price, @vs.Calories Calories </div>
+            <div class="information" style="color:darkorange">@vs.Size - $@vs.Price, @vs.Calories Calories </div>
         }
     }
 </div>
-<h2 class="meal-type">Drinks</h2>
+<h2 class="meal-type" style="color:lightskyblue">Drinks</h2>
 <div class="menu-item">
-    <div class="name">Aretino Apple Juice</div>
+    <div class="name" style="color:lightskyblue">Aretino Apple Juice</div>
     @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
     {
         if (d is BleakwindBuffet.Data.Drinks.AretinoAppleJuice aaj)
         {
-            <div class="information">@aaj.Size - $@aaj.Price, @aaj.Calories Calories </div>
+            <div class="information" style="color:lightskyblue">@aaj.Size - $@aaj.Price, @aaj.Calories Calories </div>
         }
     }
 </div>
 <div class="menu-item">
-    <div class="name">Candlehearth Coffee</div>
+    <div class="name" style="color:lightskyblue">Candlehearth Coffee</div>
     @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
     {
         if (d is BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc)
         {
-            <div class="information">@cc.Size - $@cc.Price, @cc.Calories Calories </div>
+            <div class="information" style="color:lightskyblue">@cc.Size - $@cc.Price, @cc.Calories Calories </div>
         }
     }
 </div>
 <div class="menu-item">
-    <div class="name">Markarth Milk</div>
+    <div class="name" style="color:lightskyblue">Markarth Milk</div>
     @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
     {
         if (d is BleakwindBuffet.Data.Drinks.MarkarthMilk mm)
         {
-            <div class="information">@mm.Size - $@mm.Price, @mm.Calories Calories </div>
+            <div class="information" style="color:lightskyblue">@mm.Size - $@mm.Price, @mm.Calories Calories </div>
         }
     }
 </div>
 <div class="menu-item">
-    <div class="name">Sailor Soda</div>
+    <div class="name" style="color:lightskyblue">Sailor Soda</div>
     @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
     {
         if (d is BleakwindBuffet.Data.Drinks.SailorSoda ss)
         {
-            <div class="information">@ss.Size - $@ss.Price, @ss.Calories Calories </div>
+            <div class="information" style="color:lightskyblue">@ss.Size - $@ss.Price, @ss.Calories Calories </div>
         }
     }
-    <div class="flavors">Available Flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, and Watermelon.</div>
+    <div class="flavors" style="color:lightskyblue">Available Flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, and Watermelon.</div>
 </div>
 <div class="menu-item">
-    <div class="name">Warrior Water</div>
+    <div class="name" style="color:lightskyblue">Warrior Water</div>
     @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
     {
         if (d is BleakwindBuffet.Data.Drinks.WarriorWater ww)
         {
-            <div class="information">@ww.Size - $@ww.Price, @ww.Calories Calories </div>
+            <div class="information" style="color:lightskyblue">@ww.Size - $@ww.Price, @ww.Calories Calories </div>
         }
     }
 </div>
 <h2 class="meal-type">Combos</h2>
-<div class="information">Any combination of an entree, side, and drink will count as a combo, and will deduct $1 off your order!</div>
+<div class="combo-information">Any combination of an entree, side, and drink will count as a combo, and will deduct $1 off your order!</div>
 
 

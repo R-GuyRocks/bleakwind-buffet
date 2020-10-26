@@ -1,4 +1,10 @@
-using System;
+/*
+/* 
+ * Author: Riley Smith
+ * Class: Startup.cshtml.cs
+ * Purpose: Contains the functionality for the startup. 
+ */
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,11 +19,18 @@ namespace Website
 {
     public class Startup
     {
+        /// <summary>
+        /// Sets Configuration equal to parameter.
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Global IConfiguration property.
+        /// </summary>
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
