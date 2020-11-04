@@ -37,12 +37,12 @@ namespace Website.Pages
         /// <summary>
         /// The current search terms.
         /// </summary>
-        public string SearchTerms { get; set; } = "";
+        public string searchTerms { get; set; } = "";
 
         /// <summary>
         /// The filtered item types
         /// </summary>
-        public string[] ItemTypes { get; set; }
+        public string[] itemTypes { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -52,19 +52,19 @@ namespace Website.Pages
         /// <summary>
         /// Gets the search results for display on the page.
         /// </summary>
-        public void OnGet(string searchTerms, string[] itemTypes, double? CaloricIntakeMin, double? CaloricIntakeMax, double? PriceMin, double? PriceMax)
+        public void OnGet(string SearchTerms, string[] ItemTypes, double? CaloricIntakeMin, double? CaloricIntakeMax, double? PriceMin, double? PriceMax)
         {
             entrees = new List<Entree>();
             sides = new List<Side>();
             drinks = new List<Drink>();
-            SearchTerms = searchTerms;
-            ItemTypes = itemTypes;
+            searchTerms = SearchTerms;
+            itemTypes = ItemTypes;
             minCalories = CaloricIntakeMin;
             maxCalories = CaloricIntakeMax;
             minPrice = PriceMin;
             maxPrice = PriceMax;
             IEnumerable<IOrderItem> list = Menu.FullMenu();
-            list = Menu.Search(SearchTerms);
+            list = Menu.Search(searchTerms);
             IEnumerable<IOrderItem> newList = Menu.FilterByItemType(list, itemTypes);
             IEnumerable<IOrderItem> newListTwo = Menu.FilterByCalories(newList, CaloricIntakeMin, CaloricIntakeMax);
             IEnumerable<IOrderItem> newListThree = Menu.FilterByCalories(newListTwo, PriceMin, PriceMax);
