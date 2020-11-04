@@ -23,11 +23,11 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Gets the name of the fries.
         /// </summary>
-        public String Name
+        public override string Name
         {
             get
             {
-                return this.ToString();
+                return "Dragonborn Waffle Fries";
             }
         }
 

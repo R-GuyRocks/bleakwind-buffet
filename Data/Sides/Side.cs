@@ -17,7 +17,7 @@ namespace BleakwindBuffet.Data.Sides
     public abstract class Side
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public string Name
+        public virtual string Name
         {
             get
             {

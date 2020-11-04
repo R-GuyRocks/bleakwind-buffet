@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
+@{ 
+    ViewData["Title"] = "Home page"; 
 }
 <style>
     h1 {
@@ -46,113 +46,270 @@
         vertical-align: middle;
         text-align: center;
     }
+
+    form#menu-list {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+    }
+
+    #search {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        text-align: left;
+    }
+
+    #filters {
+        display: inline-block;
+        flex-direction: column;
+    }
+
+    #filters input[type=number] {
+        width: 3rem;
+    }
+
+    #filters h4 {
+        margin-bottom: 0.2rem;
+    }
 </style>
 
 <div class="text-center">
     <h1 class="display-4">Welcome to Bleakwind Buffet</h1>
-    <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
+    <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!</p>
 </div>
-<h2 class="meal-type">Entrees</h2>
-@foreach (BleakwindBuffet.Data.Entrees.Entree e in Model.entrees)
-{
-    <div class="menu-item">
-        <div class="name" style="color: seagreen">@e.Name</div>
-        <div class="information" style="color: seagreen">$@e.Price, @e.Calories Calories </div>
-    </div>
-}
 
-<h2 class="meal-type">Sides</h2>
-<div class="menu-item">
-    <div class="name" style="color:darkorange">Dragonborn Waffle Fries</div>
-    @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
-    {
-        if (s is BleakwindBuffet.Data.Sides.DragonbornWaffleFries dbwf)
+<form id="menu-list" runat="server">
+    <div id="search">
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search">
+    </div>
+    <div id="filters">
+        <h4>Item Types</h4>
+        @foreach (string itemType in BleakwindBuffet.Data.Menu.ItemTypes)
         {
-            <div class="information" style="color:darkorange">@dbwf.Size - $@dbwf.Price, @dbwf.Calories Calories </div>
+            <label>
+                <input type="checkbox" name="ItemTypes" value="@itemType" checked="@Model.ItemTypes.Contains(itemType)" />
+                @itemType
+            </label>
         }
-    }
-</div>
-<div class="menu-item">
-    <div class="name" style="color:darkorange">Fried Miraak</div>
-    @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
-    {
-        if (s is BleakwindBuffet.Data.Sides.FriedMiraak fm)
-        {
-            <div class="information" style="color:darkorange">@fm.Size - $@fm.Price, @fm.Calories Calories </div>
-        }
-    }
-</div>
-<div class="menu-item">
-    <div class="name" style="color:darkorange">Mad Otar Grits</div>
-    @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
-    {
-        if (s is BleakwindBuffet.Data.Sides.MadOtarGrits mog)
-        {
-            <div class="information" style="color:darkorange">@mog.Size - $@mog.Price, @mog.Calories Calories </div>
-        }
-    }
-</div>
-<div class="menu-item">
-    <div class="name" style="color:darkorange">Vokun Salad</div>
-    @foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
-    {
-        if (s is BleakwindBuffet.Data.Sides.VokunSalad vs)
-        {
-            <div class="information" style="color:darkorange">@vs.Size - $@vs.Price, @vs.Calories Calories </div>
-        }
-    }
-</div>
-<h2 class="meal-type">Drinks</h2>
-<div class="menu-item">
-    <div class="name" style="color:dodgerblue">Aretino Apple Juice</div>
-    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
-    {
-        if (d is BleakwindBuffet.Data.Drinks.AretinoAppleJuice aaj)
-        {
-            <div class="information" style="color:dodgerblue">@aaj.Size - $@aaj.Price, @aaj.Calories Calories </div>
-        }
-    }
-</div>
-<div class="menu-item">
-    <div class="name" style="color:dodgerblue">Candlehearth Coffee</div>
-    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
-    {
-        if (d is BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc)
-        {
-            <div class="information" style="color:dodgerblue">@cc.Size - $@cc.Price, @cc.Calories Calories </div>
-        }
-    }
-</div>
-<div class="menu-item">
-    <div class="name" style="color:dodgerblue">Markarth Milk</div>
-    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
-    {
-        if (d is BleakwindBuffet.Data.Drinks.MarkarthMilk mm)
-        {
-            <div class="information" style="color:dodgerblue">@mm.Size - $@mm.Price, @mm.Calories Calories </div>
-        }
-    }
-</div>
-<div class="menu-item">
-    <div class="name" style="color:dodgerblue">Sailor Soda</div>
-    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
-    {
-        if (d is BleakwindBuffet.Data.Drinks.SailorSoda ss)
-        {
-            <div class="information" style="color:dodgerblue">@ss.Size - $@ss.Price, @ss.Calories Calories </div>
-        }
-    }
-    <div class="flavors" style="color:dodgerblue">Available Flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, and Watermelon.</div>
-</div>
-<div class="menu-item">
-    <div class="name" style="color:dodgerblue">Warrior Water</div>
-    @foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
-    {
-        if (d is BleakwindBuffet.Data.Drinks.WarriorWater ww)
-        {
-            <div class="information" style="color:dodgerblue">@ww.Size - $@ww.Price, @ww.Calories Calories </div>
-        }
-    }
-</div>
-<h2 class="meal-type">Combos</h2>
-<div class="combo-information">Any combination of an entree, side, and drink will count as a combo, which deducts $1 from your order!</div>
+        <h4>Caloric Intake</h4>
+        <div>
+            Between
+            <input name="CaloricIntakeMin" type="number" min="0" step="1.0" placeholder="min" value="@Model.minCalories" />
+            and
+            <input name="CaloricIntakeMax" type="number" min="0" step="1.0" placeholder="max" value="@Model.maxCalories" />
+        </div>
+        <h4>Price</h4>
+        <div>
+            Between
+            <input name="PriceMin" type="number" min="0" max="10" step="0.01" placeholder="min" value="@Model.minPrice" />
+            and
+            <input name="PriceMax" type="number" min="0" max="10" step="0.01" placeholder="max"  value="@Model.maxPrice" />
+        </div>
+    </div>
+    <div id="menu">
+        <div id="menu-item-block">
+            @{
+                if (Model.entrees.Count > 0)
+                {
+                    <h2 class="meal-type">Entrees</h2>
+                    foreach (BleakwindBuffet.Data.Entrees.Entree e in Model.entrees)
+                    {
+                        <div class="menu-item">
+                            <div class="name" style="color: seagreen">@e.Name</div>
+                            <div class="information" style="color: seagreen">$@e.Price, @e.Calories Calories </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        <div id="menu-item-block">
+            @if (Model.sides.Count > 0)
+            {
+                <h2 class="meal-type">Sides</h2>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
+                        {
+                            if (s is BleakwindBuffet.Data.Sides.DragonbornWaffleFries dbwf)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:darkorange">Dragonborn Waffle Fries</div>
+                                    count = count + 1;
+                                }
+                                <div class="information" style="color:darkorange">@dbwf.Size - $@dbwf.Price, @dbwf.Calories Calories</div>
+                                count = count + 1;
+                            }
+                        }
+                    }
+                </div>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
+                        {
+                            if (s is BleakwindBuffet.Data.Sides.FriedMiraak fm)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:darkorange">Fried Miraak</div> count = count + 1;
+                                }
+                                <div class="information" style="color:darkorange">@fm.Size - $@fm.Price, @fm.Calories Calories</div>
+                                count = count + 1;
+                            }
+                        }
+                    }
+                </div>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
+                        {
+                            if (s is BleakwindBuffet.Data.Sides.MadOtarGrits mog)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:darkorange">Mad Otar Grits</div>
+                                    count = count + 1;
+                                }
+                                <div class="information" style="color:darkorange">@mog.Size - $@mog.Price, @mog.Calories Calories</div>
+                                count = count + 1;
+                            }
+                        }
+                    }
+                </div>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Sides.Side s in Model.sides)
+                        {
+                            if (s is BleakwindBuffet.Data.Sides.VokunSalad vs)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:darkorange">Vokun Salad</div> count = count + 1;
+                                }
+                                <div class="information" style="color:darkorange">@vs.Size - $@vs.Price, @vs.Calories Calories</div>
+                                count = count + 1;
+                            }
+                        }
+                    }
+                </div>
+            }
+        </div>
+
+        <div id="menu-item-block">
+            @if (Model.drinks.Count > 0)
+            {
+                <h2 class="meal-type">Drinks</h2>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+                        {
+                            if (d is BleakwindBuffet.Data.Drinks.AretinoAppleJuice aaj)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:dodgerblue">Aretino Apple Juice </div>
+                                    count = count + 1;
+                                }
+                                <div class="information" style="color:dodgerblue">@aaj.Size - $@aaj.Price, @aaj.Calories Calories</div>
+                                count = count + 1;
+                            }
+                        }
+                    }
+                </div>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+                        {
+                            if (d is BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:dodgerblue">Candlehearth Coffee</div>
+                                    count = count + 1;
+                                }
+                                <div class="information" style="color:dodgerblue">@cc.Size - $@cc.Price, @cc.Calories Calories </div>
+                                count = count + 1;
+                            }
+                        }
+                    }
+                </div>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+                        {
+                            if (d is BleakwindBuffet.Data.Drinks.MarkarthMilk mm)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:dodgerblue">Markarth Milk</div>
+                                    count = count + 1;
+                                }
+                                <div class="information" style="color:dodgerblue">@mm.Size - $@mm.Price, @mm.Calories Calories </div>
+                                count = count + 1;
+                            }
+                        }
+                    }
+                </div>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+                        {
+                            if (d is BleakwindBuffet.Data.Drinks.SailorSoda ss)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:dodgerblue">Sailor Soda</div> count = count + 1;
+                                }
+                                <div class="information" style="color:dodgerblue">@ss.Size - $@ss.Price, @ss.Calories Calories </div>
+                                count = count + 1;
+                                if (count == 4)
+                                {
+                                    <div class="flavors" style="color:dodgerblue">Available Flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, and Watermelon.</div>
+                                }
+                            }
+                        }
+                    }
+                </div>
+                <div class="menu-item">
+                    @if (Model.alwaysTrue)
+                    {
+                        int count = 0;
+                        foreach (BleakwindBuffet.Data.Drinks.Drink d in Model.drinks)
+                        {
+                            if (d is BleakwindBuffet.Data.Drinks.WarriorWater ww)
+                            {
+                                if (count == 0)
+                                {
+                                    <div class="name" style="color:dodgerblue">Warrior Water</div>
+                                    count = count + 1;
+                                }
+                                <div class="information" style="color:dodgerblue">@ww.Size - $@ww.Price, @ww.Calories Calories </div>
+                                count = count + 1;
+                            }
+                        }
+                    }
+                </div>
+            }
+        </div>
+
+        <h2 class="meal-type">Combos</h2>
+        <div class="combo-information">Any combination of an entree, side, and drink will count as a combo, which deducts $1 from your order!</div>
+    </div>
+</form>

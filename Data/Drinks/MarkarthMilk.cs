@@ -23,11 +23,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the name of the drink.
         /// </summary>
-        public String Name
+        public override String Name
         {
             get
             {
-                return this.ToString();
+                return "Markarth Milk";
             }
         }
 

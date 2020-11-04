@@ -27,33 +27,57 @@ namespace Website.Pages
         public List<Side> sides;
         public List<Drink> drinks;
 
+        public bool alwaysTrue = true;
+
+        public double? minCalories = 0;
+        public double? maxCalories = 0;
+        public double? minPrice = 0;
+        public double? maxPrice = 0;
+
+        /// <summary>
+        /// The current search terms.
+        /// </summary>
+        public string SearchTerms { get; set; } = "";
+
+        /// <summary>
+        /// The filtered item types
+        /// </summary>
+        public string[] ItemTypes { get; set; }
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
 
-        public void OnGet()
+        /// <summary>
+        /// Gets the search results for display on the page.
+        /// </summary>
+        public void OnGet(string searchTerms, string[] itemTypes, double? CaloricIntakeMin, double? CaloricIntakeMax, double? PriceMin, double? PriceMax)
         {
             entrees = new List<Entree>();
             sides = new List<Side>();
             drinks = new List<Drink>();
-            foreach (IOrderItem i in Menu.Entrees())
+            SearchTerms = searchTerms;
+            ItemTypes = itemTypes;
+            minCalories = CaloricIntakeMin;
+            maxCalories = CaloricIntakeMax;
+            minPrice = PriceMin;
+            maxPrice = PriceMax;
+            IEnumerable<IOrderItem> list = Menu.FullMenu();
+            list = Menu.Search(SearchTerms);
+            IEnumerable<IOrderItem> newList = Menu.FilterByItemType(list, itemTypes);
+            IEnumerable<IOrderItem> newListTwo = Menu.FilterByCalories(newList, CaloricIntakeMin, CaloricIntakeMax);
+            IEnumerable<IOrderItem> newListThree = Menu.FilterByCalories(newListTwo, PriceMin, PriceMax);
+            foreach (IOrderItem i in newListThree)
             {
                 if (i is Entree e)
                 {
                     entrees.Add(e);
                 }
-            }
-            foreach (IOrderItem i in Menu.Sides())
-            {
                 if (i is Side s)
                 {
                     sides.Add(s);
                 }
-
-            }
-            foreach (IOrderItem i in Menu.Drinks())
-            {
                 if (i is Drink d)
                 {
                     drinks.Add(d);
@@ -62,3 +86,4 @@ namespace Website.Pages
         }
     }
 }
+
