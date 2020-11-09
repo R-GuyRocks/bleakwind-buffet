@@ -133,6 +133,17 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
+        /// Gets the name of the combo.
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                return Entree.Name + " " + Side.Name + " " + Drink.Name;
+            }
+        }
+
+        /// <summary>
         /// The special instructions for the combo.
         /// </summary>
         public List<String> SpecialInstructions

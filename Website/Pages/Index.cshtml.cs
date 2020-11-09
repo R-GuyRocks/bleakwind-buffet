@@ -16,6 +16,7 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using System.Windows.Documents.DocumentStructures;
 
 namespace Website.Pages
 {
@@ -64,7 +65,30 @@ namespace Website.Pages
             minPrice = PriceMin;
             maxPrice = PriceMax;
             IEnumerable<IOrderItem> list = Menu.FullMenu();
-            list = Menu.Search(searchTerms);
+            List<IOrderItem> list2 = new List<IOrderItem>();
+            if (SearchTerms != null)
+            {
+                string[] searchTermList = SearchTerms.Split(' ');
+
+                    list = from item in Menu.FullMenu()
+                           where item.Name != null && searchTermList.Any(s=>(item.Name.Contains(s, StringComparison.InvariantCultureIgnoreCase)) || searchTermList.Any(s=>item.Description.Contains(s, StringComparison.InvariantCultureIgnoreCase)))
+                           select item;
+                
+               /*     foreach(IOrderItem i in list)
+                    {
+                        list2.Add(i);
+                    }
+                } */
+            }
+    /*        List<IOrderItem> list3 = new List<IOrderItem>();
+            foreach (IOrderItem i in Menu.FullMenu())
+            {
+                if (list2.Contains(i))
+                {
+                    list3.Add(i);
+                }
+            } */
+     //     list = Menu.Search(searchTerms);
             IEnumerable<IOrderItem> newList = Menu.FilterByItemType(list, itemTypes);
             IEnumerable<IOrderItem> newListTwo = Menu.FilterByCalories(newList, CaloricIntakeMin, CaloricIntakeMax);
             IEnumerable<IOrderItem> newListThree = Menu.FilterByCalories(newListTwo, PriceMin, PriceMax);

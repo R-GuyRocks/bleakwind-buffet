@@ -33,6 +33,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public override string Description { get; } = "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
 
+        /// <summary>
+        /// The name of the entree.
+        /// </summary>
+        public override string Name { get; } = "Philly Poacher";
+
         /// <value>
         /// Gets the list of special instructions on how to make the sandwhich.
         /// </value>

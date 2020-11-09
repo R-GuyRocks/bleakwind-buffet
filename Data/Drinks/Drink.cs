@@ -17,6 +17,10 @@ namespace BleakwindBuffet.Data.Drinks
     public abstract class Drink
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// The name of the drink.
+        /// </summary>
         public virtual string Name
         {
             get

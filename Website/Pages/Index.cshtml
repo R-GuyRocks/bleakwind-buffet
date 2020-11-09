@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
+@{ 
+    ViewData["Title"] = "Home page"; 
 }
 <style>
     h1 {
@@ -64,28 +64,26 @@
         flex-direction: column;
     }
 
-        #filters input[type=number] {
-            width: 3rem;
-        }
+    #filters input[type=number] {
+        width: 3rem;
+    }
 
-        #filters h4 {
-            margin-bottom: 0.2rem;
-        }
-
+    #filters h4 {
+        margin-bottom: 0.2rem;
+    }
     .description {
         font-size: 12px;
     }
-
     .flex-columns {
         display: flex;
         flex-direction: row;
     }
-
     @@media (max-width: 490px) {
-        .flex-columns {
-            flex-direction: column;
-        }
+    .flex-columns {
+        flex-direction: column;
     }
+}
+
 </style>
 
 <div class="text-center">

@@ -18,7 +18,7 @@ namespace BleakwindBuffet.Data.Entrees
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string Name
+        public virtual string Name
         {
             get
             {
