@@ -159,5 +159,15 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// The combo's description.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return "A combo containing a " + Entree.Name + ", a " + Side.Name + ", and a " + Drink.Name + ".";
+            }
+        }
     }
 }

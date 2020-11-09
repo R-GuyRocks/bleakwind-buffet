@@ -41,6 +41,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// </value>
         public override uint Calories { get; } = 0;
 
+        /// <summary>
+        /// The drink's description.
+        /// </summary>
+        public string Description { get; } = "It’s water. Just water.";
+
         /// <value>
         /// Gets the list of special instructions on how to make the drink.
         /// </value>

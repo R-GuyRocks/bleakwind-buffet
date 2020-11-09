@@ -93,6 +93,11 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// The side's description.
+        /// </summary>
+        public string Description { get; } = "Cheesey Grits.";
+
         private Size size = Size.Small;
 
         /// <value>

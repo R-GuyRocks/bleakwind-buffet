@@ -28,6 +28,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories { get; } = 982;
 
+        /// <summary>
+        /// The entree's description.
+        /// </summary>
+        public string Description { get; } = "Juicy T-Bone, not much else to say.";
+
         /// <value>
         /// Gets an empty list of instructions.
         /// </value>

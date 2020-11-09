@@ -28,6 +28,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories { get; } = 404;
 
+        /// <summary>
+        /// The entree's description.
+        /// </summary>
+        public string Description { get; } = "Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.";
+
         /// <value>
         /// Gets the list of special instructions on how to make the omelette.
         /// </value>

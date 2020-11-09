@@ -28,6 +28,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories { get; } = 784;
 
+        /// <summary>
+        /// The entree's description.
+        /// </summary>
+        public string Description { get; } = "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+
         /// <value>
         /// Gets the list of special instructions on how to make the sandwhich.
         /// </value>
