@@ -31,7 +31,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The entree's description.
         /// </summary>
-        public string Description { get; } = "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+        public override string Description { get; } = "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
 
         /// <value>
         /// Gets the list of special instructions on what to include in the combo.

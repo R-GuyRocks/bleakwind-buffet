@@ -97,7 +97,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// The side's description.
         /// </summary>
-        public string Description { get; } = "Perfectly prepared hash brown pancakes.";
+        public override string Description { get; } = "Perfectly prepared hash brown pancakes.";
 
         private Size size = Size.Small;
 

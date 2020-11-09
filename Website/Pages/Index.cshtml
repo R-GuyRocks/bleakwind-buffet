@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
-@{ 
-    ViewData["Title"] = "Home page"; 
+@{
+    ViewData["Title"] = "Home page";
 }
 <style>
     h1 {
@@ -64,12 +64,27 @@
         flex-direction: column;
     }
 
-    #filters input[type=number] {
-        width: 3rem;
+        #filters input[type=number] {
+            width: 3rem;
+        }
+
+        #filters h4 {
+            margin-bottom: 0.2rem;
+        }
+
+    .description {
+        font-size: 12px;
     }
 
-    #filters h4 {
-        margin-bottom: 0.2rem;
+    .flex-columns {
+        display: flex;
+        flex-direction: row;
+    }
+
+    @@media (max-width: 490px) {
+        .flex-columns {
+            flex-direction: column;
+        }
     }
 </style>
 
@@ -104,10 +119,10 @@
             Between
             <input name="PriceMin" type="number" min="0" step="0.01" placeholder="min" value="@Model.minPrice" />
             and
-            <input name="PriceMax" type="number" min="0" step="0.01" placeholder="max"  value="@Model.maxPrice" />
+            <input name="PriceMax" type="number" min="0" step="0.01" placeholder="max" value="@Model.maxPrice" />
         </div>
     </div>
-    <div id="menu">
+    <div id="menu" class="flex-columns">
         <div id="menu-item-block">
             @{
                 if (Model.entrees.Count > 0)
@@ -117,6 +132,7 @@
                     {
                         <div class="menu-item">
                             <div class="name" style="color: seagreen">@e.Name</div>
+                            <div class="description" style="color: seagreen">@e.Description</div>
                             <div class="information" style="color: seagreen">$@e.Price, @e.Calories Calories </div>
                         </div>
                     }
@@ -138,6 +154,7 @@
                                 if (count == 0)
                                 {
                                     <div class="name" style="color:darkorange">Dragonborn Waffle Fries</div>
+                                    <div class="description" style="color:darkorange">@dbwf.Description</div>
                                     count = count + 1;
                                 }
                                 <div class="information" style="color:darkorange">@dbwf.Size - $@dbwf.Price, @dbwf.Calories Calories</div>
@@ -157,6 +174,7 @@
                                 if (count == 0)
                                 {
                                     <div class="name" style="color:darkorange">Fried Miraak</div> count = count + 1;
+                                    <div class="description" style="color:darkorange">@fm.Description</div>
                                 }
                                 <div class="information" style="color:darkorange">@fm.Size - $@fm.Price, @fm.Calories Calories</div>
                                 count = count + 1;
@@ -175,6 +193,7 @@
                                 if (count == 0)
                                 {
                                     <div class="name" style="color:darkorange">Mad Otar Grits</div>
+                                    <div class="description" style="color:darkorange">@mog.Description</div>
                                     count = count + 1;
                                 }
                                 <div class="information" style="color:darkorange">@mog.Size - $@mog.Price, @mog.Calories Calories</div>
@@ -194,6 +213,7 @@
                                 if (count == 0)
                                 {
                                     <div class="name" style="color:darkorange">Vokun Salad</div> count = count + 1;
+                                    <div class="description" style="color:darkorange">@vs.Description</div>
                                 }
                                 <div class="information" style="color:darkorange">@vs.Size - $@vs.Price, @vs.Calories Calories</div>
                                 count = count + 1;
@@ -219,6 +239,7 @@
                                 if (count == 0)
                                 {
                                     <div class="name" style="color:dodgerblue">Aretino Apple Juice </div>
+                                    <div class="description" style="color:dodgerblue">@aaj.Description</div>
                                     count = count + 1;
                                 }
                                 <div class="information" style="color:dodgerblue">@aaj.Size - $@aaj.Price, @aaj.Calories Calories</div>
@@ -238,6 +259,7 @@
                                 if (count == 0)
                                 {
                                     <div class="name" style="color:dodgerblue">Candlehearth Coffee</div>
+                                    <div class="description" style="color:dodgerblue">@cc.Description</div>
                                     count = count + 1;
                                 }
                                 <div class="information" style="color:dodgerblue">@cc.Size - $@cc.Price, @cc.Calories Calories </div>
@@ -257,6 +279,7 @@
                                 if (count == 0)
                                 {
                                     <div class="name" style="color:dodgerblue">Markarth Milk</div>
+                                    <div class="description" style="color:dodgerblue">@mm.Description</div>
                                     count = count + 1;
                                 }
                                 <div class="information" style="color:dodgerblue">@mm.Size - $@mm.Price, @mm.Calories Calories </div>
@@ -275,7 +298,9 @@
                             {
                                 if (count == 0)
                                 {
-                                    <div class="name" style="color:dodgerblue">Sailor Soda</div> count = count + 1;
+                                    <div class="name" style="color:dodgerblue">Sailor Soda</div>
+                                    <div class="description" style="color:dodgerblue">@ss.Description</div>
+                                    count = count + 1;
                                 }
                                 <div class="information" style="color:dodgerblue">@ss.Size - $@ss.Price, @ss.Calories Calories </div>
                                 count = count + 1;
@@ -298,6 +323,7 @@
                                 if (count == 0)
                                 {
                                     <div class="name" style="color:dodgerblue">Warrior Water</div>
+                                    <div class="description" style="color:dodgerblue">@ww.Description</div>
                                     count = count + 1;
                                 }
                                 <div class="information" style="color:dodgerblue">@ww.Size - $@ww.Price, @ww.Calories Calories </div>
@@ -308,8 +334,7 @@
                 </div>
             }
         </div>
-
-        <h2 class="meal-type">Combos</h2>
-        <div class="combo-information">Any combination of an entree, side, and drink will count as a combo, which deducts $1 from your order!</div>
     </div>
 </form>
+<h2 class="meal-type">Combos</h2>
+<div class="combo-information">Any combination of an entree, side, and drink will count as a combo, which deducts $1 from your order!</div>

@@ -95,7 +95,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// The drink's description.
         /// </summary>
-        public string Description { get; } = "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.";
+        public override string Description { get; } = "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.";
 
         /// <value>
         /// Gets the list of special instructions on how to make the drink.

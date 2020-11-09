@@ -96,7 +96,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// The drink's description.
         /// </summary>
-        public string Description { get; } = "Fresh squeezed apple juice.";
+        public override string Description { get; } = "Fresh squeezed apple juice.";
 
         /// <value>
         /// Gets the list of special instructions on how to make the drink.

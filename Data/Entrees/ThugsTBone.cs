@@ -31,7 +31,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The entree's description.
         /// </summary>
-        public string Description { get; } = "Juicy T-Bone, not much else to say.";
+        public override string Description { get; } = "Juicy T-Bone, not much else to say.";
 
         /// <value>
         /// Gets an empty list of instructions.

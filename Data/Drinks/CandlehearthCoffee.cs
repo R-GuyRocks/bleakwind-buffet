@@ -96,7 +96,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// The drink's description.
         /// </summary>
-        public string Description { get; } = "Fair trade, fresh ground dark roast coffee.";
+        public override string Description { get; } = "Fair trade, fresh ground dark roast coffee.";
 
         /// <value>
         /// Gets the list of special instructions on how to make the drink.

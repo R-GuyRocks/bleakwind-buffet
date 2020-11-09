@@ -44,7 +44,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// The drink's description.
         /// </summary>
-        public string Description { get; } = "It’s water. Just water.";
+        public override string Description { get; } = "It’s water. Just water.";
 
         /// <value>
         /// Gets the list of special instructions on how to make the drink.
