@@ -106,6 +106,11 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// <summary>
+        /// The type of menu item this item is.
+        /// </summary>
+        public string ItemType { get; } = "Combo";
+
         private double price;
 
         /// <value>

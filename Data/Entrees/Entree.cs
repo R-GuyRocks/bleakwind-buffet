@@ -27,6 +27,11 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// The type of menu item this item is.
+        /// </summary>
+        public string ItemType { get; } = "Entree";
+
+        /// <summary>
         /// The entree's price.
         /// </summary>
         /// <value>

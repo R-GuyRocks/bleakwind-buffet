@@ -42,6 +42,11 @@ namespace BleakwindBuffet.Data
         /// The item's description.
         /// </summary>
         string Description { get; }
+
+        /// <summary>
+        /// The type of menu item this item is.
+        /// </summary>
+        string ItemType { get; }
     }
 }
 

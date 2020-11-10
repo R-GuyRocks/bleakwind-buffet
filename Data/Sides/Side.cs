@@ -51,6 +51,11 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// The type of menu item this item is.
+        /// </summary>
+        public string ItemType { get; } = "Side";
+
+        /// <summary>
         /// The side's price.
         /// </summary>
         /// <value>

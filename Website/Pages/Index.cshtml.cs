@@ -70,29 +70,42 @@ namespace Website.Pages
             {
                 string[] searchTermList = SearchTerms.Split(' ');
 
-                    list = from item in Menu.FullMenu()
-                           where item.Name != null && searchTermList.Any(s=>(item.Name.Contains(s, StringComparison.InvariantCultureIgnoreCase)) || searchTermList.Any(s=>item.Description.Contains(s, StringComparison.InvariantCultureIgnoreCase)))
-                           select item;
-                
-               /*     foreach(IOrderItem i in list)
-                    {
-                        list2.Add(i);
-                    }
-                } */
+                list = from item in Menu.FullMenu()
+                       where item.Name != null && searchTermList.Any(s => (item.Name.Contains(s, StringComparison.InvariantCultureIgnoreCase)) || searchTermList.Any(s => item.Description.Contains(s, StringComparison.InvariantCultureIgnoreCase)))
+                       select item;
             }
-    /*        List<IOrderItem> list3 = new List<IOrderItem>();
-            foreach (IOrderItem i in Menu.FullMenu())
+            if (itemTypes != null && itemTypes.Length != 0)
             {
-                if (list2.Contains(i))
-                {
-                    list3.Add(i);
-                }
-            } */
-     //     list = Menu.Search(searchTerms);
-            IEnumerable<IOrderItem> newList = Menu.FilterByItemType(list, itemTypes);
-            IEnumerable<IOrderItem> newListTwo = Menu.FilterByCalories(newList, CaloricIntakeMin, CaloricIntakeMax);
-            IEnumerable<IOrderItem> newListThree = Menu.FilterByCalories(newListTwo, PriceMin, PriceMax);
-            foreach (IOrderItem i in newListThree)
+                    list = list.Where(item =>
+                        item.ItemType != null &&
+                        itemTypes.Contains(item.ItemType)
+                        );
+            }
+            if (CaloricIntakeMin != null)
+            {
+                list = list.Where(item =>
+                    item.Calories >= CaloricIntakeMin
+                     );
+            }
+            if (CaloricIntakeMax != null)
+            {
+                list = list.Where(item =>
+                    item.Calories <= CaloricIntakeMax
+                     );
+            }
+            if (PriceMin != null)
+            {
+                list = list.Where(item =>
+                    item.Price >= PriceMin
+                     );
+            }
+            if (PriceMax != null)
+            {
+                list = list.Where(item =>
+                    item.Price <= PriceMax
+                     );
+            }
+            foreach (IOrderItem i in list)
             {
                 if (i is Entree e)
                 {

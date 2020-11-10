@@ -27,7 +27,12 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 return this.ToString();
             }
-        }  
+        }
+
+        /// <summary>
+        /// The type of menu item this item is.
+        /// </summary>
+        public string ItemType { get; } = "Drink";
 
         /// <summary>
         /// The drink's size.
