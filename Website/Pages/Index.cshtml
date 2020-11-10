@@ -46,7 +46,7 @@
         vertical-align: middle;
         text-align: center;
     }
-/*    form#menu-list {
+    form#menu-list {
         display: grid;
         grid-template-columns: 1fr 3fr;
         grid-template-rows: auto auto;
@@ -70,7 +70,7 @@
     #filters h4 {
         margin-bottom: 0.2rem;
     }
-    */
+    
     .description {
         font-size: 12px;
     }
@@ -121,7 +121,7 @@
         </div>
     </div>
     <div id="menu" class="flex-columns">
-        <div id="menu-item-block">
+        <div id="menu-item-block" style="flex-grow: 1; flex-basis: 0">
             @{
                 if (Model.entrees.Count > 0)
                 {
@@ -137,7 +137,7 @@
                 }
             }
         </div>
-        <div id="menu-item-block">
+        <div id="menu-item-block" style="flex-grow: 1; flex-basis: 0">
             @if (Model.sides.Count > 0)
             {
                 <h2 class="meal-type">Sides</h2>
@@ -221,7 +221,7 @@
                 </div>
             }
         </div>
-        <div id="menu-item-block">
+        <div id="menu-item-block" style="flex-grow: 1; flex-basis: 0">
             @if (Model.drinks.Count > 0)
             {
                 <h2 class="meal-type">Drinks</h2>
