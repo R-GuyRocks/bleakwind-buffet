@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>b479bf1c-d7d2-4e86-b753-1187adfa982e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
-    <ProjectReference Include="..\PointOfSale\PointOfSale.csproj" />
   </ItemGroup>
 
 </Project>
